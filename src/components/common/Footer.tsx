@@ -1,0 +1,80 @@
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+import { ChevronUp } from "lucide-react";
+
+export default function Footer() {
+  const scrollToTop = () => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
+  return (
+    <footer className="bg-yeirin-cream py-10">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+          {/* Left Section */}
+          <div className="flex flex-col gap-4">
+            {/* Logo */}
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/images/logo/yeirin-logo.png"
+                alt="예이린"
+                width={100}
+                height={36}
+                className="h-9 w-auto object-contain"
+              />
+            </Link>
+
+            {/* Contact Info */}
+            <div className="text-sm text-gray-600 space-y-1">
+              <p>(48117) 부산광역시 해운대구 달맞이길 117번다길 42-8 301호</p>
+              <p>대표이메일 yeirin2023@gmail.com</p>
+              <p>사업자번호</p>
+            </div>
+
+            {/* Legal Links */}
+            <div className="flex items-center gap-4 text-sm text-gray-600">
+              <Link href="/terms" className="hover:text-yeirin-orange transition-colors">
+                이용약관
+              </Link>
+              <Link href="/privacy" className="hover:text-yeirin-orange transition-colors">
+                개인정보처리방침
+              </Link>
+              <Link href="/careers" className="hover:text-yeirin-orange transition-colors">
+                인재채용
+              </Link>
+            </div>
+          </div>
+
+          {/* Right Section */}
+          <div className="flex flex-col items-start md:items-end gap-4">
+            {/* Scroll to Top Button */}
+            <button
+              onClick={scrollToTop}
+              className="p-2 hover:bg-gray-200 rounded-full transition-colors"
+              aria-label="맨 위로 이동"
+            >
+              <ChevronUp size={24} className="text-gray-700" />
+            </button>
+
+            {/* Partner Logo */}
+            <div className="flex items-center gap-2">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-red-500 via-blue-500 to-blue-700 flex items-center justify-center">
+                <div className="w-3 h-3 bg-white rounded-full" />
+              </div>
+              <span className="text-sm font-medium text-gray-700">보건복지부</span>
+            </div>
+
+            {/* Copyright */}
+            <p className="text-sm text-gray-500">
+              © 2021 Yeirin All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}

@@ -1,0 +1,16 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="url(#gradient4)"/>
+  <defs>
+    <linearGradient id="gradient4" x1="0" y1="0" x2="400" y2="300">
+      <stop offset="0%" stop-color="#EC4899"/>
+      <stop offset="100%" stop-color="#F43F5E"/>
+    </linearGradient>
+  </defs>
+  <circle cx="140" cy="130" r="35" fill="white" fill-opacity="0.2"/>
+  <circle cx="200" cy="140" r="35" fill="white" fill-opacity="0.25"/>
+  <circle cx="260" cy="130" r="35" fill="white" fill-opacity="0.2"/>
+  <path d="M140 130 L200 140 L260 130" stroke="white" stroke-width="3" stroke-opacity="0.5" stroke-linecap="round"/>
+  <rect x="100" y="200" width="200" height="16" rx="4" fill="white" fill-opacity="0.3"/>
+  <rect x="130" y="224" width="140" height="12" rx="4" fill="white" fill-opacity="0.2"/>
+  <text x="200" y="265" text-anchor="middle" fill="white" font-family="system-ui" font-size="14">협력 네트워크</text>
+</svg>
