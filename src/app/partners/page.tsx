@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Building2, Brain, Heart, ChevronLeft, ChevronRight } from "lucide-react";
 
 const categories = [
@@ -73,6 +74,24 @@ export default function PartnersPage() {
           <p className="text-gray-600 max-w-2xl mx-auto">
             함께 걸은 지역에서 예이린과 함께 하고 있습니다
           </p>
+        </div>
+      </section>
+
+      {/* Partnership Ecosystem */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-12">
+            예이린 파트너십 생태계
+          </h2>
+          <div className="max-w-5xl mx-auto">
+            <Image
+              src="/images/partners/파트너쉽.png"
+              alt="예이린 파트너십 생태계 - 공공 거버넌스 파트너, 학술/연구 혁신 파트너, 국제/시민사회 파트너"
+              width={1200}
+              height={500}
+              className="w-full h-auto rounded-2xl shadow-lg"
+            />
+          </div>
         </div>
       </section>
 

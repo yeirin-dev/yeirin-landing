@@ -1,5 +1,7 @@
 import { Heart, Lightbulb, Users } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { boardMembers } from "@/data/members";
 
 const values = [
   {
@@ -23,34 +25,6 @@ const values = [
     description:
       "아동의 건강과 돌봄을 통합적 관점에서 바라보고 전문적 서비스를 제공합니다.",
   },
-];
-
-const organizationChart = {
-  top: "조합원총회",
-  second: ["이사회", "감사"],
-  third: ["전략경영팀부", "사업부", "예이린관리팀"],
-  programs: [
-    {
-      title: "취약아동 건강관리 사업",
-      items: ["취약아동 대상 의료연계 사업"],
-    },
-    {
-      title: "취약아동 돌봄 사업",
-      items: ["취약아동 대상 건강증진 돌봄거점 사업"],
-    },
-    {
-      title: "기타 사업",
-      items: ["마음대로 환경교육", "조합원 교육", "조합간 연대교류"],
-    },
-  ],
-};
-
-const boardMembers = [
-  { name: "이사 박지영", role: "이사장", image: "" },
-  { name: "이사 백남청", role: "이사", image: "" },
-  { name: "이사 이경희", role: "이사", image: "" },
-  { name: "이사 황제민", role: "이사", image: "" },
-  { name: "이사 박태숙", role: "이사", image: "" },
 ];
 
 export default function AboutPage() {
@@ -125,79 +99,38 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* History Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-12">
+            예이린 연혁
+          </h2>
+          <div className="max-w-6xl mx-auto">
+            <Image
+              src="/images/about/연혁.png"
+              alt="예이린 연혁 - 2021년부터 2025년까지의 주요 활동"
+              width={1200}
+              height={400}
+              className="w-full h-auto rounded-2xl shadow-lg"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Organization Chart */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-12">
             예이린 조직도
           </h2>
-
-          <div className="max-w-4xl mx-auto">
-            {/* Top Level */}
-            <div className="flex justify-center mb-4">
-              <div className="bg-yeirin-yellow text-gray-900 px-8 py-3 rounded-lg font-bold">
-                {organizationChart.top}
-              </div>
-            </div>
-
-            {/* Connector Line */}
-            <div className="flex justify-center mb-4">
-              <div className="w-px h-8 bg-gray-300" />
-            </div>
-
-            {/* Second Level */}
-            <div className="flex justify-center gap-8 mb-4">
-              {organizationChart.second.map((item, index) => (
-                <div
-                  key={index}
-                  className="bg-white border-2 border-yeirin-yellow text-gray-900 px-6 py-2 rounded-lg font-medium"
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
-
-            {/* Connector Line */}
-            <div className="flex justify-center mb-4">
-              <div className="w-px h-8 bg-gray-300" />
-            </div>
-
-            {/* Third Level */}
-            <div className="flex justify-center gap-4 mb-8">
-              {organizationChart.third.map((item, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg text-sm"
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
-
-            {/* Programs */}
-            <div className="grid md:grid-cols-3 gap-4">
-              {organizationChart.programs.map((program, index) => (
-                <div
-                  key={index}
-                  className="bg-yeirin-cream rounded-xl p-4 border border-yeirin-yellow/30"
-                >
-                  <h4 className="font-bold text-yeirin-orange mb-3 text-sm">
-                    {program.title}
-                  </h4>
-                  <ul className="space-y-2">
-                    {program.items.map((item, itemIndex) => (
-                      <li
-                        key={itemIndex}
-                        className="text-gray-600 text-sm flex items-start gap-2"
-                      >
-                        <span className="text-yeirin-orange">•</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
+          <div className="max-w-5xl mx-auto">
+            <Image
+              src="/images/about/조직도.png"
+              alt="예이린 조직도 - 이사장, 이사진, 전문위원, 자문위원, 사업본부 등"
+              width={1200}
+              height={600}
+              className="w-full h-auto rounded-2xl shadow-lg bg-white p-4"
+            />
           </div>
         </div>
       </section>
@@ -214,22 +147,41 @@ export default function AboutPage() {
               <span className="text-yeirin-orange font-medium">구성원</span>을
               소개합니다
             </p>
+            <p className="text-gray-500 text-sm mt-2">
+              프로필을 클릭하면 상세 정보를 확인할 수 있습니다
+            </p>
           </div>
 
           <div className="flex flex-wrap justify-center gap-8">
-            {boardMembers.map((member, index) => (
-              <div key={index} className="text-center">
-                <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-gray-200 overflow-hidden flex items-center justify-center">
-                  <svg
-                    className="w-16 h-16 text-gray-400"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                  </svg>
+            {boardMembers.map((member) => (
+              <Link
+                key={member.id}
+                href={`/about/members/${member.id}`}
+                className="group text-center"
+              >
+                <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-gray-200 overflow-hidden flex items-center justify-center ring-4 ring-transparent group-hover:ring-yeirin-yellow transition-all duration-300 group-hover:scale-105">
+                  {member.image && !member.image.includes("undefined") ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <svg
+                      className="w-16 h-16 text-gray-400"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                    </svg>
+                  )}
                 </div>
-                <p className="font-medium text-gray-900">{member.name}</p>
-              </div>
+                <p className="font-medium text-gray-900 group-hover:text-yeirin-orange transition-colors">
+                  {member.name}
+                </p>
+                <p className="text-sm text-gray-500">{member.role}</p>
+              </Link>
             ))}
           </div>
         </div>
