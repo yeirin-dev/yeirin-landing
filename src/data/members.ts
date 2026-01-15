@@ -136,10 +136,38 @@ export const boardMembers: Member[] = [
   },
 ];
 
+export const techMembers: Member[] = [
+  {
+    id: "yoon-sanghyun",
+    name: "윤상현",
+    role: "CTO",
+    title: "사회적협동조합 예이린 CTO",
+    image: "/images/board/윤상현.jpg",
+    introduction:
+      "AI/ML, 정보보안, 로보틱스 분야의 전문가로서 예이린의 기술 혁신을 이끌고 있습니다. 돌봄 사각지대 해소를 위한 기술 솔루션 개발에 힘쓰고 있습니다.",
+    career: [
+      "현) 아키텍트 솔루션 엔지니어 Association 위원",
+      "전) AI/ML 솔루션/SI Perevo 대표",
+      "전) ARSS 군용 프로토콜 연구원",
+      "전) AlwaysYoga SWE",
+    ],
+    education: [
+      "인제대학교 AI융합로봇학 석사",
+      "인제대학교 인공지능 학사",
+      "인제대학교 산업보안 학사",
+    ],
+    expertise: ["AI", "ML", "정보보안", "로보틱스", "강화학습", "소프트웨어 아키텍처"],
+    message:
+      "일생에 쌓아왔던 공학적 역량을 돌봄의 사각지대 없는 사회를 만들기 위해 쓰겠습니다.",
+  },
+];
+
 export function getMemberById(id: string): Member | undefined {
-  return boardMembers.find((member) => member.id === id);
+  const allMembers = [...boardMembers, ...techMembers];
+  return allMembers.find((member) => member.id === id);
 }
 
 export function getAllMemberIds(): string[] {
-  return boardMembers.map((member) => member.id);
+  const allMembers = [...boardMembers, ...techMembers];
+  return allMembers.map((member) => member.id);
 }

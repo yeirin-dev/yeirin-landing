@@ -1,7 +1,7 @@
 import { Heart, Lightbulb, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { boardMembers } from "@/data/members";
+import { boardMembers, techMembers } from "@/data/members";
 
 const values = [
   {
@@ -154,6 +154,58 @@ export default function AboutPage() {
 
           <div className="flex flex-wrap justify-center gap-8">
             {boardMembers.map((member) => (
+              <Link
+                key={member.id}
+                href={`/about/members/${member.id}`}
+                className="group text-center"
+              >
+                <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-gray-200 overflow-hidden flex items-center justify-center ring-4 ring-transparent group-hover:ring-yeirin-yellow transition-all duration-300 group-hover:scale-105">
+                  {member.image && !member.image.includes("undefined") ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <svg
+                      className="w-16 h-16 text-gray-400"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                    </svg>
+                  )}
+                </div>
+                <p className="font-medium text-gray-900 group-hover:text-yeirin-orange transition-colors">
+                  {member.name}
+                </p>
+                <p className="text-sm text-gray-500">{member.role}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tech Development Team */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              기술개발본부
+            </h2>
+            <p className="text-gray-600">
+              예이린의{" "}
+              <span className="text-yeirin-orange font-medium">기술 혁신</span>을
+              이끌어가는 구성원을 소개합니다
+            </p>
+            <p className="text-gray-500 text-sm mt-2">
+              프로필을 클릭하면 상세 정보를 확인할 수 있습니다
+            </p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-8">
+            {techMembers.map((member) => (
               <Link
                 key={member.id}
                 href={`/about/members/${member.id}`}
