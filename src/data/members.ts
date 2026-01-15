@@ -146,6 +146,7 @@ export const techMembers: Member[] = [
     introduction:
       "AI/ML, 정보보안, 로보틱스 분야의 전문가로서 예이린의 기술 혁신을 이끌고 있습니다. 돌봄 사각지대 해소를 위한 기술 솔루션 개발에 힘쓰고 있습니다.",
     career: [
+      "현) 사회적협동조합 예이린 CTO",
       "현) 아키텍트 솔루션 엔지니어 Association 위원",
       "전) AI/ML 솔루션/SI Perevo 대표",
       "전) ARSS 군용 프로토콜 연구원",
