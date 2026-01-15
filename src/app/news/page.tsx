@@ -1,65 +1,127 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import { Search } from "lucide-react";
+import { Search, ExternalLink } from "lucide-react";
 
-type CategoryType = "all" | "press" | "activity";
+type CategoryType = "all" | "press";
 
 const categories = [
   { id: "all" as CategoryType, label: "전체" },
   { id: "press" as CategoryType, label: "보도자료" },
-  { id: "activity" as CategoryType, label: "활동소식" },
 ];
 
 const newsData = [
   {
-    id: 1,
-    title: "대화형 AI 심리상담 플랫폼... 아동돌봄 연계 생태계 구축",
-    date: "2024.03.15",
+    id: 14,
+    title: "예이린 사회적협동조합, '2025 송년의 밤' 통해 B-IMPACT 얼라이언스 출범 선언",
+    date: "2025.12.24",
     category: "press",
-    excerpt:
-      "예이린 사회적협동조합의 AI 기반 아동심리상담 서비스 확대, 서비스 모델을 선보이며 주목받고 있다. 예이린은 부산 지역에서 활발하게 아동심리상담 서비스를 전개하고 있으며 앞으로의 전망이 밝다.",
+    media: "세계비즈",
+    url: "https://m.segyebiz.com/adxView/20251224512201",
   },
   {
-    id: 2,
-    title: "예이린, 사회서비스 박람회 참가",
-    date: "2024.03.10",
-    category: "activity",
-    excerpt:
-      "지난 9월 서울에서 열린 대한민국 사회서비스 박람회에서 예이린 박지영 이사장이 심리상담 솔루션 '내친구 소올이' 사례 발표를 하고 있다.",
-  },
-  {
-    id: 3,
-    title: "취약계층 아동 건강관리 프로그램 성과 발표",
-    date: "2024.03.05",
+    id: 13,
+    title: "대화형 AI 심리상담 플랫폼… 아동돌봄 연계 생태계 구축",
+    date: "2025.11.03",
     category: "press",
-    excerpt:
-      "예이린이 운영하는 취약계층 아동 건강관리 프로그램의 성과가 발표되었습니다. 지난 1년간 100명 이상의 아동이 혜택을 받았습니다.",
+    media: "부산일보",
+    url: "https://www.busan.com/view/busan/view.php?code=2025110317410585667",
   },
   {
-    id: 4,
-    title: "지역사회 협력 네트워크 확대",
-    date: "2024.02.28",
-    category: "activity",
-    excerpt:
-      "예이린이 지역사회 협력 네트워크를 확대하여 더 많은 기관과 협력하게 되었습니다.",
-  },
-  {
-    id: 5,
-    title: "아동 정서 발달 프로그램 신규 론칭",
-    date: "2024.02.20",
+    id: 12,
+    title: "예이린 사회적협동조합–굿네이버스 영남본부, '아동 마음건강 지원' 업무협약 체결",
+    date: "2025.12.02",
     category: "press",
-    excerpt:
-      "예이린이 아동 정서 발달을 위한 새로운 프로그램을 론칭했습니다. 전문 상담사와 함께하는 맞춤형 프로그램입니다.",
+    media: "매일신문",
+    url: "https://www.imaeil.com/page/view/2025120213551281055",
+  },
+  {
+    id: 11,
+    title: "인텔리어스, 'AI 마음건강+' 시범사업 성공적으로 수행",
+    date: "2025.11.11",
+    category: "press",
+    media: "itbiznews",
+    url: "https://www.itbiznews.com/news/articleView.html?idxno=186682",
+  },
+  {
+    id: 10,
+    title: "부산 사상구, 'AI와 함께하는 마음건강+' 시범사업 성과공유회 개최",
+    date: "2025.10.24",
+    category: "press",
+    media: "국제신문",
+    url: "https://www.kookje.co.kr/news2011/asp/newsbody.asp?code=0300&key=20251024.99099006178",
+  },
+  {
+    id: 9,
+    title: "부산 사상구, 'AI와 함께하는 마음건강 돌봄사업' 협약식 체결",
+    date: "2025.07.10",
+    category: "press",
+    media: "뉴스포털1",
+    url: "https://www.civilreporter.co.kr/news/articleView.html?idxno=500240",
+  },
+  {
+    id: 8,
+    title: "예이린 사회적협동조합, 복권기금 '경계선 지능 아동 사회적응력 향상 지원사업' 최종 선정",
+    date: "2025.06.01",
+    category: "press",
+    media: "E동아",
+    url: "https://www.newsis.com/view/NISX20250530_0003196626",
+  },
+  {
+    id: 7,
+    title: "부산사회서비스원 'AI, IoT 기반 돌봄·아동상담' 나선다",
+    date: "2025.06.01",
+    category: "press",
+    media: "뉴시스",
+    url: "https://www.newsis.com/view/NISX20250530_0003196626",
   },
   {
     id: 6,
-    title: "봄맞이 건강검진 캠페인 실시",
-    date: "2024.02.15",
-    category: "activity",
-    excerpt:
-      "예이린이 봄을 맞아 취약계층 아동을 대상으로 건강검진 캠페인을 실시합니다.",
+    title: "부산사회서비스원, 인공지능·사물인터넷 활용 복지 서비스 제공",
+    date: "2025.05.31",
+    category: "press",
+    media: "연합뉴스",
+    url: "https://www.yna.co.kr/view/AKR20250530101500051",
+  },
+  {
+    id: 5,
+    title: "부산사회서비스원, AI·IoT 기술 활용한 사회서비스 본격 추진",
+    date: "2025.05.31",
+    category: "press",
+    media: "세계일보",
+    url: "https://www.segye.com/newsView/20250530506079",
+  },
+  {
+    id: 4,
+    title: "AI 아동 상담·돌봄서비스 연계…부산사회서비스원 복지기술 단체 2곳 선정",
+    date: "2025.05.30",
+    category: "press",
+    media: "부산일보",
+    url: "https://v.daum.net/v/pngEFG2XSJ",
+  },
+  {
+    id: 3,
+    title: "예이린 사회적협동조합, 청소년 마약류 오남용 예방 워크숍",
+    date: "2025.02.25",
+    category: "press",
+    media: "부산일보",
+    url: "https://www.busan.com/view/busan/view.php?code=2025022509455771221",
+  },
+  {
+    id: 2,
+    title: "보건의료·복지 사회적협동조합 예이린, 하계워크숍 열어",
+    date: "2023.08.21",
+    category: "press",
+    media: "부산일보",
+    url: "https://www.busan.com/view/busan/view.php?code=2023081716434739154",
+  },
+  {
+    id: 1,
+    title: "[포토뉴스] 예이린 사회적협동조합 창립총회",
+    date: "2022.11.29",
+    category: "press",
+    media: "부산일보",
+    url: "https://www.busan.com/view/busan/view.php?code=2022112821363773756",
   },
 ];
 
@@ -72,7 +134,7 @@ export default function NewsPage() {
       activeCategory === "all" || news.category === activeCategory;
     const matchesSearch =
       news.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      news.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
+      news.media.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
@@ -85,7 +147,7 @@ export default function NewsPage() {
             Health Care system for Your Child
           </p>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            예이린 소식
+            예이린 뉴스룸
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
             예이린의 보도자료와 최근 소식을 확인할 수 있습니다
@@ -137,9 +199,11 @@ export default function NewsPage() {
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredNews.map((news) => (
-              <Link
+              <a
                 key={news.id}
-                href={`/news/${news.id}`}
+                href={news.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300"
               >
                 {/* Image Placeholder */}
@@ -155,34 +219,31 @@ export default function NewsPage() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth={1}
-                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                        d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
                       />
                     </svg>
                   </div>
                   <div className="absolute top-4 left-4">
-                    <span
-                      className={`text-xs px-3 py-1 rounded-full ${
-                        news.category === "press"
-                          ? "bg-yeirin-yellow text-gray-900 font-medium"
-                          : "bg-yeirin-orange text-white"
-                      }`}
-                    >
-                      {news.category === "press" ? "보도자료" : "활동소식"}
+                    <span className="text-xs px-3 py-1 rounded-full bg-yeirin-yellow text-gray-900 font-medium">
+                      보도자료
                     </span>
+                  </div>
+                  <div className="absolute top-4 right-4">
+                    <ExternalLink size={16} className="text-gray-400" />
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="p-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xs text-yeirin-orange font-medium">{news.media}</span>
+                  </div>
                   <h3 className="font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-yeirin-orange transition-colors">
                     {news.title}
                   </h3>
-                  <p className="text-gray-500 text-sm line-clamp-2 mb-4">
-                    {news.excerpt}
-                  </p>
                   <p className="text-gray-400 text-sm">{news.date}</p>
                 </div>
-              </Link>
+              </a>
             ))}
           </div>
 
