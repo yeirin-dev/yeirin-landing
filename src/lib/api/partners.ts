@@ -19,6 +19,7 @@ export interface Partner {
   facilityTypeDisplayName: string;
   district: string;
   phoneNumber: string | null;
+  address: string;
 }
 
 export interface CategoryCount {

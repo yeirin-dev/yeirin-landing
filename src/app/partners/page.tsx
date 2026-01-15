@@ -6,9 +6,11 @@ import { Building2, Brain, Heart, ChevronLeft, ChevronRight, Loader2 } from "luc
 import {
   getPartners,
   FacilityType,
+  type Partner,
   type PartnerListResponse,
   type CategoryCount,
 } from "@/lib/api/partners";
+import KakaoMap from "@/components/KakaoMap";
 
 // 카테고리 아이콘 매핑
 const categoryIcons: Record<FacilityType, typeof Building2> = {
@@ -31,8 +33,10 @@ export default function PartnersPage() {
   const [selectedCategory, setSelectedCategory] = useState<FacilityType | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [data, setData] = useState<PartnerListResponse | null>(null);
+  const [allPartners, setAllPartners] = useState<Partner[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [selectedPartner, setSelectedPartner] = useState<Partner | null>(null);
 
   const fetchPartners = useCallback(async () => {
     setLoading(true);
@@ -57,6 +61,23 @@ export default function PartnersPage() {
   useEffect(() => {
     fetchPartners();
   }, [fetchPartners]);
+
+  // 지도에 표시할 모든 파트너 가져오기 (페이지네이션 없이)
+  useEffect(() => {
+    const fetchAllPartners = async () => {
+      try {
+        const response = await getPartners({
+          limit: 200, // 충분히 큰 수
+          facilityType: selectedCategory || undefined,
+          district: selectedDistrict || undefined,
+        });
+        setAllPartners(response.partners);
+      } catch (err) {
+        console.error("Failed to fetch all partners for map:", err);
+      }
+    };
+    fetchAllPartners();
+  }, [selectedCategory, selectedDistrict]);
 
   // 필터 변경 시 페이지 리셋
   const handleDistrictChange = (district: string | null) => {
@@ -183,27 +204,17 @@ export default function PartnersPage() {
       <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8">
-            {/* Map Placeholder */}
+            {/* Kakao Map */}
             <div className="bg-white rounded-2xl p-6 shadow-sm">
               <h3 className="font-bold text-gray-900 mb-4">
                 부산광역시 예이린 협력 기관
               </h3>
-              <div className="aspect-square bg-gray-100 rounded-xl flex items-center justify-center">
-                {/* Map SVG Placeholder */}
-                <svg
-                  viewBox="0 0 200 200"
-                  className="w-full h-full max-w-md text-gray-300"
-                >
-                  <path
-                    d="M100 20 L140 60 L160 100 L140 140 L100 180 L60 140 L40 100 L60 60 Z"
-                    fill="currentColor"
-                    opacity="0.3"
-                  />
-                  <circle cx="100" cy="100" r="5" fill="#FFD43B" />
-                  <circle cx="120" cy="80" r="4" fill="#FF9F1C" />
-                  <circle cx="80" cy="120" r="4" fill="#FF9F1C" />
-                  <circle cx="110" cy="130" r="4" fill="#FF9F1C" />
-                </svg>
+              <div className="aspect-square relative rounded-xl overflow-hidden">
+                <KakaoMap
+                  partners={allPartners}
+                  selectedPartner={selectedPartner}
+                  onMarkerClick={(partner) => setSelectedPartner(partner)}
+                />
               </div>
             </div>
 
@@ -296,7 +307,10 @@ export default function PartnersPage() {
                           data.partners.map((partner, index) => (
                             <tr
                               key={partner.id}
-                              className="border-b border-gray-100 hover:bg-gray-50"
+                              onClick={() => setSelectedPartner(partner)}
+                              className={`border-b border-gray-100 hover:bg-gray-50 cursor-pointer transition-colors ${
+                                selectedPartner?.id === partner.id ? "bg-yeirin-cream" : ""
+                              }`}
                             >
                               <td className="py-3 px-4 text-sm text-gray-900">
                                 <span className="bg-yeirin-yellow text-gray-900 font-medium px-2 py-1 rounded text-xs">
