@@ -1,80 +1,179 @@
 "use client";
 
-const promises = [
+// 3대 핵심가치 아이콘 컴포넌트
+const FamilyIcon = () => (
+  <svg viewBox="0 0 64 64" fill="none" className="w-16 h-16">
+    {/* 부모 */}
+    <circle cx="20" cy="20" r="6" fill="#C85A4A" />
+    <path d="M20 28c-6 0-10 4-10 8v4h20v-4c0-4-4-8-10-8z" fill="#C85A4A" />
+    <circle cx="44" cy="20" r="6" fill="#C85A4A" />
+    <path d="M44 28c-6 0-10 4-10 8v4h20v-4c0-4-4-8-10-8z" fill="#C85A4A" />
+    {/* 아이 */}
+    <circle cx="32" cy="32" r="5" fill="#C85A4A" />
+    <path d="M32 38c-5 0-8 3-8 6v4h16v-4c0-3-3-6-8-6z" fill="#C85A4A" />
+  </svg>
+);
+
+const PeopleIcon = () => (
+  <svg viewBox="0 0 64 64" fill="none" className="w-16 h-16">
+    {/* 중앙 사람 */}
+    <circle cx="32" cy="16" r="6" fill="#C85A4A" />
+    <path d="M32 24c-6 0-10 4-10 8v4h20v-4c0-4-4-8-10-8z" fill="#C85A4A" />
+    {/* 왼쪽 사람 */}
+    <circle cx="16" cy="28" r="5" fill="#C85A4A" />
+    <path d="M16 34c-5 0-8 3-8 6v4h16v-4c0-3-3-6-8-6z" fill="#C85A4A" />
+    {/* 오른쪽 사람 */}
+    <circle cx="48" cy="28" r="5" fill="#C85A4A" />
+    <path d="M48 34c-5 0-8 3-8 6v4h16v-4c0-3-3-6-8-6z" fill="#C85A4A" />
+    {/* 연결선 */}
+    <path d="M20 36h24" stroke="#C85A4A" strokeWidth="2" strokeDasharray="2 2" />
+  </svg>
+);
+
+const AtomIcon = () => (
+  <svg viewBox="0 0 64 64" fill="none" className="w-16 h-16">
+    {/* 중앙 원 */}
+    <circle cx="32" cy="32" r="6" fill="#C85A4A" />
+    {/* 궤도 */}
+    <ellipse cx="32" cy="32" rx="24" ry="10" stroke="#C85A4A" strokeWidth="2" fill="none" />
+    <ellipse cx="32" cy="32" rx="24" ry="10" stroke="#C85A4A" strokeWidth="2" fill="none" transform="rotate(60 32 32)" />
+    <ellipse cx="32" cy="32" rx="24" ry="10" stroke="#C85A4A" strokeWidth="2" fill="none" transform="rotate(-60 32 32)" />
+    {/* 전자 */}
+    <circle cx="56" cy="32" r="3" fill="#C85A4A" />
+    <circle cx="20" cy="52" r="3" fill="#C85A4A" />
+    <circle cx="20" cy="12" r="3" fill="#C85A4A" />
+  </svg>
+);
+
+// 태극 로고 컴포넌트
+const TaegeukLogo = () => (
+  <svg viewBox="0 0 40 40" className="w-10 h-10">
+    <circle cx="20" cy="20" r="18" fill="white" stroke="#ddd" strokeWidth="0.5" />
+    {/* 빨간 부분 */}
+    <path d="M20 2a18 18 0 0 1 0 36c0-5 4-9 9-9s9-4 9-9-4-9-9-9-9 4-9 9" fill="#C8102E" />
+    {/* 파란 부분 */}
+    <path d="M20 38a18 18 0 0 1 0-36c0 5-4 9-9 9s-9 4-9 9 4 9 9 9 9-4 9-9" fill="#003478" />
+    {/* 작은 원 */}
+    <circle cx="20" cy="11" r="5" fill="#C8102E" />
+    <circle cx="20" cy="29" r="5" fill="#003478" />
+  </svg>
+);
+
+const coreValues = [
   {
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" className="w-full h-full">
-        <circle cx="32" cy="32" r="30" stroke="#FFD43B" strokeWidth="2" fill="#FFF8E7"/>
-        <path d="M32 44c-6 0-12-6-12-12s6-12 12-12c3 0 6 1.5 8 4" stroke="#FF9F1C" strokeWidth="2.5" strokeLinecap="round"/>
-        <path d="M32 20c6 0 12 6 12 12s-6 12-12 12" stroke="#FF9F1C" strokeWidth="2.5" strokeLinecap="round"/>
-        <path d="M29 30l3 3 6-6" stroke="#FFD43B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
-    title: "전문성",
-    description:
-      "의료 전문가, 돌봄전문가 등으로 구성된 전문 상담팀을 통해 아동의 건강과 복지를 체계적으로 관리합니다. 검증된 프로그램과 전문 인력이 함께합니다.",
+    icon: <FamilyIcon />,
+    titleKo: "풀필먼트",
+    titleEn: "FULFILLMENT",
+    description: "예이린은 취약아동과그 가정의 미충족의료 및 돌봄의 수요를 충족시킨다",
   },
   {
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" className="w-full h-full">
-        <circle cx="32" cy="32" r="30" stroke="#FFD43B" strokeWidth="2" fill="#FFF8E7"/>
-        <circle cx="24" cy="26" r="6" fill="#FF9F1C"/>
-        <circle cx="40" cy="26" r="6" fill="#FF9F1C"/>
-        <path d="M18 42c0-6 6-10 14-10s14 4 14 10" stroke="#FFD43B" strokeWidth="2.5" strokeLinecap="round"/>
-        <circle cx="32" cy="22" r="5" fill="#FFD43B"/>
-        <path d="M26 38c0-4 3-6 6-6s6 2 6 6" stroke="#FF9F1C" strokeWidth="2" strokeLinecap="round"/>
-      </svg>
-    ),
-    title: "접근성",
-    description:
-      "어디서나 쉽게 이용할 수 있는 건강 관리 서비스를 제공합니다. 지역사회와 연계하여 취약계층 아동들이 필요한 서비스에 쉽게 접근할 수 있도록 합니다.",
+    icon: <PeopleIcon />,
+    titleKo: "이노베이션",
+    titleEn: "INNOVATION",
+    description: "예이린은 전문성과 사회적 책무에 기반하여 취약아동 건강관리 및 돌봄 시장의 혁신을 이룬다",
   },
   {
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" className="w-full h-full">
-        <circle cx="32" cy="32" r="30" stroke="#FFD43B" strokeWidth="2" fill="#FFF8E7"/>
-        <path d="M32 20v8M28 24h8" stroke="#FF9F1C" strokeWidth="2.5" strokeLinecap="round"/>
-        <path d="M22 32c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10" stroke="#FFD43B" strokeWidth="2.5" strokeLinecap="round"/>
-        <path d="M26 38l-4 8h20l-4-8" stroke="#FF9F1C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
-    title: "지속성",
-    description:
-      "일시적인 지원이 아닌 지속적인 관리와 케어를 통해 아동들의 건강한 성장을 돕습니다. 장기적인 관점에서 아동 발달을 지원합니다.",
+    icon: <AtomIcon />,
+    titleKo: "인터그레이션",
+    titleEn: "INTERGRATION",
+    description: "예이린은 아동의 건강과 돌봄의 빈틈을 채우고, 불평등을 해소하여 궁극적으로 사회통합에 기여한다",
   },
 ];
 
 export default function PromiseSection() {
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-        {/* Section Title */}
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-            예이린은 약속합니다
+    <section className="py-16 md:py-20 bg-gradient-to-b from-white to-gray-50">
+      <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8">
+        {/* Main Title with Decorative Lines */}
+        <div className="text-center mb-8">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#C85A4A] mb-2 relative inline-block">
+            건강특화 비영리 스타트업! 예이린
+            {/* Decorative wavy lines */}
+            <svg
+              className="absolute -bottom-2 left-0 w-full h-3"
+              viewBox="0 0 300 12"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M0,6 Q15,0 30,6 T60,6 T90,6 T120,6 T150,6 T180,6 T210,6 T240,6 T270,6 T300,6"
+                stroke="#C85A4A"
+                strokeWidth="2"
+                fill="none"
+                opacity="0.3"
+              />
+              <path
+                d="M0,10 Q15,4 30,10 T60,10 T90,10 T120,10 T150,10 T180,10 T210,10 T240,10 T270,10 T300,10"
+                stroke="#C85A4A"
+                strokeWidth="1.5"
+                fill="none"
+                opacity="0.2"
+              />
+            </svg>
           </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            예이린은 사회적협동조합으로서 취약계층 아동의 건강과 복지를 위해 최선을 다하겠습니다.
-            모든 아동이 건강하게 자랄 수 있는 세상을 만들어 갑니다.
+        </div>
+
+        {/* Mission Description */}
+        <div className="text-center mb-10 max-w-4xl mx-auto">
+          <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+            예이린은{" "}
+            <span className="text-[#E8A838] font-semibold">
+              &apos;우리 아이가 평등하게 보호받는 건강한 세상 만들기&apos;
+            </span>
+            를 미션으로 하여
+            <br className="hidden md:block" />
+            &apos;취약아동&apos;을 대상으로 이들의{" "}
+            <span className="text-[#E8A838] font-semibold">
+              &apos;미충족 의료 및 돌봄&apos;
+            </span>{" "}
+            욕구 해결을 주 목적으로 하는 보건복지부, 과학기술정보통신부 소관 사회적협동조합입니다.
           </p>
         </div>
 
-        {/* Promise Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {promises.map((promise, index) => (
+        {/* Government Ministry Logos */}
+        <div className="flex justify-center items-center gap-8 md:gap-16 mb-12">
+          <div className="flex items-center gap-2">
+            <TaegeukLogo />
+            <span className="text-sm md:text-base font-medium text-gray-700">보건복지부</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <TaegeukLogo />
+            <span className="text-sm md:text-base font-medium text-gray-700">과학기술정보통신부</span>
+          </div>
+        </div>
+
+        {/* Core Values Header */}
+        <div className="mb-10">
+          <div className="bg-gradient-to-r from-[#C85A4A]/10 via-[#C85A4A]/20 to-[#C85A4A]/10 py-3 px-6 rounded-lg">
+            <h3 className="text-center text-lg md:text-xl font-bold text-[#C85A4A]">
+              예이린 3대 핵심가치
+            </h3>
+          </div>
+        </div>
+
+        {/* Core Values Cards */}
+        <div className="grid md:grid-cols-3 gap-6">
+          {coreValues.map((value, index) => (
             <div
               key={index}
-              className="text-center"
+              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="w-24 h-24 mx-auto mb-6">
-                {promise.icon}
+              {/* Icon Area */}
+              <div className="pt-8 pb-6 flex justify-center bg-gradient-to-b from-gray-50 to-white">
+                {value.icon}
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                {promise.title}
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {promise.description}
-              </p>
+
+              {/* Content Area */}
+              <div className="bg-[#C85A4A] text-white p-6 rounded-t-3xl -mt-4">
+                <h4 className="text-xl md:text-2xl font-bold text-center mb-1">
+                  {value.titleKo}
+                </h4>
+                <p className="text-xs tracking-widest text-center text-white/80 mb-4">
+                  {value.titleEn}
+                </p>
+                <p className="text-sm text-center leading-relaxed text-white/90">
+                  {value.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

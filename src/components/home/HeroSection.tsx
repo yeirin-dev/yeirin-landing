@@ -76,14 +76,15 @@ export default function HeroSection() {
 
       {/* Text Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
-        <p className="text-white/90 text-sm md:text-base mb-3 tracking-wider">
-          Health Care system for Your Child
+        <p className="text-white/90 text-sm md:text-base mb-4 tracking-wider">
+          기술로 돌봄을 새롭게, 아이들의 내일을 따뜻하게
         </p>
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-          취약계층 아동을 위한
-          <br />
-          건강 관리 시스템
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-relaxed mb-2">
+          대한민국을 넘어 글로벌 돌봄 혁신을 선도하는
         </h1>
+        <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-white tracking-wide">
+          TECH–NON PROFIT, 예이린 사회적협동조합
+        </p>
       </div>
 
       {/* Slide Indicators */}
