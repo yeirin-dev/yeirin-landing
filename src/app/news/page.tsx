@@ -18,6 +18,7 @@ const newsData = [
     category: "press",
     media: "세계비즈",
     url: "https://m.segyebiz.com/adxView/20251224512201",
+    thumbnail: "http://m.segyefn.com/content/image/2025/12/24/20251224512183.jpg",
   },
   {
     id: 13,
@@ -26,6 +27,7 @@ const newsData = [
     category: "press",
     media: "부산일보",
     url: "https://www.busan.com/view/busan/view.php?code=2025110317410585667",
+    thumbnail: "https://www.busan.com/nas/wcms/wcms_data/photos/2025/11/03/2025110317410501022_l.jpg",
   },
   {
     id: 12,
@@ -34,6 +36,7 @@ const newsData = [
     category: "press",
     media: "매일신문",
     url: "https://www.imaeil.com/page/view/2025120213551281055",
+    thumbnail: "https://www.imaeil.com/photos/2025/12/02/2025120213540418970_l.jpg",
   },
   {
     id: 11,
@@ -42,6 +45,7 @@ const newsData = [
     category: "press",
     media: "itbiznews",
     url: "https://www.itbiznews.com/news/articleView.html?idxno=186682",
+    thumbnail: "https://cdn.itbiznews.com/news/photo/202511/186682_190683_2249.jpg",
   },
   {
     id: 10,
@@ -50,6 +54,7 @@ const newsData = [
     category: "press",
     media: "국제신문",
     url: "https://www.kookje.co.kr/news2011/asp/newsbody.asp?code=0300&key=20251024.99099006178",
+    thumbnail: "https://db.kookje.co.kr/news2000/photo/2025/1024/L20251024.99099006178i1.jpg",
   },
   {
     id: 9,
@@ -58,6 +63,7 @@ const newsData = [
     category: "press",
     media: "뉴스포털1",
     url: "https://www.civilreporter.co.kr/news/articleView.html?idxno=500240",
+    thumbnail: "https://cdn.civilreporter.co.kr/news/photo/202507/500240_524239_2019.jpg",
   },
   {
     id: 8,
@@ -66,6 +72,7 @@ const newsData = [
     category: "press",
     media: "E동아",
     url: "https://www.newsis.com/view/NISX20250530_0003196626",
+    thumbnail: "https://img1.newsis.com/2024/06/19/NISI20240619_0001579897_web.jpg",
   },
   {
     id: 7,
@@ -74,6 +81,7 @@ const newsData = [
     category: "press",
     media: "뉴시스",
     url: "https://www.newsis.com/view/NISX20250530_0003196626",
+    thumbnail: "https://img1.newsis.com/2024/06/19/NISI20240619_0001579897_web.jpg",
   },
   {
     id: 6,
@@ -82,6 +90,7 @@ const newsData = [
     category: "press",
     media: "연합뉴스",
     url: "https://www.yna.co.kr/view/AKR20250530101500051",
+    thumbnail: "https://img7.yna.co.kr/etc/inner/KR/2025/05/30/AKR20250530101500051_01_i_P4.jpg",
   },
   {
     id: 5,
@@ -90,6 +99,7 @@ const newsData = [
     category: "press",
     media: "세계일보",
     url: "https://www.segye.com/newsView/20250530506079",
+    thumbnail: "https://www.segye.com/content/image/2025/05/30/20250530506078.jpg",
   },
   {
     id: 4,
@@ -98,6 +108,7 @@ const newsData = [
     category: "press",
     media: "부산일보",
     url: "https://v.daum.net/v/pngEFG2XSJ",
+    thumbnail: "https://img1.daumcdn.net/thumb/S1200x630/?fname=https://t1.daumcdn.net/news/202505/30/551750-8jup1yA/20250530163018366tbjz.png",
   },
   {
     id: 3,
@@ -106,6 +117,7 @@ const newsData = [
     category: "press",
     media: "부산일보",
     url: "https://www.busan.com/view/busan/view.php?code=2025022509455771221",
+    thumbnail: "https://www.busan.com/nas/wcms/wcms_data/photos/2025/02/25/2025022509454244169_l.jpg",
   },
   {
     id: 2,
@@ -114,6 +126,7 @@ const newsData = [
     category: "press",
     media: "부산일보",
     url: "https://www.busan.com/view/busan/view.php?code=2023081716434739154",
+    thumbnail: "https://www.busan.com/nas/wcms/wcms_data/photos/2023/08/17/2023081716394246758_l.jpg",
   },
   {
     id: 1,
@@ -122,6 +135,7 @@ const newsData = [
     category: "press",
     media: "부산일보",
     url: "https://www.busan.com/view/busan/view.php?code=2022112821363773756",
+    thumbnail: "https://www.busan.com/nas/wcms/wcms_data/photos/2022/11/28/2022112821360592092_l.jpg",
   },
 ];
 
@@ -206,30 +220,38 @@ export default function NewsPage() {
                 rel="noopener noreferrer"
                 className="group bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300"
               >
-                {/* Image Placeholder */}
-                <div className="aspect-[16/10] bg-gradient-to-br from-gray-100 to-gray-200 relative">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <svg
-                      className="w-12 h-12 text-gray-300"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1}
-                        d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
-                      />
-                    </svg>
-                  </div>
+                {/* Thumbnail Image */}
+                <div className="aspect-[16/10] bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden">
+                  {news.thumbnail ? (
+                    <img
+                      src={news.thumbnail}
+                      alt={news.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <svg
+                        className="w-12 h-12 text-gray-300"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1}
+                          d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
+                        />
+                      </svg>
+                    </div>
+                  )}
                   <div className="absolute top-4 left-4">
                     <span className="text-xs px-3 py-1 rounded-full bg-yeirin-yellow text-gray-900 font-medium">
                       보도자료
                     </span>
                   </div>
                   <div className="absolute top-4 right-4">
-                    <ExternalLink size={16} className="text-gray-400" />
+                    <ExternalLink size={16} className="text-white drop-shadow-md" />
                   </div>
                 </div>
 
