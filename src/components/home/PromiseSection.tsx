@@ -4,7 +4,7 @@ import Image from "next/image";
 
 // 3대 핵심가치 아이콘 컴포넌트 - 노란색/주황색 테마
 const FamilyIcon = () => (
-  <svg viewBox="0 0 64 64" fill="none" className="w-14 h-14">
+  <svg viewBox="0 0 64 64" fill="none" className="w-16 h-16 md:w-20 md:h-20">
     {/* 부모 왼쪽 */}
     <circle cx="18" cy="18" r="5" fill="#FF9F1C" />
     <path d="M18 24c-5 0-9 3-9 7v5h18v-5c0-4-4-7-9-7z" fill="#FF9F1C" />
@@ -18,7 +18,7 @@ const FamilyIcon = () => (
 );
 
 const PeopleIcon = () => (
-  <svg viewBox="0 0 64 64" fill="none" className="w-14 h-14">
+  <svg viewBox="0 0 64 64" fill="none" className="w-16 h-16 md:w-20 md:h-20">
     {/* 중앙 위 사람 */}
     <circle cx="32" cy="14" r="5" fill="#FF9F1C" />
     <path d="M32 20c-5 0-9 3-9 7v4h18v-4c0-4-4-7-9-7z" fill="#FF9F1C" />
@@ -32,7 +32,7 @@ const PeopleIcon = () => (
 );
 
 const AtomIcon = () => (
-  <svg viewBox="0 0 64 64" fill="none" className="w-14 h-14">
+  <svg viewBox="0 0 64 64" fill="none" className="w-16 h-16 md:w-20 md:h-20">
     {/* 중앙 원 */}
     <circle cx="32" cy="32" r="5" fill="#FF9F1C" />
     {/* 궤도 */}
@@ -69,11 +69,11 @@ const coreValues = [
 
 export default function PromiseSection() {
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-b from-white to-yeirin-cream/30">
-      <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-white to-yeirin-cream/30">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         {/* Main Title with Decorative Lines */}
-        <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-yeirin-orange mb-2 relative inline-block">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-yeirin-orange mb-4 relative inline-block">
             건강특화 비영리 스타트업! 예이린
             {/* Decorative wavy lines */}
             <svg
@@ -117,18 +117,18 @@ export default function PromiseSection() {
         </div>
 
         {/* Government Ministry Logos */}
-        <div className="flex justify-center items-center mb-12">
+        <div className="flex justify-center items-center mb-16">
           <Image
             src="/images/gov-logo.png"
             alt="보건복지부, 과학기술정보통신부"
-            width={400}
-            height={60}
-            className="h-12 md:h-14 w-auto object-contain"
+            width={500}
+            height={80}
+            className="h-14 md:h-16 w-auto object-contain"
           />
         </div>
 
         {/* Core Values Header */}
-        <div className="mb-10">
+        <div className="mb-12">
           <div className="bg-gradient-to-r from-yeirin-yellow/10 via-yeirin-yellow/20 to-yeirin-yellow/10 py-3 px-6 rounded-lg">
             <h3 className="text-center text-lg md:text-xl font-bold text-yeirin-orange">
               예이린 3대 핵심가치
@@ -137,26 +137,26 @@ export default function PromiseSection() {
         </div>
 
         {/* Core Values Cards */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-8">
           {coreValues.map((value, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col"
+              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
             >
               {/* Icon Area */}
-              <div className="pt-8 pb-6 flex justify-center bg-gradient-to-b from-gray-50 to-white">
+              <div className="pt-10 pb-8 flex justify-center bg-gradient-to-b from-gray-50 to-white">
                 {value.icon}
               </div>
 
               {/* Content Area - flex-1 to fill equal height */}
-              <div className="bg-yeirin-orange text-white p-6 rounded-t-3xl -mt-4 flex-1 flex flex-col">
+              <div className="bg-yeirin-orange text-white p-8 rounded-t-3xl -mt-4 flex-1 flex flex-col">
                 <h4 className="text-xl md:text-2xl font-bold text-center mb-1">
                   {value.titleKo}
                 </h4>
                 <p className="text-xs tracking-widest text-center text-white/80 mb-4">
                   {value.titleEn}
                 </p>
-                <p className="text-sm text-center leading-relaxed text-white/90 flex-1 flex items-center justify-center">
+                <p className="text-sm md:text-base text-center leading-relaxed text-white/90 flex-1 flex items-center justify-center">
                   {value.description}
                 </p>
               </div>
