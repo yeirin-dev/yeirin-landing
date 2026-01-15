@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { Building2, Brain, Heart, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
+import { Building2, Heart, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 import {
   getPartners,
   FacilityType,
@@ -12,18 +12,16 @@ import {
 } from "@/lib/api/partners";
 import KakaoMap from "@/components/KakaoMap";
 
-// 카테고리 아이콘 매핑
-const categoryIcons: Record<FacilityType, typeof Building2> = {
+// 카테고리 아이콘 매핑 (교육복지사협회는 학교측 요청으로 노출 제외)
+const categoryIcons: Partial<Record<FacilityType, typeof Building2>> = {
   [FacilityType.CARE_FACILITY]: Building2,
   [FacilityType.COMMUNITY_CENTER]: Heart,
-  [FacilityType.EDUCATION_WELFARE_SCHOOL]: Brain,
 };
 
 // 카테고리 색상 매핑
-const categoryColors: Record<FacilityType, string> = {
+const categoryColors: Partial<Record<FacilityType, string>> = {
   [FacilityType.CARE_FACILITY]: "bg-yellow-100",
   [FacilityType.COMMUNITY_CENTER]: "bg-orange-100",
-  [FacilityType.EDUCATION_WELFARE_SCHOOL]: "bg-amber-100",
 };
 
 const ITEMS_PER_PAGE = 10;
@@ -138,9 +136,11 @@ export default function PartnersPage() {
       {/* Category Cards */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {data?.categoryCounts.map((category: CategoryCount) => {
               const Icon = categoryIcons[category.facilityType];
+              const colorClass = categoryColors[category.facilityType];
+              if (!Icon || !colorClass) return null; // 교육복지사협회 등 미지원 카테고리 제외
               const isSelected = selectedCategory === category.facilityType;
               return (
                 <button
@@ -153,7 +153,7 @@ export default function PartnersPage() {
                   }`}
                 >
                   <div
-                    className={`w-16 h-16 ${categoryColors[category.facilityType]} rounded-2xl flex items-center justify-center`}
+                    className={`w-16 h-16 ${colorClass} rounded-2xl flex items-center justify-center`}
                   >
                     <Icon className="w-8 h-8 text-yeirin-orange" />
                   </div>
