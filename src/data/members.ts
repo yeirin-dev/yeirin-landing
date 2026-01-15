@@ -138,7 +138,7 @@ export const boardMembers: Member[] = [
 
 export const techMembers: Member[] = [
   {
-    id: "yoon-sanghyun",
+    id: "yun-sanghyun",
     name: "윤상현",
     role: "CTO",
     title: "사회적협동조합 예이린 CTO",
