@@ -37,15 +37,15 @@ export default function Footer() {
 
             {/* Legal Links */}
             <div className="flex items-center gap-4 text-sm text-gray-600">
-              <Link href="/terms" className="hover:text-yeirin-orange transition-colors">
+              <span className="text-gray-400 cursor-default">
                 이용약관
-              </Link>
-              <Link href="/privacy" className="hover:text-yeirin-orange transition-colors">
+              </span>
+              <span className="text-gray-400 cursor-default">
                 개인정보처리방침
-              </Link>
-              <Link href="/careers" className="hover:text-yeirin-orange transition-colors">
+              </span>
+              <span className="text-gray-400 cursor-default">
                 인재채용
-              </Link>
+              </span>
             </div>
           </div>
 

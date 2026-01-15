@@ -144,7 +144,6 @@ export default function KakaoMap({
   useEffect(() => {
     // 이미 로드된 경우
     if (window.kakao && window.kakao.maps) {
-      console.log("[KakaoMap] kakao.maps already loaded");
       window.kakao.maps.load(() => {
         setIsLoaded(true);
       });
@@ -154,7 +153,6 @@ export default function KakaoMap({
     // 이미 스크립트 태그가 있는 경우
     const existingScript = document.querySelector('script[src*="dapi.kakao.com"]');
     if (existingScript) {
-      console.log("[KakaoMap] Script tag already exists, waiting...");
       const checkInterval = setInterval(() => {
         if (window.kakao && window.kakao.maps) {
           clearInterval(checkInterval);
@@ -172,25 +170,20 @@ export default function KakaoMap({
     script.async = true;
 
     script.onload = () => {
-      console.log("[KakaoMap] Script loaded successfully");
       if (window.kakao && window.kakao.maps) {
         window.kakao.maps.load(() => {
-          console.log("[KakaoMap] kakao.maps.load() callback executed");
           setIsLoaded(true);
         });
       } else {
-        console.error("[KakaoMap] kakao or kakao.maps not found after load");
         setLoadError("카카오맵 SDK 초기화 실패");
       }
     };
 
-    script.onerror = (e) => {
-      console.error("[KakaoMap] Script load error:", e);
-      setLoadError("카카오맵 스크립트 로드 실패. 네트워크 탭에서 상세 오류를 확인하세요.");
+    script.onerror = () => {
+      setLoadError("카카오맵 스크립트 로드 실패");
     };
 
     document.head.appendChild(script);
-    console.log("[KakaoMap] Script tag appended to head");
 
     return () => {
       // Cleanup은 하지 않음 - 스크립트는 전역으로 유지
@@ -320,10 +313,6 @@ export default function KakaoMap({
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 rounded-full" style={{ backgroundColor: MARKER_COLORS[FacilityType.COMMUNITY_CENTER] }} />
               <span className="text-gray-700">지역아동센터</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="w-3 h-3 rounded-full" style={{ backgroundColor: MARKER_COLORS[FacilityType.EDUCATION_WELFARE_SCHOOL] }} />
-              <span className="text-gray-700">교육복지사협회</span>
             </div>
           </div>
         </div>
