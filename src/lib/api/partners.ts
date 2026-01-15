@@ -1,9 +1,10 @@
 /**
  * Landing API - Partners
+ * 프록시를 통해 백엔드 API 호출 (Mixed Content 문제 해결)
  */
 
-const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+// 프록시 경로 사용 (next.config.ts rewrites 설정)
+const API_BASE_PATH = "/api/proxy";
 
 export enum FacilityType {
   CARE_FACILITY = "CARE_FACILITY",
@@ -57,7 +58,7 @@ export async function getPartners(
   if (params?.district) searchParams.set("district", params.district);
 
   const queryString = searchParams.toString();
-  const url = `${API_BASE_URL}/api/v1/landing/partners${queryString ? `?${queryString}` : ""}`;
+  const url = `${API_BASE_PATH}/v1/landing/partners${queryString ? `?${queryString}` : ""}`;
 
   const response = await fetch(url, {
     next: { revalidate: 60 }, // 60초 캐시
@@ -74,7 +75,7 @@ export async function getPartners(
  * 구/군 목록 조회
  */
 export async function getDistricts(): Promise<string[]> {
-  const response = await fetch(`${API_BASE_URL}/api/v1/landing/partners/districts`, {
+  const response = await fetch(`${API_BASE_PATH}/v1/landing/partners/districts`, {
     next: { revalidate: 300 }, // 5분 캐시
   });
 
