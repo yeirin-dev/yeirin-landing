@@ -136,17 +136,30 @@ export default function KakaoMap({
   const mapRef = useRef<HTMLDivElement>(null);
   const [map, setMap] = useState<kakao.maps.Map | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [loadError, setLoadError] = useState<string | null>(null);
   const [markers, setMarkers] = useState<MarkerData[]>([]);
   const [activeOverlay, setActiveOverlay] = useState<kakao.maps.CustomOverlay | null>(null);
   const geocodedCache = useRef<Map<string, kakao.maps.LatLng>>(new Map());
 
   // SDK 로드 완료 핸들러
   const handleScriptLoad = useCallback(() => {
+    console.log("[KakaoMap] Script loaded, checking kakao object...");
     if (window.kakao && window.kakao.maps) {
+      console.log("[KakaoMap] kakao.maps found, calling load()...");
       window.kakao.maps.load(() => {
+        console.log("[KakaoMap] kakao.maps.load() callback executed");
         setIsLoaded(true);
       });
+    } else {
+      console.error("[KakaoMap] kakao or kakao.maps not found");
+      setLoadError("카카오맵 SDK 로드 실패");
     }
+  }, []);
+
+  // SDK 로드 에러 핸들러
+  const handleScriptError = useCallback(() => {
+    console.error("[KakaoMap] Script load error");
+    setLoadError("카카오맵 스크립트 로드 실패. 도메인이 등록되어 있는지 확인하세요.");
   }, []);
 
   // 지도 초기화
@@ -247,13 +260,20 @@ export default function KakaoMap({
       <Script
         src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=dea4dba14e9d393656d3cee92af2ccd4&libraries=services&autoload=false`}
         onLoad={handleScriptLoad}
+        onError={handleScriptError}
         strategy="afterInteractive"
       />
       <div
         ref={mapRef}
         className="w-full h-full min-h-[400px] rounded-xl bg-gray-100"
       >
-        {!isLoaded && (
+        {loadError && (
+          <div className="w-full h-full flex flex-col items-center justify-center text-red-500 p-4 text-center">
+            <p className="font-medium mb-2">지도 로드 실패</p>
+            <p className="text-sm text-gray-500">{loadError}</p>
+          </div>
+        )}
+        {!isLoaded && !loadError && (
           <div className="w-full h-full flex items-center justify-center text-gray-400">
             지도를 불러오는 중...
           </div>
