@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { getAllMemberIds } from "@/data/members";
 
-const SITE_URL = "https://yeirin.org";
+const SITE_URL = "https://yeirin.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const memberIds = getAllMemberIds();

@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 
-const SITE_URL = "https://yeirin.org";
+const SITE_URL = "https://yeirin.com";
 const SITE_NAME = "사회적협동조합 예이린";
 
 export const viewport: Viewport = {

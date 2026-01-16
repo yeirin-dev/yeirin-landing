@@ -5,7 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import { getMemberById, getAllMemberIds, boardMembers, techMembers } from "@/data/members";
 import MemberProfile from "@/components/members/MemberProfile";
 
-const SITE_URL = "https://yeirin.org";
+const SITE_URL = "https://yeirin.com";
 const SITE_NAME = "사회적협동조합 예이린";
 
 interface PageProps {
