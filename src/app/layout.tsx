@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     description: "취약계층 아동의 건강한 성장을 지원하는 사회적협동조합",
   },
   verification: {
-    google: "google-site-verification-code", // 추후 Google Search Console 등록 시 교체
+    google: "google422fab12e314d528",
   },
   alternates: {
     canonical: SITE_URL,
