@@ -52,20 +52,11 @@ export const metadata: Metadata = {
     locale: "ko_KR",
     url: SITE_URL,
     siteName: SITE_NAME,
-    images: [
-      {
-        url: "/images/og-default.png",
-        width: 1200,
-        height: 630,
-        alt: "예이린 - 취약계층 아동을 위한 건강 관리 시스템",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "예이린 | Health Care System for Your Child",
     description: "취약계층 아동의 건강한 성장을 지원하는 사회적협동조합",
-    images: ["/images/og-default.png"],
   },
   verification: {
     google: "google-site-verification-code", // 추후 Google Search Console 등록 시 교체
