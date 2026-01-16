@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 
 type TabType = "health" | "care" | "empowerment";
 
@@ -80,8 +80,16 @@ const contentData = {
   },
 };
 
-export default function ActivitiesPage() {
+function ActivitiesContent() {
+  const searchParams = useSearchParams();
   const [activeTab, setActiveTab] = useState<TabType>("health");
+
+  useEffect(() => {
+    const tab = searchParams.get("tab");
+    if (tab && ["health", "care", "empowerment"].includes(tab)) {
+      setActiveTab(tab as TabType);
+    }
+  }, [searchParams]);
 
   const currentContent = contentData[activeTab];
 
@@ -197,5 +205,13 @@ export default function ActivitiesPage() {
         </div>
       </section>
     </div>
+  );
+}
+
+export default function ActivitiesPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen" />}>
+      <ActivitiesContent />
+    </Suspense>
   );
 }
