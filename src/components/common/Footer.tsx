@@ -61,11 +61,14 @@ export default function Footer() {
             </button>
 
             {/* Partner Logo */}
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-red-500 via-blue-500 to-blue-700 flex items-center justify-center">
-                <div className="w-3 h-3 bg-white rounded-full" />
-              </div>
-              <span className="text-sm font-medium text-gray-700">보건복지부</span>
+            <div className="flex items-center">
+              <Image
+                src="/images/보건복지부.png"
+                alt="보건복지부"
+                width={150}
+                height={40}
+                className="h-10 w-auto object-contain"
+              />
             </div>
 
             {/* Copyright */}

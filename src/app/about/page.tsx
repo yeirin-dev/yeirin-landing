@@ -151,18 +151,18 @@ export default function AboutPage() {
       </section>
 
       {/* History Section */}
-      <section id="history" className="py-16 md:py-24 bg-gray-50">
+      <section id="history" className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-12">
             예이린 연혁
           </h2>
-          <div className="max-w-6xl mx-auto">
+          <div className="w-full">
             <Image
               src="/images/about/연혁.png"
               alt="예이린 연혁 - 2021년부터 2025년까지의 주요 활동"
-              width={1200}
-              height={400}
-              className="w-full h-auto rounded-2xl shadow-lg"
+              width={1600}
+              height={500}
+              className="w-full h-auto"
             />
           </div>
         </div>
@@ -174,13 +174,13 @@ export default function AboutPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-12">
             예이린 조직도
           </h2>
-          <div className="max-w-5xl mx-auto">
+          <div className="w-full">
             <Image
-              src="/images/about/조직도.png"
+              src="/images/organization.png"
               alt="예이린 조직도 - 이사장, 이사진, 전문위원, 자문위원, 사업본부 등"
-              width={1200}
-              height={600}
-              className="w-full h-auto rounded-2xl shadow-lg bg-white p-4"
+              width={1600}
+              height={800}
+              className="w-full h-auto"
             />
           </div>
         </div>

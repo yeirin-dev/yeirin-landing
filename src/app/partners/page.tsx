@@ -121,13 +121,13 @@ export default function PartnersPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-12">
             예이린 파트너십 생태계
           </h2>
-          <div className="max-w-5xl mx-auto">
+          <div className="w-full">
             <Image
               src="/images/partners/파트너쉽.png"
               alt="예이린 파트너십 생태계 - 공공 거버넌스 파트너, 학술/연구 혁신 파트너, 국제/시민사회 파트너"
-              width={1200}
-              height={500}
-              className="w-full h-auto rounded-2xl shadow-lg"
+              width={1600}
+              height={700}
+              className="w-full h-auto"
             />
           </div>
         </div>

@@ -3,7 +3,6 @@ import {
   PromiseSection,
   ServicesSection,
   PartnersStatsSection,
-  CategorySection,
   NewsSection,
   LogosSection,
 } from "@/components/home";
@@ -15,7 +14,6 @@ export default function Home() {
       <PromiseSection />
       <ServicesSection />
       <PartnersStatsSection />
-      <CategorySection />
       <NewsSection />
       <LogosSection />
     </>
