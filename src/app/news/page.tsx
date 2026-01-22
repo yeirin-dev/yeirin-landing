@@ -12,6 +12,24 @@ const categories = [
 
 const newsData = [
   {
+    id: 16,
+    title: "예이린 사회적협동조합, 'Say No to Drugs in BUSAN' 1년간 사회적 가치 7.7배 창출",
+    date: "2026.01.20",
+    category: "press",
+    media: "이뉴스투데이",
+    url: "http://www.enewstoday.co.kr/news/articleView.html?idxno=2383799",
+    thumbnail: "https://cdn.enewstoday.co.kr/news/thumbnail/202601/2383799_1213044_5733_v150.jpg",
+  },
+  {
+    id: 15,
+    title: "예이린 사회적협동조합, 'Say No to Drugs in BUSAN' 1년간 사회적 가치 7.7배 창출",
+    date: "2026.01.20",
+    category: "press",
+    media: "아시아투데이",
+    url: "https://m.asiatoday.co.kr/kn/view.php?key=20260120001452238",
+    thumbnail: "https://img.asiatoday.co.kr/file/2026y/01m/20d/20260120001452238_1.jpg",
+  },
+  {
     id: 14,
     title: "예이린 사회적협동조합, '2025 송년의 밤' 통해 B-IMPACT 얼라이언스 출범 선언",
     date: "2025.12.24",

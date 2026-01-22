@@ -5,6 +5,24 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 
 const newsItems = [
   {
+    id: 16,
+    title: "예이린 사회적협동조합, 'Say No to Drugs in BUSAN' 1년간 사회적 가치 7.7배 창출",
+    date: "2026.01.20",
+    thumbnail: "https://cdn.enewstoday.co.kr/news/thumbnail/202601/2383799_1213044_5733_v150.jpg",
+    category: "보도자료",
+    media: "이뉴스투데이",
+    url: "http://www.enewstoday.co.kr/news/articleView.html?idxno=2383799",
+  },
+  {
+    id: 15,
+    title: "예이린 사회적협동조합, 'Say No to Drugs in BUSAN' 1년간 사회적 가치 7.7배 창출",
+    date: "2026.01.20",
+    thumbnail: "https://img.asiatoday.co.kr/file/2026y/01m/20d/20260120001452238_1.jpg",
+    category: "보도자료",
+    media: "아시아투데이",
+    url: "https://m.asiatoday.co.kr/kn/view.php?key=20260120001452238",
+  },
+  {
     id: 14,
     title: "예이린 사회적협동조합, '2025 송년의 밤' 통해 B-IMPACT 얼라이언스 출범 선언",
     date: "2025.12.24",
@@ -21,24 +39,6 @@ const newsItems = [
     category: "보도자료",
     media: "매일신문",
     url: "https://www.imaeil.com/page/view/2025120213551281055",
-  },
-  {
-    id: 11,
-    title: "인텔리어스, 'AI 마음건강+' 시범사업 성공적으로 수행",
-    date: "2025.11.11",
-    thumbnail: "https://cdn.itbiznews.com/news/photo/202511/186682_190683_2249.jpg",
-    category: "보도자료",
-    media: "itbiznews",
-    url: "https://www.itbiznews.com/news/articleView.html?idxno=186682",
-  },
-  {
-    id: 13,
-    title: "대화형 AI 심리상담 플랫폼… 아동돌봄 연계 생태계 구축",
-    date: "2025.11.03",
-    thumbnail: "https://www.busan.com/nas/wcms/wcms_data/photos/2025/11/03/2025110317410501022_l.jpg",
-    category: "보도자료",
-    media: "부산일보",
-    url: "https://www.busan.com/view/busan/view.php?code=2025110317410585667",
   },
 ];
 
