@@ -12,6 +12,15 @@ const categories = [
 
 const newsData = [
   {
+    id: 17,
+    title: "복권기금, 경계선지능 아동 예산 205억...\"장기지원 성과 확인\"",
+    date: "2026.01.29",
+    category: "press",
+    media: "오마이뉴스",
+    url: "https://n.news.naver.com/article/047/0002503182?sid=102",
+    thumbnail: "https://imgnews.pstatic.net/image/047/2026/01/29/0002503182_001_20260129153618485.jpg?type=w800",
+  },
+  {
     id: 16,
     title: "예이린 사회적협동조합, 'Say No to Drugs in BUSAN' 1년간 사회적 가치 7.7배 창출",
     date: "2026.01.20",
@@ -36,7 +45,7 @@ const newsData = [
     category: "press",
     media: "세계비즈",
     url: "https://m.segyebiz.com/adxView/20251224512201",
-    thumbnail: "http://m.segyefn.com/content/image/2025/12/24/20251224512183.jpg",
+    thumbnail: "https://m.segyebiz.com/content/image/2025/12/24/20251224512183.jpg",
   },
   {
     id: 13,
