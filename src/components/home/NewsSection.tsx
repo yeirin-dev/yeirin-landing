@@ -2,56 +2,12 @@
 
 import Link from "next/link";
 import { ArrowRight, ExternalLink } from "lucide-react";
-
-const newsItems = [
-  {
-    id: 17,
-    title: "복권기금, 경계선지능 아동 예산 205억...\"장기지원 성과 확인\"",
-    date: "2026.01.29",
-    thumbnail: "https://imgnews.pstatic.net/image/047/2026/01/29/0002503182_001_20260129153618485.jpg?type=w800",
-    category: "보도자료",
-    media: "오마이뉴스",
-    url: "https://n.news.naver.com/article/047/0002503182?sid=102",
-  },
-  {
-    id: 16,
-    title: "예이린 사회적협동조합, 'Say No to Drugs in BUSAN' 1년간 사회적 가치 7.7배 창출",
-    date: "2026.01.20",
-    thumbnail: "https://cdn.enewstoday.co.kr/news/thumbnail/202601/2383799_1213044_5733_v150.jpg",
-    category: "보도자료",
-    media: "이뉴스투데이",
-    url: "http://www.enewstoday.co.kr/news/articleView.html?idxno=2383799",
-  },
-  {
-    id: 15,
-    title: "예이린 사회적협동조합, 'Say No to Drugs in BUSAN' 1년간 사회적 가치 7.7배 창출",
-    date: "2026.01.20",
-    thumbnail: "https://img.asiatoday.co.kr/file/2026y/01m/20d/20260120001452238_1.jpg",
-    category: "보도자료",
-    media: "아시아투데이",
-    url: "https://m.asiatoday.co.kr/kn/view.php?key=20260120001452238",
-  },
-  {
-    id: 14,
-    title: "예이린 사회적협동조합, '2025 송년의 밤' 통해 B-IMPACT 얼라이언스 출범 선언",
-    date: "2025.12.24",
-    thumbnail: "https://m.segyebiz.com/content/image/2025/12/24/20251224512183.jpg",
-    category: "보도자료",
-    media: "세계비즈",
-    url: "https://m.segyebiz.com/adxView/20251224512201",
-  },
-  {
-    id: 12,
-    title: "예이린 사회적협동조합–굿네이버스 영남본부, '아동 마음건강 지원' 업무협약 체결",
-    date: "2025.12.02",
-    thumbnail: "https://www.imaeil.com/photos/2025/12/02/2025120213540418970_l.jpg",
-    category: "보도자료",
-    media: "매일신문",
-    url: "https://www.imaeil.com/page/view/2025120213551281055",
-  },
-];
+import { newsData } from "@/data/news";
 
 export default function NewsSection() {
+  // 홈페이지에는 최신 5개만 표시
+  const newsItems = newsData.slice(0, 5);
+
   return (
     <section className="py-16 md:py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
@@ -109,7 +65,7 @@ export default function NewsSection() {
                 )}
                 <div className="absolute top-3 left-3">
                   <span className="bg-yeirin-yellow text-gray-900 text-xs font-medium px-3 py-1 rounded-full">
-                    {news.category}
+                    보도자료
                   </span>
                 </div>
                 <div className="absolute top-3 right-3">
