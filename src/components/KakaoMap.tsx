@@ -376,7 +376,7 @@ function createMarker(
         margin-bottom: 6px;
       ">${partner.facilityTypeDisplayName}</div>
       <div style="color: #6b7280; font-size: 12px;">${partner.address}</div>
-      ${partner.phoneNumber ? `<div style="color: #6b7280; font-size: 12px; margin-top: 2px;">${partner.phoneNumber.startsWith("010") ? partner.phoneNumber.replace(/^(010[-.\s]?)(\d{3,4})([-.\s]?)(\d{4})$/, "$1****$3$4") : partner.phoneNumber}</div>` : ""}
+      ${partner.phoneNumber ? `<div style="color: #6b7280; font-size: 12px; margin-top: 2px;">${partner.phoneNumber.startsWith("010") ? "010-****-****" : partner.phoneNumber}</div>` : ""}
     </div>
     <div style="
       width: 0;

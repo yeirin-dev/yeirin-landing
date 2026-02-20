@@ -326,7 +326,7 @@ export default function PartnersPage() {
                               <td className="py-3 px-4 text-sm text-gray-600">
                                 {partner.phoneNumber
                                   ? partner.phoneNumber.startsWith("010")
-                                    ? partner.phoneNumber.replace(/^(010[-.\s]?)(\d{3,4})([-.\s]?)(\d{4})$/, "$1****$3$4")
+                                    ? "010-****-****"
                                     : partner.phoneNumber
                                   : "-"}
                               </td>
