@@ -10,6 +10,15 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: 18,
+    title: "\"아이마다 다른 '느린 걸음', 맞춤형 전문가가 함께 걷는다\"",
+    date: "2026.02.10",
+    category: "press",
+    media: "이투뉴스",
+    url: "https://www.e2news.com/news/articleView.html?idxno=327767",
+    thumbnail: "https://cdn.e2news.com/news/thumbnail/202602/327767_225991_3910_v150.jpg",
+  },
+  {
     id: 17,
     title: "복권기금, 경계선지능 아동 예산 205억...\"장기지원 성과 확인\"",
     date: "2026.01.29",
