@@ -12,7 +12,7 @@ const slides = [
   {
     id: 2,
     image: "/images/hero/hero-bg-2.jpeg",
-    objectPosition: "center top 8%",
+    objectPosition: "center top 4%",
   },
   {
     id: 3,
