@@ -7,14 +7,17 @@ const slides = [
   {
     id: 1,
     image: "/images/hero/hero-bg.png",
+    objectPosition: "center",
   },
   {
     id: 2,
     image: "/images/hero/hero-bg-2.jpeg",
+    objectPosition: "center top 15%",
   },
   {
     id: 3,
     image: "/images/hero/hero-bg.png",
+    objectPosition: "center",
   },
 ];
 
@@ -67,7 +70,8 @@ export default function HeroSection() {
               src={slide.image}
               alt={`슬라이드 ${index + 1}`}
               fill
-              className="object-cover object-top"
+              className="object-cover"
+              style={{ objectPosition: slide.objectPosition }}
               priority={index === 0}
             />
           </div>
