@@ -67,7 +67,7 @@ export default function HeroSection() {
               src={slide.image}
               alt={`슬라이드 ${index + 1}`}
               fill
-              className="object-cover"
+              className="object-cover object-top"
               priority={index === 0}
             />
           </div>
