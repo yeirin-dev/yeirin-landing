@@ -10,7 +10,7 @@ const slides = [
   },
   {
     id: 2,
-    image: "/images/hero/hero-bg.png",
+    image: "/images/hero/hero-bg-2.jpeg",
   },
   {
     id: 3,
