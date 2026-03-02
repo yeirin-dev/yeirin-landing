@@ -10,6 +10,15 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: 19,
+    title: "예이린 사회적협동조합–부산광역시아동청소년그룹홈협회, 취약아동 통합 돌봄 협력체계 구축 업무협약 체결",
+    date: "2026.02.20",
+    category: "press",
+    media: "E동아",
+    url: "https://edu.donga.com/news/articleView.html?idxno=103549",
+    thumbnail: "https://cdn.edu.donga.com/news/photo/202602/103549_167338_270.jpg",
+  },
+  {
     id: 18,
     title: "\"아이마다 다른 '느린 걸음', 맞춤형 전문가가 함께 걷는다\"",
     date: "2026.02.10",
