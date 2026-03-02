@@ -60,15 +60,53 @@ export default function Footer() {
               <ChevronUp size={24} className="text-gray-700" />
             </button>
 
-            {/* Partner Logo */}
-            <div className="flex items-center">
-              <Image
-                src="/images/보건복지부.png"
-                alt="보건복지부"
-                width={150}
-                height={40}
-                className="h-10 w-auto object-contain"
-              />
+            {/* Partner Logos */}
+            <div className="flex flex-col items-end gap-2">
+              <div className="flex items-center gap-3">
+                <Link href="https://www.mohw.go.kr/" target="_blank" rel="noopener noreferrer">
+                  <Image
+                    src="/images/보건복지부.png"
+                    alt="보건복지부"
+                    width={150}
+                    height={40}
+                    className="h-10 w-auto object-contain"
+                  />
+                </Link>
+                <Link href="https://www.msit.go.kr/index.do" target="_blank" rel="noopener noreferrer">
+                  <Image
+                    src="/images/과학기술정보통신부.png"
+                    alt="과학기술정보통신부"
+                    width={150}
+                    height={40}
+                    className="h-10 w-auto object-contain"
+                  />
+                </Link>
+                <Link
+                  href="https://www.instagram.com/yeiri_n2023official/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="인스타그램"
+                >
+                  <Image
+                    src="/images/인스타그램.svg"
+                    alt="인스타그램"
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 object-contain"
+                  />
+                </Link>
+              </div>
+              <div className="flex items-center">
+                <Link href="https://www.nts.go.kr/" target="_blank" rel="noopener noreferrer">
+                  <Image
+                    src="/images/국세청.png"
+                    alt="국세청"
+                    width={150}
+                    height={40}
+                    className="h-10 w-auto object-contain"
+                  />
+                </Link>
+              </div>
             </div>
 
             {/* Copyright */}
