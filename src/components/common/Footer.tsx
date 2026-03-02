@@ -61,7 +61,7 @@ export default function Footer() {
             </button>
 
             {/* Partner Logos */}
-            <div className="flex flex-col items-end gap-2">
+            <div className="flex flex-col items-end gap-3">
               <div className="flex items-center gap-3">
                 <Link href="https://www.mohw.go.kr/" target="_blank" rel="noopener noreferrer">
                   <Image
@@ -81,32 +81,30 @@ export default function Footer() {
                     className="h-10 w-auto object-contain"
                   />
                 </Link>
-                <Link
-                  href="https://www.instagram.com/yeiri_n2023official/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="인스타그램"
-                >
-                  <Image
-                    src="/images/인스타그램.svg"
-                    alt="인스타그램"
-                    width={40}
-                    height={40}
-                    className="h-10 w-10 object-contain"
-                  />
-                </Link>
-              </div>
-              <div className="flex items-center">
                 <Link href="https://www.nts.go.kr/" target="_blank" rel="noopener noreferrer">
                   <Image
                     src="/images/국세청.png"
                     alt="국세청"
-                    width={150}
-                    height={40}
-                    className="h-10 w-auto object-contain"
+                    width={200}
+                    height={52}
+                    className="h-12 w-auto object-contain"
                   />
                 </Link>
               </div>
+              <Link
+                href="https://www.instagram.com/yeiri_n2023official/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="인스타그램"
+              >
+                <Image
+                  src="/images/인스타그램.svg"
+                  alt="인스타그램"
+                  width={36}
+                  height={36}
+                  className="h-9 w-9 object-contain"
+                />
+              </Link>
             </div>
 
             {/* Copyright */}
