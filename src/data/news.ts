@@ -10,6 +10,24 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: 21,
+    title: "부산서 보호아동 맞춤 지원...예이린, 파견전문가 출범식",
+    date: "2026.03.04",
+    category: "press",
+    media: "느린인뉴스",
+    url: "https://www.slowlearnernews.org/news/articleView.html?idxno=2996",
+    thumbnail: "https://cdn.slowlearnernews.org/news/photo/202603/2996_4108_4914.png",
+  },
+  {
+    id: 20,
+    title: "부산 아동·청소년 심리지원 네트워크 'B-IMPACT 얼라이언스' 출범",
+    date: "2026.03.03",
+    category: "press",
+    media: "동아일보",
+    url: "https://n.news.naver.com/article/020/0003700916?sid=102",
+    thumbnail: "https://imgnews.pstatic.net/image/020/2026/03/03/0003700916_001_20260303111712355.jpg?type=w800",
+  },
+  {
     id: 19,
     title: "예이린 사회적협동조합–부산광역시아동청소년그룹홈협회, 취약아동 통합 돌봄 협력체계 구축 업무협약 체결",
     date: "2026.02.20",
