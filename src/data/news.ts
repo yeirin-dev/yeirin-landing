@@ -10,6 +10,42 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: 25,
+    title: "\"단순업무는 AI가, 돌봄은 사람이\"... 한국아동복지협회·예이린·아이피나우, AI 기반 스마트 돌봄 인프라 구축 협약",
+    date: "2026.03.10",
+    category: "press",
+    media: "E동아",
+    url: "https://edu.donga.com/news/articleView.html?idxno=104451",
+    thumbnail: "https://cdn.edu.donga.com/news/photo/202603/104451_168321_2740.jpg",
+  },
+  {
+    id: 24,
+    title: "경계선 지능 아동 전문가 맞춤 지원",
+    date: "2026.03.08",
+    category: "press",
+    media: "부산일보",
+    url: "https://n.news.naver.com/article/082/0001369837?sid=102",
+    thumbnail: "https://imgnews.pstatic.net/image/082/2026/03/08/0001369837_001_20260308182019036.jpg?type=w800",
+  },
+  {
+    id: 23,
+    title: "부산 아동·청소년 심리지원 네트워크 'B-IMPACT 얼라이언스' 출범",
+    date: "2026.03.03",
+    category: "press",
+    media: "동아일보",
+    url: "https://www.donga.com/news/Society/article/all/20260303/133452565/1",
+    thumbnail: "https://dimg.donga.com/wps/NEWS/IMAGE/2026/03/03/133452515.2.jpg",
+  },
+  {
+    id: 22,
+    title: "예이린 사회적협동조합, 'B-IMPACT 얼라이언스' 공식 출범",
+    date: "2026.03.03",
+    category: "press",
+    media: "이투뉴스",
+    url: "https://www.e2news.com/news/articleView.html?idxno=328275",
+    thumbnail: "https://cdn.e2news.com/news/thumbnail/202603/328275_226464_4554_v150.jpg",
+  },
+  {
     id: 21,
     title: "부산서 보호아동 맞춤 지원...예이린, 파견전문가 출범식",
     date: "2026.03.04",
