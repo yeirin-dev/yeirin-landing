@@ -332,59 +332,42 @@ export default function AboutPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-12">
             CI Character
           </h2>
-          <div className="space-y-12">
-            {/* 황제펭귄 소개 & 캐릭터 디자인 */}
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="rounded-2xl overflow-hidden">
-                <Image
-                  src="/images/characters/emperor-penguins.jpg"
-                  alt="예이린 CI 캐릭터 - 황제펭귄 피피, 페페, 핀"
-                  width={800}
-                  height={600}
-                  className="w-full h-auto object-cover rounded-2xl"
-                />
-              </div>
-              <div className="rounded-2xl overflow-hidden">
-                <Image
-                  src="/images/characters/character-design.jpg"
-                  alt="예이린 캐릭터 디자인 컨셉"
-                  width={800}
-                  height={600}
-                  className="w-full h-auto object-cover rounded-2xl"
-                />
-              </div>
-            </div>
-
-            {/* 개별 캐릭터 시트 */}
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="rounded-2xl overflow-hidden">
-                <Image
-                  src="/images/characters/pipi.jpg"
-                  alt="피피 - 주황 가방 캐릭터"
-                  width={600}
-                  height={600}
-                  className="w-full h-auto object-cover rounded-2xl"
-                />
-              </div>
-              <div className="rounded-2xl overflow-hidden">
-                <Image
-                  src="/images/characters/pepe.jpg"
-                  alt="페페 - 노란 가방 캐릭터"
-                  width={600}
-                  height={600}
-                  className="w-full h-auto object-cover rounded-2xl"
-                />
-              </div>
-              <div className="rounded-2xl overflow-hidden">
-                <Image
-                  src="/images/characters/pin.jpg"
-                  alt="핀 - 빨간 가방 캐릭터"
-                  width={600}
-                  height={600}
-                  className="w-full h-auto object-cover rounded-2xl"
-                />
-              </div>
-            </div>
+          <div className="max-w-4xl mx-auto space-y-10">
+            <Image
+              src="/images/characters/emperor-penguins.jpg"
+              alt="예이린 CI 캐릭터 - 황제펭귄 피피, 페페, 핀"
+              width={1200}
+              height={900}
+              className="w-full h-auto rounded-2xl"
+            />
+            <Image
+              src="/images/characters/character-design.jpg"
+              alt="예이린 캐릭터 디자인 컨셉"
+              width={1200}
+              height={900}
+              className="w-full h-auto rounded-2xl"
+            />
+            <Image
+              src="/images/characters/pipi.jpg"
+              alt="피피 - 주황 가방 캐릭터"
+              width={1200}
+              height={1200}
+              className="w-full h-auto rounded-2xl"
+            />
+            <Image
+              src="/images/characters/pepe.jpg"
+              alt="페페 - 노란 가방 캐릭터"
+              width={1200}
+              height={1200}
+              className="w-full h-auto rounded-2xl"
+            />
+            <Image
+              src="/images/characters/pin.jpg"
+              alt="핀 - 빨간 가방 캐릭터"
+              width={1200}
+              height={1200}
+              className="w-full h-auto rounded-2xl"
+            />
           </div>
         </div>
       </section>
