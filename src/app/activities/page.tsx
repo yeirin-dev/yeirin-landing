@@ -3,6 +3,7 @@
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { AlertTriangle } from "lucide-react";
+import Image from "next/image";
 import FastTrackReferralModal from "@/components/fast-track/FastTrackReferralModal";
 
 type TabType = "health" | "care" | "empowerment";
@@ -15,6 +16,7 @@ const tabs = [
 
 const contentData = {
   health: {
+    image: "/images/activities/health.png",
     sections: [
       {
         title: "취약 아동 대상 의료연계 사업",
@@ -36,6 +38,7 @@ const contentData = {
       "취약아동을 대상으로 지역사회 건강검진 및 심사자가 의료를 연계하여 치료를 확인하고, 건강증진 정서인지발달지원 프로그램 통해 안전하게 성장시료를 제공하여 건강회복과 조기회복이 가능하도록 지원하고 있습니다. 또한 건강회복이 이루어진 아동은 건강의 지속성이 확보될 수 있도록 돌봄거점시설로 연계합니다.",
   },
   care: {
+    image: "/images/activities/care.png",
     sections: [
       {
         title: "취약아동 대상 건강친화적 돌봄환경 구축",
@@ -53,6 +56,7 @@ const contentData = {
       "취약아동의 돌봄 서비스에 체소 및 자격 충실히 돌봄 체계를 구축을 위해 '취약아동 대상 건강적 돌봄거점 사업'을 추진사업으로서 운영하고 있습니다. 유영화시설(기타어린이집), 공동배움터(따하어린이), 함께 통 추진양육을 위한 출산 통 돌봄지원 이룸 돌봄 공동체시설 기반을 마련하고, 13개년 국내 의료시설 권역 돌봄시설 연계산업 외 증대적 발전을 잇는로만 약속힙니다.",
   },
   empowerment: {
+    image: "/images/activities/empowerment.png",
     sections: [
       {
         title: "조합원과 직원에 대한 상담, 교육, 훈련 및 정보제공 사업",
@@ -161,37 +165,16 @@ function ActivitiesContent() {
               ))}
             </div>
 
-            {/* Right - Image Placeholder */}
-            <div className="space-y-6">
-              <div className="aspect-[4/3] bg-gray-100 rounded-2xl overflow-hidden flex items-center justify-center">
-                <svg
-                  className="w-16 h-16 text-gray-300"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1}
-                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
-              </div>
-              <div className="aspect-[4/3] bg-gray-100 rounded-2xl overflow-hidden flex items-center justify-center">
-                <svg
-                  className="w-16 h-16 text-gray-300"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1}
-                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
+            {/* Right - Image */}
+            <div className="flex items-center justify-center">
+              <div className="w-full rounded-2xl overflow-hidden">
+                <Image
+                  src={currentContent.image}
+                  alt={tabs.find((t) => t.id === activeTab)?.label || ""}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover rounded-2xl"
+                />
               </div>
             </div>
           </div>

@@ -326,15 +326,64 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CI Character Section - 빈 공간 */}
+      {/* CI Character Section */}
       <section id="ci-character" className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-12">
             CI Character
           </h2>
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-gray-100 rounded-2xl h-64 md:h-96 flex items-center justify-center border-2 border-dashed border-gray-300">
-              <p className="text-gray-400 text-lg">CI Character 영역</p>
+          <div className="space-y-12">
+            {/* 황제펭귄 소개 & 캐릭터 디자인 */}
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/characters/emperor-penguins.jpg"
+                  alt="예이린 CI 캐릭터 - 황제펭귄 피피, 페페, 핀"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover rounded-2xl"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/characters/character-design.jpg"
+                  alt="예이린 캐릭터 디자인 컨셉"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover rounded-2xl"
+                />
+              </div>
+            </div>
+
+            {/* 개별 캐릭터 시트 */}
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/characters/pipi.jpg"
+                  alt="피피 - 주황 가방 캐릭터"
+                  width={600}
+                  height={600}
+                  className="w-full h-auto object-cover rounded-2xl"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/characters/pepe.jpg"
+                  alt="페페 - 노란 가방 캐릭터"
+                  width={600}
+                  height={600}
+                  className="w-full h-auto object-cover rounded-2xl"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/characters/pin.jpg"
+                  alt="핀 - 빨간 가방 캐릭터"
+                  width={600}
+                  height={600}
+                  className="w-full h-auto object-cover rounded-2xl"
+                />
+              </div>
             </div>
           </div>
         </div>

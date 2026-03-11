@@ -46,6 +46,19 @@ export default function DonationPage() {
       {/* Form Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-xl mx-auto px-4 md:px-6 lg:px-8">
+          {/* 후원 계좌 안내 */}
+          <div className="bg-yeirin-yellow/20 border border-yeirin-yellow rounded-2xl p-8 mb-8 text-center">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">
+              후원 계좌 안내
+            </h2>
+            <p className="text-gray-700 font-medium">
+              예이린사회적협동조합 박지영
+            </p>
+            <p className="text-lg font-bold text-yeirin-orange mt-2">
+              부산 101-2089-2099-05
+            </p>
+          </div>
+
           <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
             <h2 className="text-xl font-bold text-yeirin-orange text-center mb-8">
               후원 단체 정보
@@ -164,7 +177,7 @@ export default function DonationPage() {
 
           {/* Additional Info */}
           <div className="mt-8 text-center text-sm text-gray-500">
-            <p>문의사항이 있으시면 아래로 연락해주세요.</p>
+            <p>기부금 영수증 발급 / 기타 문의사항은 아래로 연락해주세요.</p>
             <p className="mt-2">
               이메일:{" "}
               <a
