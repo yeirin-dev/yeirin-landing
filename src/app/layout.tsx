@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
+import PopupAd from "@/components/PopupAd";
 
 const SITE_URL = "https://yeirin.com";
 const SITE_NAME = "사회적협동조합 예이린";
@@ -80,6 +81,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <PopupAd />
       </body>
     </html>
   );
