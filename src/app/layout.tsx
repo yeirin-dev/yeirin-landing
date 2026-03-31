@@ -1,8 +1,16 @@
 import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import PopupAd from "@/components/PopupAd";
+
+const pretendard = localFont({
+  src: "../fonts/PretendardVariable.woff2",
+  display: "swap",
+  weight: "45 920",
+  variable: "--font-pretendard",
+});
 
 const SITE_URL = "https://yeirin.com";
 const SITE_NAME = "사회적협동조합 예이린";
@@ -74,8 +82,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
-      <body className="antialiased">
+    <html lang="ko" className={pretendard.variable}>
+      <body className="font-pretendard antialiased">
         <Header />
         <main className="min-h-screen pt-16">
           {children}
