@@ -135,7 +135,36 @@ export default function PartnersPage() {
 
       {/* Category Cards */}
       <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 space-y-6">
+          {/* B-IMPACT 참여 기관 */}
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 p-6 bg-white border border-gray-200 rounded-2xl">
+            <div className="flex items-center gap-4">
+              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+                <Image
+                  src="/images/b-impact.png"
+                  alt="B-IMPACT"
+                  width={36}
+                  height={42}
+                  className="h-8 w-auto object-contain"
+                />
+              </div>
+              <div>
+                <h3 className="font-bold text-gray-900 text-lg">
+                  B-IMPACT 참여 기관
+                </h3>
+                <p className="text-gray-500 text-sm">26기관</p>
+              </div>
+            </div>
+            <a
+              href="https://b-impact.yeirin.com/organizations"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="self-start md:self-auto px-6 py-2.5 bg-purple-100 hover:bg-purple-200 text-purple-700 font-bold rounded-full transition-colors whitespace-nowrap"
+            >
+              참여 기관 바로보기
+            </a>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-6">
             {data?.categoryCounts.map((category: CategoryCount) => {
               const Icon = categoryIcons[category.facilityType];
