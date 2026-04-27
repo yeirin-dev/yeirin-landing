@@ -3,4 +3,5 @@ export { default as PromiseSection } from "./PromiseSection";
 export { default as ServicesSection } from "./ServicesSection";
 export { default as PartnersStatsSection } from "./PartnersStatsSection";
 export { default as NewsSection } from "./NewsSection";
+export { default as FastTrackSection } from "./FastTrackSection";
 export { default as LogosSection } from "./LogosSection";

@@ -5,8 +5,8 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 import { newsData } from "@/data/news";
 
 export default function NewsSection() {
-  // 홈페이지에는 최신 5개만 표시
-  const newsItems = newsData.slice(0, 5);
+  // 홈페이지에는 최신 8개만 표시 (2줄)
+  const newsItems = newsData.slice(0, 8);
 
   return (
     <section className="py-16 md:py-24 bg-gray-50">

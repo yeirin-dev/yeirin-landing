@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useRef } from "react";
 import { Users, MapPin, Building, Home } from "lucide-react";
-import { getPartners } from "@/lib/api/partners";
 
 function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
   const [count, setCount] = useState(0);
@@ -48,49 +47,33 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
 }
 
 export default function PartnersStatsSection() {
-  const [partnerCount, setPartnerCount] = useState(0);
-  const [districtCount, setDistrictCount] = useState(0);
-
-  useEffect(() => {
-    const fetchStats = async () => {
-      try {
-        const response = await getPartners({ limit: 1 });
-        setPartnerCount(response.total);
-        setDistrictCount(response.availableDistricts?.length || 0);
-      } catch (err) {
-        console.error("Failed to fetch partner stats:", err);
-      }
-    };
-    fetchStats();
-  }, []);
-
   const stats = [
     {
       icon: Users,
       label: "전문 인력",
-      value: 15,
+      value: 46,
       suffix: "명",
       color: "text-blue-500"
     },
     {
       icon: MapPin,
       label: "협력 지역",
-      value: districtCount,
+      value: 9,
       suffix: "구군",
       color: "text-green-500"
     },
     {
       icon: Building,
       label: "협력 기관",
-      value: partnerCount,
+      value: 94,
       suffix: "곳",
       color: "text-purple-500"
     },
     {
       icon: Home,
-      label: "돌봄 거점",
-      value: partnerCount,
-      suffix: "곳",
+      label: "지원 아동 수",
+      value: 730,
+      suffix: "명",
       color: "text-orange-500"
     },
   ];

@@ -16,7 +16,7 @@ const slides = [
   },
   {
     id: 3,
-    image: "/images/hero/hero-bg.png",
+    image: "/images/hero/hero-bg-3.png",
     objectPosition: "center",
   },
 ];

@@ -91,20 +91,36 @@ export default function Footer() {
                   />
                 </Link>
               </div>
-              <Link
-                href="https://www.instagram.com/yeiri_n2023official/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="인스타그램"
-              >
-                <Image
-                  src="/images/인스타그램.svg"
-                  alt="인스타그램"
-                  width={36}
-                  height={36}
-                  className="h-9 w-9 object-contain"
-                />
-              </Link>
+              <div className="flex items-center gap-3">
+                <Link
+                  href="https://b-impact.yeirin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="B-IMPACT"
+                >
+                  <Image
+                    src="/images/b-impact.png"
+                    alt="B-IMPACT"
+                    width={36}
+                    height={42}
+                    className="h-9 w-auto object-contain"
+                  />
+                </Link>
+                <Link
+                  href="https://www.instagram.com/yeiri_n2023official/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="인스타그램"
+                >
+                  <Image
+                    src="/images/인스타그램.svg"
+                    alt="인스타그램"
+                    width={36}
+                    height={36}
+                    className="h-9 w-9 object-contain"
+                  />
+                </Link>
+              </div>
             </div>
 
             {/* Copyright */}
