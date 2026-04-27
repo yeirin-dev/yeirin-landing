@@ -1,5 +1,5 @@
 import { Member } from "@/data/members";
-import { Briefcase, GraduationCap, Award, Quote, FlaskConical, FileText } from "lucide-react";
+import { Quote } from "lucide-react";
 
 interface MemberProfileProps {
   member: Member;
@@ -11,6 +11,7 @@ export default function MemberProfile({
   variant = "page",
 }: MemberProfileProps) {
   const isModal = variant === "modal";
+  const hasImage = member.image && !member.image.includes("undefined");
 
   return (
     <div className={isModal ? "" : "min-h-screen bg-gray-50"}>
@@ -18,18 +19,18 @@ export default function MemberProfile({
         className={
           isModal
             ? ""
-            : "max-w-4xl mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-20"
+            : "max-w-3xl mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-20"
         }
       >
-        {/* Header Section */}
         <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
+          {/* Banner */}
           <div className="bg-gradient-to-r from-yeirin-yellow to-yeirin-orange/80 h-32 md:h-40" />
 
-          <div className="px-6 md:px-8 pb-8">
+          <div className="px-6 md:px-10 pb-10 md:pb-12">
             {/* Profile Image */}
             <div className="-mt-16 md:-mt-20 mb-6">
               <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gray-200 border-4 border-white shadow-lg overflow-hidden flex items-center justify-center">
-                {member.image && !member.image.includes("undefined") ? (
+                {hasImage ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={member.image}
@@ -49,7 +50,7 @@ export default function MemberProfile({
             </div>
 
             {/* Name & Role */}
-            <div className="mb-6">
+            <div className="mb-2">
               <div className="flex items-center gap-3 mb-2">
                 <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
                   {member.name}
@@ -58,128 +59,25 @@ export default function MemberProfile({
                   {member.role}
                 </span>
               </div>
-              <p className="text-gray-600">{member.title}</p>
+              <p className="text-gray-600 text-sm md:text-base">
+                {member.title}
+              </p>
             </div>
 
-            {/* Introduction */}
-            <p className="text-gray-700 leading-relaxed mb-8 text-lg">
-              {member.introduction}
-            </p>
-
-            {/* Message Quote */}
+            {/* 포부 */}
             {member.message && (
-              <div className="bg-yeirin-cream rounded-xl p-6 mb-8">
-                <div className="flex gap-4">
-                  <Quote className="w-8 h-8 text-yeirin-orange flex-shrink-0" />
-                  <p className="text-gray-800 italic leading-relaxed">
-                    &ldquo;{member.message}&rdquo;
-                  </p>
+              <div className="bg-yeirin-cream rounded-2xl p-6 md:p-8 mt-8">
+                <div className="flex items-center gap-2 mb-3">
+                  <Quote className="w-5 h-5 text-yeirin-orange" />
+                  <h2 className="font-bold text-yeirin-orange text-sm tracking-wider">
+                    포부 한마디
+                  </h2>
                 </div>
+                <p className="text-gray-800 text-base md:text-lg leading-relaxed">
+                  &ldquo;{member.message}&rdquo;
+                </p>
               </div>
             )}
-
-            {/* Details Grid */}
-            <div className="grid md:grid-cols-2 gap-6">
-              {/* Career */}
-              <div className="bg-gray-50 rounded-xl p-6">
-                <div className="flex items-center gap-2 mb-4">
-                  <Briefcase className="w-5 h-5 text-yeirin-orange" />
-                  <h2 className="font-bold text-gray-900">경력</h2>
-                </div>
-                <ul className="space-y-2">
-                  {member.career.map((item, index) => (
-                    <li
-                      key={index}
-                      className="text-gray-600 text-sm flex items-start gap-2"
-                    >
-                      <span className="text-yeirin-orange mt-1">•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Education */}
-              {member.education && member.education.length > 0 && (
-                <div className="bg-gray-50 rounded-xl p-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <GraduationCap className="w-5 h-5 text-yeirin-orange" />
-                    <h2 className="font-bold text-gray-900">학력</h2>
-                  </div>
-                  <ul className="space-y-2">
-                    {member.education.map((item, index) => (
-                      <li
-                        key={index}
-                        className="text-gray-600 text-sm flex items-start gap-2"
-                      >
-                        <span className="text-yeirin-orange mt-1">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {/* Expertise */}
-              <div className="bg-gray-50 rounded-xl p-6 md:col-span-2">
-                <div className="flex items-center gap-2 mb-4">
-                  <Award className="w-5 h-5 text-yeirin-orange" />
-                  <h2 className="font-bold text-gray-900">전문분야</h2>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {member.expertise.map((item, index) => (
-                    <span
-                      key={index}
-                      className="bg-yeirin-yellow/50 text-gray-800 px-4 py-2 rounded-full text-sm"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Research */}
-              {member.research && member.research.length > 0 && (
-                <div className="bg-gray-50 rounded-xl p-6 md:col-span-2">
-                  <div className="flex items-center gap-2 mb-4">
-                    <FlaskConical className="w-5 h-5 text-yeirin-orange" />
-                    <h2 className="font-bold text-gray-900">연구개발사업</h2>
-                  </div>
-                  <ul className="space-y-3">
-                    {member.research.map((item, index) => (
-                      <li
-                        key={index}
-                        className="text-gray-600 text-sm flex items-start gap-2"
-                      >
-                        <span className="text-yeirin-orange mt-1 flex-shrink-0">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {/* Policy Research */}
-              {member.policyResearch && member.policyResearch.length > 0 && (
-                <div className="bg-gray-50 rounded-xl p-6 md:col-span-2">
-                  <div className="flex items-center gap-2 mb-4">
-                    <FileText className="w-5 h-5 text-yeirin-orange" />
-                    <h2 className="font-bold text-gray-900">정책연구 & 연구용역</h2>
-                  </div>
-                  <ul className="space-y-3">
-                    {member.policyResearch.map((item, index) => (
-                      <li
-                        key={index}
-                        className="text-gray-600 text-sm flex items-start gap-2"
-                      >
-                        <span className="text-yeirin-orange mt-1 flex-shrink-0">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
           </div>
         </div>
       </div>

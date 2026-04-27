@@ -2,7 +2,12 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { getMemberById, getAllMemberIds, boardMembers, techMembers } from "@/data/members";
+import {
+  getMemberById,
+  getAllMemberIds,
+  boardMembers,
+  techMembers,
+} from "@/data/members";
 import MemberProfile from "@/components/members/MemberProfile";
 
 const SITE_URL = "https://yeirin.com";
@@ -17,7 +22,9 @@ export async function generateStaticParams() {
   return ids.map((id) => ({ id }));
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { id } = await params;
   const member = getMemberById(id);
 
@@ -28,19 +35,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const isTechMember = techMembers.some((m) => m.id === id);
-  const teamName = isTechMember ? "기술개발본부" : "이사회";
+  const teamName = isTechMember ? "주식회사 예이린" : "이사회";
 
   const title = `${member.name} ${member.role} | ${SITE_NAME} ${teamName}`;
-  const description = member.introduction.slice(0, 155) + (member.introduction.length > 155 ? "..." : "");
-  const expertiseText = member.expertise.join(", ");
-  const fullDescription = `${member.title}. ${description} 전문분야: ${expertiseText}`;
+  const description = member.message
+    ? `${member.title}. ${member.message}`
+    : member.title;
 
-  const imageUrl = member.image ? `${SITE_URL}${member.image}` : `${SITE_URL}/images/og-default.png`;
+  const imageUrl = member.image
+    ? `${SITE_URL}${member.image}`
+    : `${SITE_URL}/images/og-default.png`;
   const pageUrl = `${SITE_URL}/about/members/${id}`;
 
   return {
     title,
-    description: fullDescription.slice(0, 160),
+    description: description.slice(0, 160),
     keywords: [
       member.name,
       "예이린",
@@ -49,7 +58,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       teamName,
       "아동건강",
       "취약계층 아동",
-      ...member.expertise,
     ],
     authors: [{ name: member.name }],
     creator: SITE_NAME,
@@ -67,7 +75,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     openGraph: {
       title,
-      description: fullDescription.slice(0, 200),
+      description: description.slice(0, 200),
       type: "profile",
       url: pageUrl,
       siteName: SITE_NAME,
@@ -84,7 +92,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     twitter: {
       card: "summary_large_image",
       title,
-      description: fullDescription.slice(0, 200),
+      description: description.slice(0, 200),
       images: [imageUrl],
     },
     alternates: {
@@ -106,7 +114,7 @@ export default async function MemberPage({ params }: PageProps) {
   }
 
   const isTechMember = techMembers.some((m) => m.id === id);
-  const teamName = isTechMember ? "기술개발본부" : "이사회";
+  const teamName = isTechMember ? "주식회사 예이린" : "이사회";
 
   // JSON-LD structured data for SEO (Person schema)
   const personJsonLd = {
@@ -115,7 +123,7 @@ export default async function MemberPage({ params }: PageProps) {
     "@id": `${SITE_URL}/about/members/${id}#person`,
     name: member.name,
     jobTitle: member.role,
-    description: member.introduction,
+    description: member.message ?? member.title,
     image: member.image ? `${SITE_URL}${member.image}` : undefined,
     url: `${SITE_URL}/about/members/${id}`,
     worksFor: {
@@ -129,15 +137,6 @@ export default async function MemberPage({ params }: PageProps) {
       name: SITE_NAME,
       url: SITE_URL,
     },
-    knowsAbout: member.expertise,
-    alumniOf: member.education.map((edu) => ({
-      "@type": "EducationalOrganization",
-      name: edu.split(" ")[0], // 대학명 추출
-    })),
-    hasCredential: member.education.map((edu) => ({
-      "@type": "EducationalOccupationalCredential",
-      name: edu,
-    })),
   };
 
   // Organization schema
@@ -148,7 +147,8 @@ export default async function MemberPage({ params }: PageProps) {
     name: SITE_NAME,
     url: SITE_URL,
     logo: `${SITE_URL}/images/logo.png`,
-    description: "취약계층 아동의 건강과 복지를 위해 연구와 실천을 병행하는 사회적협동조합",
+    description:
+      "취약계층 아동의 건강과 복지를 위해 연구와 실천을 병행하는 사회적협동조합",
     foundingDate: "2021",
     address: {
       "@type": "PostalAddress",

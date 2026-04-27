@@ -2,7 +2,79 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { boardMembers, techMembers } from "@/data/members";
+import {
+  boardMembers,
+  fieldExpertMembers,
+  getMembersByIds,
+  type Member,
+} from "@/data/members";
+import YeirinHistory from "@/components/about/YeirinHistory";
+import CICharacterCarousel from "@/components/about/CICharacterCarousel";
+import OrgChart from "@/components/about/OrgChart";
+
+// 조직별 인원 그룹
+const yeirinCorpMembers = getMembersByIds(["yun-sanghyun", "kim-hunjeong"]);
+const advisorMembers = getMembersByIds([
+  "park-suyoung",
+  "kim-yejong",
+  "moon-jungjun",
+  "hwang-youngsook",
+  "shin-hyunsang",
+  "lee-sungjin",
+]);
+const businessTeamMembers = getMembersByIds(["kim-narae", "go-hyunsook"]);
+const bImpactMembers = getMembersByIds(["kim-younggeun", "shim-mingyu"]);
+const borderlineMembers = getMembersByIds(["ahn-yeji"]);
+const officeMembers = getMembersByIds(["oh-seolhwa"]);
+const specialistMembers = getMembersByIds([
+  "lee-cheolwoo",
+  "shin-sangyong",
+  "han-maneung",
+  "kwon-hyunae",
+]);
+
+function ProfileCard({ member }: { member: Member }) {
+  const hasImage = member.image && !member.image.includes("undefined");
+  return (
+    <Link
+      href={`/about/members/${member.id}`}
+      className="group text-center w-32"
+    >
+      <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-gray-200 overflow-hidden flex items-center justify-center ring-4 ring-transparent group-hover:ring-yeirin-yellow transition-all duration-300 group-hover:scale-105">
+        {hasImage ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={member.image}
+            alt={member.name}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <svg
+            className="w-16 h-16 text-gray-400"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+          </svg>
+        )}
+      </div>
+      <p className="font-medium text-gray-900 group-hover:text-yeirin-orange transition-colors">
+        {member.name}
+      </p>
+      <p className="text-sm text-gray-500">{member.role}</p>
+    </Link>
+  );
+}
+
+function MemberRow({ members }: { members: Member[] }) {
+  return (
+    <div className="flex flex-wrap justify-center gap-x-8 gap-y-10">
+      {members.map((m) => (
+        <ProfileCard key={m.id} member={m} />
+      ))}
+    </div>
+  );
+}
 
 // 3대 핵심가치 아이콘 컴포넌트 (메인페이지와 동일)
 const FamilyIcon = () => (
@@ -153,44 +225,28 @@ export default function AboutPage() {
       {/* History Section */}
       <section id="history" className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-12">
-            예이린 연혁
-          </h2>
-          <div className="w-full">
-            <Image
-              src="/images/about/연혁.png"
-              alt="예이린 연혁 - 2021년부터 2025년까지의 주요 활동"
-              width={1600}
-              height={500}
-              className="w-full h-auto"
-            />
-          </div>
+          <YeirinHistory />
         </div>
       </section>
 
       {/* Organization Section */}
       <section id="organization" className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-4">
             예이린 조직도
           </h2>
-          <div className="w-full">
-            <Image
-              src="/images/organization.png"
-              alt="예이린 조직도 - 이사장, 이사진, 전문위원, 자문위원, 사업본부 등"
-              width={1600}
-              height={800}
-              className="w-full h-auto"
-            />
-          </div>
+          <p className="text-center text-sm text-gray-500 mb-12">
+            인물을 클릭하면 프로필을 확인할 수 있습니다
+          </p>
+          <OrgChart />
         </div>
       </section>
 
-      {/* Board Members */}
-      <section className="py-16 md:py-24 bg-yeirin-cream">
+      {/* 이사회 (이사진 + 감사) */}
+      <section className="py-16 md:py-20 bg-yeirin-cream">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
               이사회
             </h2>
             <p className="text-gray-600">
@@ -202,91 +258,137 @@ export default function AboutPage() {
               프로필을 클릭하면 상세 정보를 확인할 수 있습니다
             </p>
           </div>
-
-          <div className="flex flex-wrap justify-center gap-8">
-            {boardMembers.map((member) => (
-              <Link
-                key={member.id}
-                href={`/about/members/${member.id}`}
-                className="group text-center"
-              >
-                <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-gray-200 overflow-hidden flex items-center justify-center ring-4 ring-transparent group-hover:ring-yeirin-yellow transition-all duration-300 group-hover:scale-105">
-                  {member.image && !member.image.includes("undefined") ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <svg
-                      className="w-16 h-16 text-gray-400"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                    </svg>
-                  )}
-                </div>
-                <p className="font-medium text-gray-900 group-hover:text-yeirin-orange transition-colors">
-                  {member.name}
-                </p>
-                <p className="text-sm text-gray-500">{member.role}</p>
-              </Link>
-            ))}
-          </div>
+          <MemberRow members={boardMembers} />
         </div>
       </section>
 
-      {/* Tech Development Team */}
-      <section className="py-16 md:py-24 bg-white">
+      {/* 주식회사 예이린 */}
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              기술개발본부
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+              주식회사 예이린
             </h2>
             <p className="text-gray-600">
               예이린의{" "}
               <span className="text-yeirin-orange font-medium">기술 혁신</span>을
               이끌어가는 구성원을 소개합니다
             </p>
-            <p className="text-gray-500 text-sm mt-2">
-              프로필을 클릭하면 상세 정보를 확인할 수 있습니다
+          </div>
+          <MemberRow members={yeirinCorpMembers} />
+        </div>
+      </section>
+
+      {/* 자문위원 */}
+      <section className="py-16 md:py-20 bg-yeirin-cream">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+              자문위원
+            </h2>
+            <p className="text-gray-600">
+              다양한 분야의{" "}
+              <span className="text-yeirin-orange font-medium">전문가</span>들이
+              예이린의 사업 방향에 함께 합니다
             </p>
           </div>
+          <MemberRow members={advisorMembers} />
+        </div>
+      </section>
 
-          <div className="flex flex-wrap justify-center gap-8">
-            {techMembers.map((member) => (
-              <Link
-                key={member.id}
-                href={`/about/members/${member.id}`}
-                className="group text-center"
-              >
-                <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-gray-200 overflow-hidden flex items-center justify-center ring-4 ring-transparent group-hover:ring-yeirin-yellow transition-all duration-300 group-hover:scale-105">
-                  {member.image && !member.image.includes("undefined") ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <svg
-                      className="w-16 h-16 text-gray-400"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                    </svg>
-                  )}
-                </div>
-                <p className="font-medium text-gray-900 group-hover:text-yeirin-orange transition-colors">
-                  {member.name}
-                </p>
-                <p className="text-sm text-gray-500">{member.role}</p>
-              </Link>
-            ))}
+      {/* 사업본부 · 사무국 */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+              사업본부 · 사무국
+            </h2>
+            <p className="text-gray-600">
+              예이린의{" "}
+              <span className="text-yeirin-orange font-medium">사업과 운영</span>
+              을 책임지는 구성원입니다
+            </p>
           </div>
+          <div className="flex flex-col md:flex-row md:justify-center md:items-start gap-12 md:gap-x-20 lg:gap-x-28">
+            <div>
+              <h3 className="text-center text-lg md:text-xl font-bold text-yeirin-orange mb-6">
+                사업본부
+              </h3>
+              <MemberRow members={businessTeamMembers} />
+            </div>
+            <div className="hidden md:block w-px bg-gray-200 self-stretch" />
+            <div>
+              <h3 className="text-center text-lg md:text-xl font-bold text-yeirin-orange mb-6">
+                사무국
+              </h3>
+              <MemberRow members={officeMembers} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* B-IMPACT 얼라이언스 · 경계선 아동 파견전문가 양성단 */}
+      <section className="py-16 md:py-20 bg-yeirin-cream">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+              B-IMPACT 얼라이언스 · 경계선 아동 파견전문가 양성단
+            </h2>
+            <p className="text-gray-600">
+              사업본부 산하의{" "}
+              <span className="text-yeirin-orange font-medium">전문 사업단</span>
+              입니다
+            </p>
+          </div>
+          <div className="flex flex-col md:flex-row md:justify-center md:items-start gap-12 md:gap-x-20 lg:gap-x-28">
+            <div>
+              <h3 className="text-center text-lg md:text-xl font-bold text-yeirin-orange mb-6">
+                B-IMPACT 얼라이언스
+              </h3>
+              <MemberRow members={bImpactMembers} />
+            </div>
+            <div className="hidden md:block w-px bg-gray-200 self-stretch" />
+            <div>
+              <h3 className="text-center text-lg md:text-xl font-bold text-yeirin-orange mb-6">
+                경계선 아동 파견전문가 양성단
+              </h3>
+              <MemberRow members={borderlineMembers} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 전문위원 */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+              전문위원
+            </h2>
+            <p className="text-gray-600">
+              법률·행정·세무·노무 분야의{" "}
+              <span className="text-yeirin-orange font-medium">전문위원</span>이
+              예이린의 운영을 지원합니다
+            </p>
+          </div>
+          <MemberRow members={specialistMembers} />
+        </div>
+      </section>
+
+      {/* 현장 전문가 */}
+      <section className="py-16 md:py-20 bg-yeirin-cream">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+              현장 전문가
+            </h2>
+            <p className="text-gray-600">
+              아동복지시설{" "}
+              <span className="text-yeirin-orange font-medium">현장</span>에서
+              아이들의 곁을 지키는 분들입니다
+            </p>
+          </div>
+          <MemberRow members={fieldExpertMembers} />
         </div>
       </section>
 
@@ -300,9 +402,11 @@ export default function AboutPage() {
             예이린의 ESG 경영
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-            예이린은 아동의 건강 및 발달에 관한 지식 및 지역사회 자원을 활용하여
-            취약계층 아동들을 돌보는 사회적협동조합입니다. 조합 이해관계자들과의
-            관계를 중요시하며, 환경과 다양한 분들을 취약인으로 삼고 있습니다.
+            예이린은 1957년 제정 및 1988년 개정된 ‘어린이 헌장’의 취지를
+            받들어 아동을 위한 사회적 책무를 다하고자 노력합니다. 또한 아동의
+            행복한 삶을 위하여 조합의 사회적 책임과 조합윤리를 준수하고, 지속
+            가능한 발전을 추구하며, 평등과 다양성 존중을 최우선으로 삼고
+            있습니다.
           </p>
           <div className="bg-yeirin-yellow/30 rounded-2xl py-8 px-6 max-w-2xl mx-auto">
             <p className="text-sm md:text-base mb-2 text-gray-700">
@@ -332,43 +436,7 @@ export default function AboutPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-12">
             CI Character
           </h2>
-          <div className="max-w-4xl mx-auto space-y-10">
-            <Image
-              src="/images/characters/emperor-penguins.jpg"
-              alt="예이린 CI 캐릭터 - 황제펭귄 피피, 페페, 핀"
-              width={1200}
-              height={900}
-              className="w-full h-auto rounded-2xl"
-            />
-            <Image
-              src="/images/characters/character-design.jpg"
-              alt="예이린 캐릭터 디자인 컨셉"
-              width={1200}
-              height={900}
-              className="w-full h-auto rounded-2xl"
-            />
-            <Image
-              src="/images/characters/pipi.jpg"
-              alt="피피 - 주황 가방 캐릭터"
-              width={1200}
-              height={1200}
-              className="w-full h-auto rounded-2xl"
-            />
-            <Image
-              src="/images/characters/pepe.jpg"
-              alt="페페 - 노란 가방 캐릭터"
-              width={1200}
-              height={1200}
-              className="w-full h-auto rounded-2xl"
-            />
-            <Image
-              src="/images/characters/pin.jpg"
-              alt="핀 - 빨간 가방 캐릭터"
-              width={1200}
-              height={1200}
-              className="w-full h-auto rounded-2xl"
-            />
-          </div>
+          <CICharacterCarousel />
         </div>
       </section>
     </div>

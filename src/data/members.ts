@@ -4,13 +4,8 @@ export interface Member {
   role: string;
   title: string;
   image: string;
-  introduction: string;
-  career: string[];
-  education: string[];
-  expertise: string[];
+  /** 포부 한마디 */
   message?: string;
-  research?: string[];
-  policyResearch?: string[];
 }
 
 export const boardMembers: Member[] = [
@@ -19,120 +14,41 @@ export const boardMembers: Member[] = [
     name: "박지영",
     role: "이사장",
     title: "인제대학교 교수 · 사회적협동조합 예이린 이사장",
-    image: "/images/board/박지영.png",
-    introduction:
-      "취약계층 아동의 건강과 복지를 위해 연구와 실천을 병행하고 있습니다. 아동 비만예방, 건강증진 프로그램 개발 등 다양한 연구를 통해 지역사회 아동들의 건강한 성장을 지원하고 있습니다.",
-    career: [
-      "현) 사회적협동조합 예이린 이사장",
-      "현) 인제대학교 교수",
-      "현) 대한비만학회 교육위원회 위원 (2021~)",
-      "현) 지역아동센터 부산지원단 운영위원 및 운영컨설팅위원 (2021~)",
-      "현) 아동권리보장원 돌봄시설 전문평가위원 (2018~)",
-      "전) 서울대학교병원 신생아중환자실 간호사 (2006~2009)",
-    ],
-    education: [
-      "연세대학교 간호학 박사",
-      "연세대학교 사회복지정책협동과정 박사과정 (전공: 사회적 경제와 돌봄, 비영리조직 경영, 자선)",
-    ],
-    expertise: ["아동건강관리", "비만예방", "사회적경제", "디지털 헬스리터러시", "지역사회복지"],
-    message:
-      "모든 아이들이 건강하게 자랄 권리가 있습니다. 예이린은 그 권리를 지키기 위해 존재합니다.",
-    research: [
-      "취약가정 아동과 주 양육자의 디지털 헬스리터러시 향상을 위한 교육용 디지털 콘텐츠 개발 및 온라인 건강정보 플랫폼 구축 (한국연구재단, 2022)",
-      "ICT 기반 취약가정 아동의 비만예방 표준프로그램 개발 및 평가 (한국연구재단, 2020)",
-      "저소득가정 아동의 건강한 식습관 증진을 위한 프로그램의 효과평가 및 보급: Intervention Mapping(IM)의 적용 (한국연구재단, 2018)",
-      "저소득가정 아동을 위한 지역사회 기반 비만예방 프로그램의 개발 및 효과 (한국연구재단, 2015)",
-    ],
-    policyResearch: [
-      "아동복지시설 아동 치료재활지원사업 효과성 분석 및 운영 개선방안 수립 연구 (보건복지부·아동권리보장원, 2022)",
-      "진주시보건소와 함께하는 Let's Eat Healthy (진주시, 2020~2022)",
-      "보건복지부 소관 사회적 협동조합 발전방안 연구 (보건복지부, 2019)",
-      "지역사회 기반 비만예방관리사업 표준 프로그램 개발",
-    ],
+    image: "/images/board/박지영.jpeg",
   },
   {
     id: "baek-seolhyang",
     name: "백설향",
     role: "이사",
     title: "동국대학교 교수 · 사회적협동조합 예이린 이사",
-    image: "/images/board/백설향.png",
-    introduction:
-      "아동기 건강증진 분야의 전문가로서 소아청소년 비만예방과 건강관리 교육에 힘쓰고 있습니다. 다년간의 교육 및 연구 경험을 바탕으로 예이린의 사업 방향을 함께 고민하고 있습니다.",
-    career: [
-      "현) 사회적협동조합 예이린 이사",
-      "현) 동국대학교 교수",
-      "현) 대한비만학회 소아청소년위원회 위원 (1998~)",
-      "전) 한국건강증진개발원 근로자 건강관리 교육 매체 개발 (2019~2020)",
-      "전) 경주시 아이돌보미 양성교육과정 강사 (2014~2020)",
-      "전) 경주고등학교 R&E 지도교수 (2011~2014)",
-    ],
-    education: [
-      "부산대학교 간호학 박사 (전공: 아동기 건강증진)",
-    ],
-    expertise: ["아동건강증진", "소아청소년 비만예방", "건강관리 교육", "아동 안전관리"],
+    image: "/images/board/백설향.jpg",
+    message:
+      "우리 사회에서 어린이와 청소년이 귀하게 양육되고 보호받기를 염원합니다.",
   },
   {
     id: "hwang-sein",
     name: "황세인",
     role: "이사",
-    title: "인제대학교 교수 · 사회적협동조합 예이린 이사",
-    image: "/images/board/황세인.png",
-    introduction:
-      "아동복지와 주거빈곤 분야의 전문가로서 취약계층 아동과 청소년의 복지 향상을 위해 연구하고 실천하고 있습니다.",
-    career: [
-      "현) 사회적협동조합 예이린 이사",
-      "현) 인제대학교 사회복지학과 조교수 (2021.9~)",
-      "현) 김해시 가족센터·창포종합사회복지관 사례관리 자문위원 (2021.12~)",
-      "현) (사)아둘람 이사 - 아동·청소년 중심 비영리 공익법인 (2021.6~)",
-      "전) 경남사회서비스원 커뮤니티케어 김해센터 자문위원 (2019~2021)",
-      "전) 김해시 CYS-Net(지역사회청소년통합지원체계) 실행위원",
-      "전) 경남교육청 교육복지사업 실행위원",
-    ],
-    education: [
-      "일본여자대학 사회복지학 박사 (전공: 아동복지, 주거빈곤)",
-    ],
-    expertise: ["아동복지", "주거빈곤", "사례관리", "청소년복지", "커뮤니티케어"],
+    title: "인제대학교 사회복지학과 조교수 · 사회적협동조합 예이린 이사",
+    image: "/images/board/황세인.jpg",
+    message: "아이들의 건강한 성장을 위한 환경을 만들어 나가겠습니다.",
   },
   {
     id: "park-taejoo",
     name: "박태주",
     role: "이사",
-    title: "부산·싱가폴 '카운티' 총괄 본부장 · 사회적협동조합 예이린 이사",
+    title:
+      "부산·싱가폴 ‘카운티’ 총괄 본부장 · 사회적협동조합 예이린 이사",
     image: "/images/board/박태주.png",
-    introduction:
-      "국제 영화제 및 문화 콘텐츠 분야에서의 경험을 바탕으로 예이린의 대외 협력과 홍보를 지원하고 있습니다.",
-    career: [
-      "현) 사회적협동조합 예이린 이사",
-      "현) 부산·싱가폴 '카운티' 총괄 본부장",
-      "전) 20th BIFF(부산국제영화제) 통역 및 단편 영화 제작 담당 (2015)",
-      "전) FLY(Film Leaders Incubator) 2014 in Myanmar 한국 대표 (2014)",
-    ],
-    education: [],
-    expertise: ["국제협력", "문화콘텐츠", "영화제작", "커뮤니케이션"],
   },
   {
     id: "lee-changhee",
     name: "이창희",
-    role: "이사",
-    title: "사회적협동조합 미선나무 이사장 · 사회적협동조합 예이린 이사",
+    role: "감사",
+    title:
+      "사회적협동조합 미선나무 이사장 · 사회적협동조합 예이린 감사",
     image: "/images/board/이창희.png",
-    introduction:
-      "30년 이상 사회적경제와 교육복지 분야에서 활동해온 전문가로서, 지역사회 기반 아동복지와 사회적협동조합 발전에 기여하고 있습니다.",
-    career: [
-      "현) 사회적협동조합 예이린 이사",
-      "현) 지역아동센터 충북지원단 단장 (2014~)",
-      "현) 사협) 행복을 꿈꾸는 사람들 미선나무 사회적협동조합 이사장 (2022~)",
-      "현) 사회적협동조합 일하는사람들 이사",
-      "현) 사회적기업 씨투넷 이사",
-      "전) 사) 일하는 공동체 이사 (2014~2019)",
-      "전) SK행복도시락 행복 담은 네모 이사 (2009~2019)",
-      "전) 국민임대단지 교육복지 사업 '함께사는 우리' 대표 (2011~2013)",
-      "전) 교육복지네트워크 '삶과 교육' 사무국장·대표 (2007~2011)",
-      "전) 대안학교 '거북이학교' 운영 (1999~2009)",
-      "전) 사회교육센터 일하는 사람들 사무국장 (1994~1999)",
-    ],
-    education: [],
-    expertise: ["사회적경제", "교육복지", "지역아동센터", "사회적협동조합", "비영리조직 운영"],
+    message: "슬픔을 지우는 따뜻한 사람",
   },
 ];
 
@@ -140,35 +56,328 @@ export const techMembers: Member[] = [
   {
     id: "yun-sanghyun",
     name: "윤상현",
-    role: "CTO",
-    title: "사회적협동조합 예이린 CTO",
+    role: "대표이사",
+    title: "(주) 예이린 대표이사 · 사회적협동조합 예이린 CTO",
     image: "/images/board/윤상현.jpg",
-    introduction:
-      "AI/ML, 정보보안, 로보틱스 분야의 전문가로서 예이린의 기술 혁신을 이끌고 있습니다. 돌봄 사각지대 해소를 위한 기술 솔루션 개발에 힘쓰고 있습니다.",
-    career: [
-      "현) 사회적협동조합 예이린 CTO",
-      "현) 아키텍트 솔루션 엔지니어 Association 위원",
-      "전) AI/ML 솔루션/SI Perevo 대표",
-      "전) ARSS 군용 프로토콜 연구원",
-      "전) AlwaysYoga SWE",
-    ],
-    education: [
-      "인제대학교 AI융합로봇학 석사",
-      "인제대학교 인공지능 학사",
-      "인제대학교 산업보안 학사",
-    ],
-    expertise: ["AI", "ML", "정보보안", "로보틱스", "강화학습", "소프트웨어 아키텍처"],
+  },
+];
+
+// 조직도에만 표시되는 인원 (상세 프로필 추후 보강 예정)
+export const orgChartMembers: Member[] = [
+  // (주) 예이린
+  {
+    id: "kim-hunjeong",
+    name: "김훈정",
+    role: "주임",
+    title: "(주) 예이린 주임",
+    image: "",
+    message: "기술을 통해 사회에 가치를 환원하겠습니다.",
+  },
+  // 자문위원
+  {
+    id: "park-suyoung",
+    name: "박수영",
+    role: "운영대표",
+    title: "그랜드모먼트 유스호스텔 운영대표",
+    image: "/images/board/박수영.jpg",
     message:
-      "일생에 쌓아왔던 공학적 역량을 돌봄의 사각지대 없는 사회를 만들기 위해 쓰겠습니다.",
+      "우리 청소년들은 대한민국의 미래를 이끌어 갈 소중한 자원입니다. 부울경 지역의 청소년학 1호 박사이자, 청소년 분야의 전문가로서 다년간의 청소년지도 경력과 연구 경험 등을 바탕으로 예이린의 사업 방향을 함께 고민하고 발전할 수 있도록 노력하겠습니다.",
+  },
+  {
+    id: "kim-yejong",
+    name: "김예종",
+    role: "대표",
+    title: "아트교육컨설팅 대표",
+    image: "/images/board/김예종.jpg",
+    message:
+      "아동·청소년의 건강한 성장과 안전한 사회를 위해 현장 경험을 바탕으로 실질적인 변화를 만들어가겠습니다.",
+  },
+  {
+    id: "moon-jungjun",
+    name: "문정준",
+    role: "교수",
+    title: "부산백병원 정신건강의학과 교수",
+    image: "/images/board/문정준.jpg",
+    message:
+      "정신건강의학의 관점에서 예이린의 사업을 도울 수 있도록 노력하겠습니다.",
+  },
+  {
+    id: "hwang-youngsook",
+    name: "황영숙",
+    role: "회장",
+    title: "부산시 보건교사회 회장",
+    image: "/images/board/황영숙.jpg",
+    message:
+      "청소년의 건강한 성장과 안전한 미래를 지키는데 사명감을 갖고 실효성 있는 교육방향을 제시하고 마약으로부터 안전한 학교문화를 조성하는데 적극참여하겠습니다.",
+  },
+  {
+    id: "shin-hyunsang",
+    name: "신현상",
+    role: "교수",
+    title: "한양대학교 경영학부 교수",
+    image: "/images/board/신현상.jpg",
+    message: "다음 세대를 위한 컬렉티브 임팩트, 함께 하겠습니다.",
+  },
+  {
+    id: "lee-sungjin",
+    name: "이성진",
+    role: "변호사",
+    title: "법무법인 YK 변호사",
+    image: "/images/board/이성진.jpg",
+    message: "아이들이 소외감을 느끼지 않도록 돌보겠습니다.",
+  },
+  // 사업본부
+  {
+    id: "kim-narae",
+    name: "김나래",
+    role: "팀장",
+    title: "예이린 사업본부 팀장",
+    image: "/images/board/김나래.png",
+    message:
+      "돌봄이 닿지 못한 아이들 곁에서 동행하며, 연결의 길을 만들어가겠습니다.",
+  },
+  {
+    id: "go-hyunsook",
+    name: "고현숙",
+    role: "주임",
+    title: "예이린 사업본부 주임",
+    image: "/images/board/고현숙.jpeg",
+    message: "아이들의 따뜻한 미래를 만들어가는 길에 함께하겠습니다.",
+  },
+  // B-IMPACT 얼라이언스
+  {
+    id: "kim-younggeun",
+    name: "김영근",
+    role: "학계 대표",
+    title: "인제대학교 상담심리치료학과 · B-IMPACT 학계 대표",
+    image: "/images/board/김영근.jpg",
+    message:
+      "학계의 전문성을 바탕으로 지역사회의 취약 아동 계층에게 따뜻한 봄을 가져다 줄 수 있도록 최선을 다하겠습니다.",
+  },
+  {
+    id: "shim-mingyu",
+    name: "심민규",
+    role: "현장 대표",
+    title: "더자람 아동청소년발달센터 · B-IMPACT 현장 대표",
+    image: "",
+  },
+  // 경계선 아동 파견전문가 양성단
+  {
+    id: "ahn-yeji",
+    name: "안예지",
+    role: "학계 대표",
+    title:
+      "경일대학교 평생교육학과 · 경계선 아동 파견전문가 양성단 학계 대표",
+    image: "/images/board/안예지.jpeg",
+    message:
+      "특수교육전문가로서 교육사각지대 학습자의 생애주기별 특성과 요구를 연구하고, 다양한 학습자의 가능성을 지원하는 교육체계를 만들어가고 있습니다. 누구도 배움에서 소외되지 않도록, 현장의 문제를 연구와 실천으로 이어가겠습니다.",
+  },
+  // 사무국
+  {
+    id: "oh-seolhwa",
+    name: "오설화",
+    role: "주임",
+    title: "예이린 사무국 주임",
+    image: "/images/board/오설화.jpeg",
+  },
+  // 전문위원
+  {
+    id: "lee-cheolwoo",
+    name: "이철우",
+    role: "변호사",
+    title: "문화 법률사무소 변호사",
+    image: "",
+  },
+  {
+    id: "shin-sangyong",
+    name: "신상용",
+    role: "행정사",
+    title: "한가람행정사사무소 행정사",
+    image: "",
+  },
+  {
+    id: "han-maneung",
+    name: "한만응",
+    role: "세무사",
+    title: "세무회계 혜안 세무사",
+    image: "",
+  },
+  {
+    id: "kwon-hyunae",
+    name: "권현애",
+    role: "노무사",
+    title: "유닉스 노무법인 노무사",
+    image: "/images/board/권현애.jpg",
+    message: "공정한 노무 관리로 따뜻한 동행을 뒷받침하겠습니다.",
+  },
+];
+
+// 현장 전문가 (조직도엔 없음)
+export const fieldExpertMembers: Member[] = [
+  {
+    id: "lee-oesook",
+    name: "이외숙",
+    role: "현장 전문가",
+    title: "박애원, 은혜의집",
+    image: "/images/board/이외숙.jpg",
+  },
+  {
+    id: "lee-jiseon",
+    name: "이지선",
+    role: "현장 전문가",
+    title: "라온, 에바다드림, 에바다리더",
+    image: "/images/board/이지선.jpg",
+  },
+  {
+    id: "kim-eunjin",
+    name: "김은진",
+    role: "현장 전문가",
+    title: "새들원",
+    image: "/images/board/김은진.jpg",
+  },
+  {
+    id: "han-moojin",
+    name: "한무진",
+    role: "현장 전문가",
+    title: "새들원",
+    image: "/images/board/한무진.jpg",
+  },
+  {
+    id: "gwak-darin",
+    name: "곽다린",
+    role: "현장 전문가",
+    title: "새롬아동센터",
+    image: "/images/board/곽다린.jpg",
+  },
+  {
+    id: "shim-hyemin",
+    name: "심혜민",
+    role: "현장 전문가",
+    title: "온새미로",
+    image: "/images/board/심혜민.jpg",
+  },
+  {
+    id: "kim-shinae",
+    name: "김신애",
+    role: "현장 전문가",
+    title: "파랑새아이들집",
+    image: "/images/board/김신애.jpg",
+  },
+  {
+    id: "jeon-seongmi",
+    name: "전성미",
+    role: "현장 전문가",
+    title: "파랑새아이들집",
+    image: "/images/board/전성미.jpg",
+  },
+  {
+    id: "hwang-geummi",
+    name: "황금미",
+    role: "현장 전문가",
+    title: "동성원",
+    image: "/images/board/황금미.jpg",
+  },
+  {
+    id: "kim-eunji",
+    name: "김은지",
+    role: "현장 전문가",
+    title: "새들원",
+    image: "/images/board/김은지.jpg",
+  },
+  {
+    id: "lee-sangeon",
+    name: "이상언",
+    role: "현장 전문가",
+    title: "동성원",
+    image: "/images/board/이상언.jpg",
+  },
+  {
+    id: "kang-minkyung",
+    name: "강민경",
+    role: "현장 전문가",
+    title: "해피홈이삭나래자비동산",
+    image: "/images/board/강민경.jpg",
+  },
+  {
+    id: "kim-eunbi",
+    name: "김은비",
+    role: "현장 전문가",
+    title: "새빛기독보육원",
+    image: "/images/board/김은비.jpg",
+  },
+  {
+    id: "jang-chanhae",
+    name: "장찬해",
+    role: "현장 전문가",
+    title: "소양무지개동산",
+    image: "/images/board/장찬해.jpg",
+  },
+  {
+    id: "moon-bokyung",
+    name: "문보경",
+    role: "현장 전문가",
+    title: "동산원",
+    image: "/images/board/문보경.jpg",
+  },
+  {
+    id: "cho-hyeji",
+    name: "조혜지",
+    role: "현장 전문가",
+    title: "애아원",
+    image: "/images/board/조혜지.jpg",
+  },
+  {
+    id: "jeong-youngsook",
+    name: "정영숙",
+    role: "현장 전문가",
+    title: "새들원",
+    image: "/images/board/정영숙.jpg",
+  },
+  {
+    id: "lee-sooin",
+    name: "이수인",
+    role: "현장 전문가",
+    title: "우리집원",
+    image: "/images/board/이수인.jpg",
+  },
+  {
+    id: "park-soohee",
+    name: "박수희",
+    role: "현장 전문가",
+    title: "희락원",
+    image: "/images/board/박수희.png",
+  },
+  {
+    id: "jin-sunnam",
+    name: "진선남",
+    role: "현장 전문가",
+    title: "NK아이빌",
+    image: "/images/board/진선남.jpg",
   },
 ];
 
 export function getMemberById(id: string): Member | undefined {
-  const allMembers = [...boardMembers, ...techMembers];
+  const allMembers = [
+    ...boardMembers,
+    ...techMembers,
+    ...orgChartMembers,
+    ...fieldExpertMembers,
+  ];
   return allMembers.find((member) => member.id === id);
 }
 
+export function getMembersByIds(ids: string[]): Member[] {
+  return ids
+    .map((id) => getMemberById(id))
+    .filter((m): m is Member => Boolean(m));
+}
+
 export function getAllMemberIds(): string[] {
-  const allMembers = [...boardMembers, ...techMembers];
+  const allMembers = [
+    ...boardMembers,
+    ...techMembers,
+    ...orgChartMembers,
+    ...fieldExpertMembers,
+  ];
   return allMembers.map((member) => member.id);
 }
