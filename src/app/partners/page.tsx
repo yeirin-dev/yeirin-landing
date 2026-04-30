@@ -152,7 +152,7 @@ export default function PartnersPage() {
                 <h3 className="font-bold text-gray-900 text-lg">
                   B-IMPACT 참여 기관
                 </h3>
-                <p className="text-gray-500 text-sm">26기관</p>
+                <p className="text-gray-500 text-sm">28기관</p>
               </div>
             </div>
             <a

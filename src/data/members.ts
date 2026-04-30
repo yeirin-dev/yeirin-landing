@@ -15,6 +15,8 @@ export const boardMembers: Member[] = [
     role: "이사장",
     title: "인제대학교 교수 · 사회적협동조합 예이린 이사장",
     image: "/images/board/박지영.jpeg",
+    message:
+        "모든 아이들이 건강하게 자랄 권리가 있습니다. 예이린은 그 권리를 지키기 위해 존재합니다."
   },
   {
     id: "baek-seolhyang",
@@ -40,6 +42,7 @@ export const boardMembers: Member[] = [
     title:
       "부산·싱가폴 ‘카운티’ 총괄 본부장 · 사회적협동조합 예이린 이사",
     image: "/images/board/박태주.png",
+    message: "아이들이 안전하고 당당하게 자랄 수 있는 사회를 만들겠습니다.",
   },
   {
     id: "lee-changhee",
@@ -59,6 +62,7 @@ export const techMembers: Member[] = [
     role: "대표이사",
     title: "(주) 예이린 대표이사 · 사회적협동조합 예이린 CTO",
     image: "/images/board/윤상현.jpg",
+    message: "일생에 쌓아왔던 공학적 역량을 돌봄의 사각지대 없는 사회를 만들기 위해 쓰겠습니다.",
   },
 ];
 
@@ -69,8 +73,8 @@ export const orgChartMembers: Member[] = [
     id: "kim-hunjeong",
     name: "김훈정",
     role: "주임",
-    title: "(주) 예이린 주임",
-    image: "",
+    title: "예이린 주임",
+    image: "/images/board/김훈정.jpg",
     message: "기술을 통해 사회에 가치를 환원하겠습니다.",
   },
   // 자문위원
@@ -172,6 +176,16 @@ export const orgChartMembers: Member[] = [
     message:
       "특수교육전문가로서 교육사각지대 학습자의 생애주기별 특성과 요구를 연구하고, 다양한 학습자의 가능성을 지원하는 교육체계를 만들어가고 있습니다. 누구도 배움에서 소외되지 않도록, 현장의 문제를 연구와 실천으로 이어가겠습니다.",
   },
+  {
+    id: "jeon-jongsu",
+    name: "전종수",
+    role: "현장 대표",
+    title:
+        "유스트로우 대표",
+    image: "/images/board/전종수.jpg",
+    message:
+        "위기청소년, 삶의 자립을 돕고 혼자가 아니라 살아가는 법을 전합니다.",
+  },
   // 사무국
   {
     id: "oh-seolhwa",
@@ -179,6 +193,8 @@ export const orgChartMembers: Member[] = [
     role: "주임",
     title: "예이린 사무국 주임",
     image: "/images/board/오설화.jpeg",
+    message:
+        "나보다 우리를 먼저 생각하는 마음으로 가장 친근하고 신뢰받는 구성원이 되고 싶습니다.",
   },
   // 전문위원
   {
@@ -209,6 +225,33 @@ export const orgChartMembers: Member[] = [
     title: "유닉스 노무법인 노무사",
     image: "/images/board/권현애.jpg",
     message: "공정한 노무 관리로 따뜻한 동행을 뒷받침하겠습니다.",
+  },
+    // 법인조합원
+  {
+    id: "kim-seonho",
+    name: "김선호",
+    role: "대표",
+    title: "(주)인텔리어스",
+    image: "/images/board/김선호.png",
+    message: "기술로 마음을 잇고, 아이들이 안심하고 자랄 수 있도록 함께하겠습니다.",
+  },
+  {
+    id: "lee-woojin",
+    name: "이우진",
+    role: "대표",
+    title: "(주)아뮤즈",
+    image: "/images/board/이우진.jpg",
+    message: "비즈니스의 성공도, 아이들의 건강도 결국 함께할 때 더 잘 만들어집니다.\n" +
+        "저희 아뮤즈는 늘 즐겁게 일할 때 가장 좋은 결과가 나온다고 믿어왔습니다.\n" +
+        "고객의 비즈니스를 위해 그래왔듯, 아이들 한 명 한 명이 건강하게 자라는 환경을 만드는 이 일에도 즐겁게, 진심으로 함께하겠습니다.",
+  },
+  {
+    id: "hwang-chadong",
+    name: "황차동",
+    role: "대표",
+    title: "(주)아이피나우",
+    image: "/images/board/황차동.png",
+    message: "모든 아이들이 존중받고 성장할 수 있도록, 따뜻한 돌봄과 변화를 함께 만들어가겠습니다.",
   },
 ];
 

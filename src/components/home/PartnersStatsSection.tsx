@@ -65,7 +65,7 @@ export default function PartnersStatsSection() {
     {
       icon: Building,
       label: "협력 기관",
-      value: 94,
+      value: 96,
       suffix: "곳",
       color: "text-purple-500"
     },

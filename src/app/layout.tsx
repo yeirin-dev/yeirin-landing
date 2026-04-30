@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
-// import PopupAd from "@/components/PopupAd";
+import PopupAd from "@/components/PopupAd";
 
 const pretendard = localFont({
   src: "../fonts/PretendardVariable.woff2",
@@ -89,7 +89,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        {/* <PopupAd /> */}
+        <PopupAd />
       </body>
     </html>
   );

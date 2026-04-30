@@ -115,6 +115,7 @@ const advisors: Person[] = [
 const businessTeam: Person[] = [
   { id: "kim-narae", name: "김나래", role: "팀장" },
   { id: "go-hyunsook", name: "고현숙", role: "주임" },
+  { id: "kim-hunjeong", name: "김훈정", role: "주임" },
 ];
 
 const bImpact: Person[] = [
@@ -124,6 +125,7 @@ const bImpact: Person[] = [
 
 const borderlineExperts: Person[] = [
   { id: "ahn-yeji", name: "안예지", role: "학계 대표", affiliation: "경일대학교 평생교육학과" },
+  { id: "jeon-jongsu", name: "전종수", role: "현장 대표", affiliation: "유스트로우 대표" },
 ];
 
 const officeStaff: Person[] = [
@@ -139,13 +141,13 @@ const specialists: Person[] = [
 
 const yeirinCorp: Person[] = [
   { id: "yun-sanghyun", name: "윤상현", role: "대표이사" },
-  { id: "kim-hunjeong", name: "김훈정", role: "주임" },
+
 ];
 
 const corporateMembers = [
-  { name: "(주) 아이피나우", logo: "/images/partners-orgchart/ipnow.png" },
-  { name: "(주) 인텔리어스", logo: "/images/partners-orgchart/intellius.png" },
-  { name: "(주) 아뮤즈", logo: "/images/partners-orgchart/amuz.png" },
+  { id: "hwang-chadong", name: "(주) 아이피나우", logo: "/images/partners-orgchart/ipnow.png" },
+  { id: "kim-seonho", name: "(주) 인텔리어스", logo: "/images/partners-orgchart/intellius.png" },
+  { id: "lee-woojin", name: "(주) 아뮤즈", logo: "/images/partners-orgchart/amuz.png" },
 ];
 
 // 점선 연결 스타일 (반복 사용)
@@ -306,22 +308,6 @@ export default function OrgChart() {
 
             {/* 본부 / 사업단 */}
             <div className="grid grid-cols-12 gap-4 md:gap-6">
-              {/* 자문위원 */}
-              <div className="col-span-12 md:col-span-3">
-                <ArcherElement id="advisors">
-                  <div>
-                    <GroupCard header={{ label: "자문위원", color: "orange" }}>
-                      <div className="space-y-3">
-                        {advisors.map((p) => (
-                          <div key={p.id} className="flex justify-center">
-                            <PersonNode person={p} />
-                          </div>
-                        ))}
-                      </div>
-                    </GroupCard>
-                  </div>
-                </ArcherElement>
-              </div>
 
               {/* 사업본부 + 산하 */}
               <div className="col-span-12 md:col-span-4 space-y-7">
@@ -355,6 +341,7 @@ export default function OrgChart() {
                   </div>
                 </ArcherElement>
 
+                {/*비임팩트 얼라이언스*/}
                 <ArcherElement id="b-impact">
                   <div>
                     <GroupCard
@@ -371,6 +358,7 @@ export default function OrgChart() {
                   </div>
                 </ArcherElement>
 
+                {/*경계선 아동*/}
                 <ArcherElement id="borderline">
                   <div>
                     <GroupCard
@@ -401,6 +389,23 @@ export default function OrgChart() {
                           <div key={p.id} className="flex justify-center">
                             <PersonNode person={p} />
                           </div>
+                        ))}
+                      </div>
+                    </GroupCard>
+                  </div>
+                </ArcherElement>
+              </div>
+
+              {/* 자문위원 */}
+              <div className="col-span-12 md:col-span-3">
+                <ArcherElement id="advisors">
+                  <div>
+                    <GroupCard header={{ label: "자문위원", color: "orange" }}>
+                      <div className="space-y-3">
+                        {advisors.map((p) => (
+                            <div key={p.id} className="flex justify-center">
+                              <PersonNode person={p} />
+                            </div>
                         ))}
                       </div>
                     </GroupCard>
@@ -459,27 +464,29 @@ export default function OrgChart() {
               </div>
             </ArcherElement>
 
+            {/*법인조합원*/}
             <ArcherElement id="corp-members">
               <div>
                 <GroupCard header={{ label: "법인조합원", color: "red" }}>
                   <div className="space-y-3">
                     {corporateMembers.map((c) => (
-                      <div
-                        key={c.name}
-                        className="bg-white rounded-2xl px-3 py-4 shadow-[0_2px_8px_rgba(15,23,42,0.06)] ring-1 ring-gray-100 flex flex-col items-center gap-2.5"
-                      >
-                        <div className="relative w-full h-10">
-                          <Image
-                            src={c.logo}
-                            alt={c.name}
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-                        <p className="text-[13px] font-bold text-gray-800 tracking-tight">
-                          {c.name}
-                        </p>
-                      </div>
+                        <Link
+                            key={c.name}
+                            href={`/about/members/${c.id}`}
+                            className="bg-white rounded-2xl px-3 py-4 shadow-[0_2px_8px_rgba(15,23,42,0.06)] ring-1 ring-gray-100 flex flex-col items-center gap-2.5 hover:ring-yeirin-yellow transition-all"
+                        >
+                          <div className="relative w-full h-10">
+                            <Image
+                                src={c.logo}
+                                alt={c.name}
+                                fill
+                                className="object-contain"
+                            />
+                          </div>
+                          <p className="text-[13px] font-bold text-gray-800 tracking-tight">
+                            {c.name}
+                          </p>
+                        </Link>
                     ))}
                   </div>
                 </GroupCard>
