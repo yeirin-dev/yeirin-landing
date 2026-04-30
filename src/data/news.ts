@@ -10,6 +10,15 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: 26,
+    title: "\"현장에서 답을 찾다\"… 아동·청소년 마음성장 교육, 부산에서 첫 출발",
+    date: "2026.04.27",
+    category: "press",
+    media: "E동아",
+    url: "https://edu.donga.com/news/articleView.html?idxno=106859",
+    thumbnail: "https://cdn.edu.donga.com/news/photo/202604/106859_170897_253.jpg",
+  },
+  {
     id: 25,
     title: "\"단순업무는 AI가, 돌봄은 사람이\"... 한국아동복지협회·예이린·아이피나우, AI 기반 스마트 돌봄 인프라 구축 협약",
     date: "2026.03.10",

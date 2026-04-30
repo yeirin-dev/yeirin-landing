@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   boardMembers,
-  fieldExpertMembers,
+  fieldExpertMembers, getMemberById,
   getMembersByIds,
   type Member,
 } from "@/data/members";
@@ -13,7 +13,7 @@ import CICharacterCarousel from "@/components/about/CICharacterCarousel";
 import OrgChart from "@/components/about/OrgChart";
 
 // 조직별 인원 그룹
-const yeirinCorpMembers = getMembersByIds(["yun-sanghyun", "kim-hunjeong"]);
+const yeirinCorpMembers = getMembersByIds(["yun-sanghyun"]);
 const advisorMembers = getMembersByIds([
   "park-suyoung",
   "kim-yejong",
@@ -22,9 +22,9 @@ const advisorMembers = getMembersByIds([
   "shin-hyunsang",
   "lee-sungjin",
 ]);
-const businessTeamMembers = getMembersByIds(["kim-narae", "go-hyunsook"]);
+const businessTeamMembers = getMembersByIds(["kim-narae", "go-hyunsook", "kim-hunjeong"]);
 const bImpactMembers = getMembersByIds(["kim-younggeun", "shim-mingyu"]);
-const borderlineMembers = getMembersByIds(["ahn-yeji"]);
+const borderlineMembers = getMembersByIds(["ahn-yeji", "jeon-jongsu"]);
 const officeMembers = getMembersByIds(["oh-seolhwa"]);
 const specialistMembers = getMembersByIds([
   "lee-cheolwoo",
@@ -32,6 +32,7 @@ const specialistMembers = getMembersByIds([
   "han-maneung",
   "kwon-hyunae",
 ]);
+const organizationalMember = getMembersByIds(["kim-seonho", "lee-woojin", "hwang-chadong"]);
 
 function ProfileCard({ member }: { member: Member }) {
   const hasImage = member.image && !member.image.includes("undefined");
@@ -116,7 +117,7 @@ const coreValues = [
     icon: <FamilyIcon />,
     titleKo: "풀필먼트",
     titleEn: "FULFILLMENT",
-    description: "예이린은 취약아동과그 가정의 미충족의료 및 돌봄의 수요를 충족시킨다",
+    description: "예이린은 취약아동과 그 가정의 미충족의료 및 돌봄의 수요를 충족시킨다",
   },
   {
     icon: <PeopleIcon />,
@@ -136,7 +137,7 @@ const navButtons = [
   { label: "예이린", targetId: "top" },
   { label: "연혁", targetId: "history" },
   { label: "조직구성", targetId: "organization" },
-  { label: "CI character", targetId: "ci-character" },
+  { label: "브랜딩", targetId: "ci-character" },
 ];
 
 export default function AboutPage() {
@@ -243,7 +244,7 @@ export default function AboutPage() {
       </section>
 
       {/* 이사회 (이사진 + 감사) */}
-      <section className="py-16 md:py-20 bg-yeirin-cream">
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
@@ -263,7 +264,7 @@ export default function AboutPage() {
       </section>
 
       {/* 주식회사 예이린 */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-yeirin-cream">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
@@ -280,7 +281,7 @@ export default function AboutPage() {
       </section>
 
       {/* 자문위원 */}
-      <section className="py-16 md:py-20 bg-yeirin-cream">
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
@@ -297,7 +298,7 @@ export default function AboutPage() {
       </section>
 
       {/* 사업본부 · 사무국 */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-yeirin-cream">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
@@ -328,7 +329,7 @@ export default function AboutPage() {
       </section>
 
       {/* B-IMPACT 얼라이언스 · 경계선 아동 파견전문가 양성단 */}
-      <section className="py-16 md:py-20 bg-yeirin-cream">
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
@@ -359,7 +360,7 @@ export default function AboutPage() {
       </section>
 
       {/* 전문위원 */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-yeirin-cream">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
@@ -372,6 +373,23 @@ export default function AboutPage() {
             </p>
           </div>
           <MemberRow members={specialistMembers} />
+        </div>
+      </section>
+
+      {/* 법인조합원 */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+              법인조합원
+            </h2>
+            <p className="text-gray-600">
+              예이린의 사업과 성장을 함께 만들어가는{" "}
+              <span className="text-yeirin-orange font-medium">협력 파트너</span>
+              입니다
+            </p>
+          </div>
+          <MemberRow members={organizationalMember} />
         </div>
       </section>
 

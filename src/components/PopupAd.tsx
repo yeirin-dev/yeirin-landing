@@ -43,14 +43,14 @@ export default function PopupAd() {
         onClick={(e) => e.stopPropagation()}
       >
         <a
-          href="https://forms.gle/AVAwKCxfjWU1Edxb8"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSc4rbOObPVp-waeADwNU_Feb5yLKDXE7Kg_NsmGMPdjLscv0w/viewform"
           target="_blank"
           rel="noopener noreferrer"
           className="block overflow-auto max-h-[75vh]"
         >
           <Image
-            src="/popup-ad.png"
-            alt="예이린 아동·청소년 마음성장 아카데미 4월 특강 안내"
+            src="/popup-may.jpeg"
+            alt="예이린 5월 특별활동 프로그램"
             width={2338}
             height={3316}
             className="w-full h-auto"

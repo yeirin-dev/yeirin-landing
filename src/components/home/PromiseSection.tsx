@@ -51,7 +51,7 @@ const coreValues = [
     icon: <FamilyIcon />,
     titleKo: "풀필먼트",
     titleEn: "FULFILLMENT",
-    description: "예이린은 취약아동과그 가정의 미충족의료 및 돌봄의 수요를 충족시킨다",
+    description: "예이린은 취약아동과 그 가정의 미충족의료 및 돌봄의 수요를 충족시킨다",
   },
   {
     icon: <PeopleIcon />,
