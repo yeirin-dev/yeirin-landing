@@ -263,40 +263,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 주식회사 예이린 */}
-      <section className="py-16 md:py-20 bg-yeirin-cream">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-              주식회사 예이린
-            </h2>
-            <p className="text-gray-600">
-              예이린의{" "}
-              <span className="text-yeirin-orange font-medium">기술 혁신</span>을
-              이끌어가는 구성원을 소개합니다
-            </p>
-          </div>
-          <MemberRow members={yeirinCorpMembers} />
-        </div>
-      </section>
-
-      {/* 자문위원 */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-              자문위원
-            </h2>
-            <p className="text-gray-600">
-              다양한 분야의{" "}
-              <span className="text-yeirin-orange font-medium">전문가</span>들이
-              예이린의 사업 방향에 함께 합니다
-            </p>
-          </div>
-          <MemberRow members={advisorMembers} />
-        </div>
-      </section>
-
       {/* 사업본부 · 사무국 */}
       <section className="py-16 md:py-20 bg-yeirin-cream">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
@@ -359,20 +325,20 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 전문위원 */}
+      {/* 주식회사 예이린 */}
       <section className="py-16 md:py-20 bg-yeirin-cream">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-              전문위원
+              주식회사 예이린
             </h2>
             <p className="text-gray-600">
-              법률·행정·세무·노무 분야의{" "}
-              <span className="text-yeirin-orange font-medium">전문위원</span>이
-              예이린의 운영을 지원합니다
+              예이린의{" "}
+              <span className="text-yeirin-orange font-medium">기술 혁신</span>을
+              이끌어가는 구성원을 소개합니다
             </p>
           </div>
-          <MemberRow members={specialistMembers} />
+          <MemberRow members={yeirinCorpMembers} />
         </div>
       </section>
 
@@ -393,12 +359,46 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 현장 전문가 */}
+      {/* 자문위원 */}
       <section className="py-16 md:py-20 bg-yeirin-cream">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-              현장 전문가
+              자문위원
+            </h2>
+            <p className="text-gray-600">
+              다양한 분야의{" "}
+              <span className="text-yeirin-orange font-medium">전문가</span>들이
+              예이린의 사업 방향에 함께 합니다
+            </p>
+          </div>
+          <MemberRow members={advisorMembers} />
+        </div>
+      </section>
+
+      {/* 전문위원 */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+              전문위원
+            </h2>
+            <p className="text-gray-600">
+              법률·행정·세무·노무 분야의{" "}
+              <span className="text-yeirin-orange font-medium">전문위원</span>이
+              예이린의 운영을 지원합니다
+            </p>
+          </div>
+          <MemberRow members={specialistMembers} />
+        </div>
+      </section>
+
+      {/* 파견 전문가 */}
+      <section className="py-16 md:py-20 bg-yeirin-cream">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+              파견 전문가
             </h2>
             <p className="text-gray-600">
               아동복지시설{" "}
