@@ -209,14 +209,18 @@ export const orgChartMembers: Member[] = [
     name: "신상용",
     role: "행정사",
     title: "한가람행정사사무소 행정사",
-    image: "",
+    image: "/images/board/신상용.jpeg",
+    message:
+        "복잡한 행정절차를 간결하고 효율적으로 지원합니다.",
   },
   {
     id: "han-maneung",
     name: "한만응",
     role: "세무사",
     title: "세무회계 혜안 세무사",
-    image: "",
+    image: "/images/board/한만응.jpeg",
+    message:
+        "빈틈없는 세무관리로 예이린의 사업을 지원하겠습니다.",
   },
   {
     id: "kwon-hyunae",
