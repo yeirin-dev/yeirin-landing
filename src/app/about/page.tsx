@@ -1,10 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import {
   boardMembers,
-  fieldExpertMembers, getMemberById,
+  fieldExpertMembers,
   getMembersByIds,
   type Member,
 } from "@/data/members";
