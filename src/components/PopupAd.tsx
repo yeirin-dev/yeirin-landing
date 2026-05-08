@@ -10,13 +10,15 @@ const POPUPS = [
     tab: "5월 프로그램",
     imageSrc: "/popup-may.jpeg",
     imageAlt: "예이린 5월 특별활동 프로그램",
-    linkHref: "https://docs.google.com/forms/d/e/1FAIpQLSc4rbOObPVp-waeADwNU_Feb5yLKDXE7Kg_NsmGMPdjLscv0w/viewform",
+    linkHref:
+      "https://docs.google.com/forms/d/e/1FAIpQLSc4rbOObPVp-waeADwNU_Feb5yLKDXE7Kg_NsmGMPdjLscv0w/viewform",
   },
   {
     tab: "8월 프로그램",
     imageSrc: "/popup-august.png",
     imageAlt: "예이린 8월 특별활동 프로그램",
-    linkHref: "https://docs.google.com/forms/d/e/1FAIpQLSdLnDty52hq_nQEhCE82stIKKWcP5Vb0JXXesu4pJcpfR3PzQ/viewform",
+    linkHref:
+      "https://docs.google.com/forms/d/e/1FAIpQLSdLnDty52hq_nQEhCE82stIKKWcP5Vb0JXXesu4pJcpfR3PzQ/viewform",
   },
 ];
 
@@ -51,57 +53,56 @@ export default function PopupAd() {
   const current = POPUPS[activeTab];
 
   return (
+    <div
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 p-4"
+      onClick={handleClose}
+    >
       <div
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 p-4"
-          onClick={handleClose}
+        className="relative w-full max-w-[420px] max-h-[90vh] rounded-2xl overflow-hidden bg-white shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
       >
-        <div
-            className="relative w-full max-w-[420px] max-h-[90vh] rounded-2xl overflow-hidden bg-white shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-        >
-          <div className="flex border-b border-gray-200">
-            {POPUPS.map((popup, index) => (
-                <button
-                    key={index}
-                    onClick={() => setActiveTab(index)}
-                    className={`flex-1 py-3 text-sm font-semibold transition-colors ${activeTab === index ? "text-gray-900 border-b-2 border-gray-900" : "text-gray-400 hover:text-gray-600"}`}
-                >
-                  {popup.tab}
-                </button>
-            ))}
-          </div>
-          <a
+        <div className="flex border-b border-gray-200">
+          {POPUPS.map((popup, index) => (
+            <button
+              key={index}
+              onClick={() => setActiveTab(index)}
+              className={`flex-1 py-3 text-sm font-semibold transition-colors ${activeTab === index ? "text-gray-900 border-b-2 border-gray-900" : "text-gray-400 hover:text-gray-600"}`}
+            >
+              {popup.tab}
+            </button>
+          ))}
+        </div>
+        <a
           href={current.linkHref}
           target="_blank"
           rel="noopener noreferrer"
           className="block overflow-auto max-h-[75vh]"
-          >
+        >
           <Image
-              src={current.imageSrc}
-              alt={current.imageAlt}
-              width={2338}
-              height={3316}
-              className="w-full h-auto"
-              priority
+            src={current.imageSrc}
+            alt={current.imageAlt}
+            width={2338}
+            height={3316}
+            className="w-full h-auto"
+            priority
           />
         </a>
         <div className="flex border-t border-gray-200">
           <button
-              onClick={handleDismissToday}
-              className="flex-1 py-3 text-sm text-gray-500 hover:bg-gray-50 transition-colors"
+            onClick={handleDismissToday}
+            className="flex-1 py-3 text-sm text-gray-500 hover:bg-gray-50 transition-colors"
           >
             오늘 하루 보지 않기
           </button>
-          <div className="w-px bg-gray-200"/>
+          <div className="w-px bg-gray-200" />
           <button
-              onClick={handleClose}
-              className="flex-1 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
+            onClick={handleClose}
+            className="flex-1 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
           >
             닫기
           </button>
         </div>
       </div>
-</div>
-)
-  ;
+    </div>
+  );
 }

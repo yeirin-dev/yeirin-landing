@@ -14,7 +14,7 @@ export const boardMembers: Member[] = [
     name: "박지영",
     role: "이사장",
     title: "인제대학교 교수 · 사회적협동조합 예이린 이사장",
-    image: "/images/board/박지영.jpeg",
+    image: "/images/board/박지영.jpg",
     message:
         "모든 아이들이 건강하게 자랄 권리가 있습니다. 예이린은 그 권리를 지키기 위해 존재합니다."
   },
@@ -41,7 +41,7 @@ export const boardMembers: Member[] = [
     role: "이사",
     title:
       "부산·싱가폴 ‘카운티’ 총괄 본부장 · 사회적협동조합 예이린 이사",
-    image: "/images/board/박태주.png",
+    image: "/images/board/박태주.jpg",
     message: "아이들이 안전하고 당당하게 자랄 수 있는 사회를 만들겠습니다.",
   },
   {
@@ -50,7 +50,7 @@ export const boardMembers: Member[] = [
     role: "감사",
     title:
       "사회적협동조합 미선나무 이사장 · 사회적협동조합 예이린 감사",
-    image: "/images/board/이창희.png",
+    image: "/images/board/이창희.jpg",
     message: "슬픔을 지우는 따뜻한 사람",
   },
 ];
@@ -136,7 +136,7 @@ export const orgChartMembers: Member[] = [
     name: "김나래",
     role: "팀장",
     title: "예이린 사업본부 팀장",
-    image: "/images/board/김나래.png",
+    image: "/images/board/김나래.jpg",
     message:
       "돌봄이 닿지 못한 아이들 곁에서 동행하며, 연결의 길을 만들어가겠습니다.",
   },
@@ -145,7 +145,7 @@ export const orgChartMembers: Member[] = [
     name: "고현숙",
     role: "주임",
     title: "예이린 사업본부 주임",
-    image: "/images/board/고현숙.jpeg",
+    image: "/images/board/고현숙.jpg",
     message: "아이들의 따뜻한 미래를 만들어가는 길에 함께하겠습니다.",
   },
   // B-IMPACT 얼라이언스
@@ -163,7 +163,7 @@ export const orgChartMembers: Member[] = [
     name: "심민규",
     role: "현장 대표",
     title: "더자람 아동청소년발달센터 · B-IMPACT 현장 대표",
-    image: "/images/board/심민규.webp",
+    image: "/images/board/심민규.jpg",
     message:
         "아이들을 위한 의미 있는 공공사업과 기관들의 협업 및 성장에 밑거름이 될 수 있도록 최선을 다하겠습니다.",
   },
@@ -174,7 +174,7 @@ export const orgChartMembers: Member[] = [
     role: "학계 대표",
     title:
       "경일대학교 평생교육학과 · 경계선 아동 파견전문가 양성단 학계 대표",
-    image: "/images/board/안예지.jpeg",
+    image: "/images/board/안예지.jpg",
     message:
       "특수교육전문가로서 교육사각지대 학습자의 생애주기별 특성과 요구를 연구하고, 다양한 학습자의 가능성을 지원하는 교육체계를 만들어가고 있습니다. 누구도 배움에서 소외되지 않도록, 현장의 문제를 연구와 실천으로 이어가겠습니다.",
   },
@@ -194,7 +194,7 @@ export const orgChartMembers: Member[] = [
     name: "오설화",
     role: "주임",
     title: "예이린 사무국 주임",
-    image: "/images/board/오설화.jpeg",
+    image: "/images/board/오설화.jpg",
     message:
         "나보다 우리를 먼저 생각하는 마음으로 가장 친근하고 신뢰받는 구성원이 되고 싶습니다.",
   },
@@ -213,7 +213,7 @@ export const orgChartMembers: Member[] = [
     name: "신상용",
     role: "행정사",
     title: "한가람행정사사무소 행정사",
-    image: "/images/board/신상용.jpeg",
+    image: "/images/board/신상용.jpg",
     message:
         "복잡한 행정절차를 간결하고 효율적으로 지원합니다.",
   },
@@ -222,7 +222,7 @@ export const orgChartMembers: Member[] = [
     name: "한만응",
     role: "세무사",
     title: "세무회계 혜안 세무사",
-    image: "/images/board/한만응.jpeg",
+    image: "/images/board/한만응.jpg",
     message:
         "빈틈없는 세무관리로 예이린의 사업을 지원하겠습니다.",
   },
@@ -240,7 +240,7 @@ export const orgChartMembers: Member[] = [
     name: "김선호",
     role: "대표",
     title: "(주)인텔리어스",
-    image: "/images/board/김선호.png",
+    image: "/images/board/김선호.jpg",
     message: "기술로 마음을 잇고, 아이들이 안심하고 자랄 수 있도록 함께하겠습니다.",
   },
   {
@@ -258,7 +258,7 @@ export const orgChartMembers: Member[] = [
     name: "황차동",
     role: "대표",
     title: "(주)아이피나우",
-    image: "/images/board/황차동.png",
+    image: "/images/board/황차동.jpg",
     message: "모든 아이들이 존중받고 성장할 수 있도록, 따뜻한 돌봄과 변화를 함께 만들어가겠습니다.",
   },
 ];
@@ -414,7 +414,7 @@ export const fieldExpertMembers: Member[] = [
     name: "박수희",
     role: "파견 전문가",
     title: "희락원",
-    image: "/images/board/박수희.png",
+    image: "/images/board/박수희.jpg",
     message: "느리지만 천천히 한발한발 나아가는 아이들의 따뜻한 동반자가 되겠습니다.",
   },
   {
