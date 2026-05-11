@@ -1,10 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import {
   boardMembers,
-  fieldExpertMembers, getMemberById,
+  fieldExpertMembers,
   getMembersByIds,
   type Member,
 } from "@/data/members";
@@ -452,7 +451,7 @@ export default function AboutPage() {
       <section id="ci-character" className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-12">
-            CI Character
+            예이린 브랜딩
           </h2>
           <CICharacterCarousel />
         </div>

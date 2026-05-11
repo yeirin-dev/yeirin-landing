@@ -5,8 +5,26 @@ import Image from "next/image";
 
 const STORAGE_KEY = "popup-ad-dismissed";
 
+const POPUPS = [
+  {
+    tab: "5월 프로그램",
+    imageSrc: "/popup-may.jpeg",
+    imageAlt: "예이린 5월 특별활동 프로그램",
+    linkHref:
+      "https://docs.google.com/forms/d/e/1FAIpQLSc4rbOObPVp-waeADwNU_Feb5yLKDXE7Kg_NsmGMPdjLscv0w/viewform",
+  },
+  {
+    tab: "8월 프로그램",
+    imageSrc: "/popup-august.png",
+    imageAlt: "예이린 8월 특별활동 프로그램",
+    linkHref:
+      "https://docs.google.com/forms/d/e/1FAIpQLSdLnDty52hq_nQEhCE82stIKKWcP5Vb0JXXesu4pJcpfR3PzQ/viewform",
+  },
+];
+
 export default function PopupAd() {
   const [visible, setVisible] = useState(false);
+  const [activeTab, setActiveTab] = useState(0);
 
   useEffect(() => {
     const dismissed = localStorage.getItem(STORAGE_KEY);
@@ -32,6 +50,7 @@ export default function PopupAd() {
   };
 
   if (!visible) return null;
+  const current = POPUPS[activeTab];
 
   return (
     <div
@@ -42,15 +61,26 @@ export default function PopupAd() {
         className="relative w-full max-w-[420px] max-h-[90vh] rounded-2xl overflow-hidden bg-white shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
+        <div className="flex border-b border-gray-200">
+          {POPUPS.map((popup, index) => (
+            <button
+              key={index}
+              onClick={() => setActiveTab(index)}
+              className={`flex-1 py-3 text-sm font-semibold transition-colors ${activeTab === index ? "text-gray-900 border-b-2 border-gray-900" : "text-gray-400 hover:text-gray-600"}`}
+            >
+              {popup.tab}
+            </button>
+          ))}
+        </div>
         <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSc4rbOObPVp-waeADwNU_Feb5yLKDXE7Kg_NsmGMPdjLscv0w/viewform"
+          href={current.linkHref}
           target="_blank"
           rel="noopener noreferrer"
           className="block overflow-auto max-h-[75vh]"
         >
           <Image
-            src="/popup-may.jpeg"
-            alt="예이린 5월 특별활동 프로그램"
+            src={current.imageSrc}
+            alt={current.imageAlt}
             width={2338}
             height={3316}
             className="w-full h-auto"
