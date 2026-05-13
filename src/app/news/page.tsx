@@ -2,13 +2,19 @@
 
 import { useState } from "react";
 import { Search, ExternalLink } from "lucide-react";
-import { newsData } from "@/data/news";
+import { newsData, type NewsCategory } from "@/data/news";
 
-type CategoryType = "all" | "press";
+type CategoryType = "all" | NewsCategory;
 
-const categories = [
-  { id: "all" as CategoryType, label: "전체" },
-  { id: "press" as CategoryType, label: "보도자료" },
+const CATEGORY_LABELS: Record<NewsCategory, string> = {
+  press: "보도자료",
+  partner: "조합원 소식",
+};
+
+const categories: { id: CategoryType; label: string }[] = [
+  { id: "all", label: "전체" },
+  { id: "press", label: CATEGORY_LABELS.press },
+  { id: "partner", label: CATEGORY_LABELS.partner },
 ];
 
 export default function NewsPage() {
@@ -119,7 +125,7 @@ export default function NewsPage() {
                   )}
                   <div className="absolute top-4 left-4">
                     <span className="text-xs px-3 py-1 rounded-full bg-yeirin-yellow text-gray-900 font-medium">
-                      보도자료
+                      {CATEGORY_LABELS[news.category]}
                     </span>
                   </div>
                   <div className="absolute top-4 right-4">

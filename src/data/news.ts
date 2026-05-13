@@ -1,14 +1,25 @@
+export type NewsCategory = "press" | "partner";
+
 export interface NewsItem {
   id: number;
   title: string;
   date: string;
-  category: string;
+  category: NewsCategory;
   media: string;
   url: string;
   thumbnail: string;
 }
 
 export const newsData: NewsItem[] = [
+  {
+    id: 27,
+    title: "아이피나우, 제2회 대한민국 인공지능 혁신대상 'AI혁신 종합대상' 수상",
+    date: "2026.05.11",
+    category: "partner",
+    media: "전자신문",
+    url: "https://v.daum.net/v/20260511180358079",
+    thumbnail: "https://img1.daumcdn.net/thumb/S1200x630/?fname=https://t1.daumcdn.net/news/202605/12/etimesi/20260512113308717gxpa.jpg",
+  },
   {
     id: 26,
     title: "\"현장에서 답을 찾다\"… 아동·청소년 마음성장 교육, 부산에서 첫 출발",
