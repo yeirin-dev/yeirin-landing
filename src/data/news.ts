@@ -1,8 +1,10 @@
+export type NewsCategory = "press" | "partner";
+
 export interface NewsItem {
   id: number;
   title: string;
   date: string;
-  category: string;
+  category: NewsCategory;
   media: string;
   url: string;
   thumbnail: string;
