@@ -12,6 +12,24 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: 29,
+    title: "'B-IMPACT 얼라이언스' 첫 라운드테이블…AI 연계 통합 돌봄망 본격화",
+    date: "2026.05.22",
+    category: "press",
+    media: "뉴스1",
+    url: "https://www.news1.kr/local/busan-gyeongnam/6175498",
+    thumbnail: "https://i3n.news1.kr/system/photos/2026/5/22/7921527/high.jpg",
+  },
+  {
+    id: 28,
+    title: "예이린, 부산 'B-임팩트 얼라이언스' 정기 라운드테이블 개최",
+    date: "2026.05.22",
+    category: "press",
+    media: "더파워",
+    url: "https://www.thepowernews.co.kr/view.php?ud=20260522164333986461d72a7352_7",
+    thumbnail: "https://cliimage.commutil.kr/phpwas/restmb_allidxmake.php?pp=002&idx=999&simg=2026052216401507421061d72a735222297138226.jpg&nmt=7",
+  },
+  {
     id: 27,
     title: "아이피나우, 제2회 대한민국 인공지능 혁신대상 'AI혁신 종합대상' 수상",
     date: "2026.05.11",
