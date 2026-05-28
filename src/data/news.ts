@@ -12,6 +12,15 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: 30,
+    title: "부산 'B-임팩트 얼라이언스', AI 기반 아동 마음건강 돌봄망 가동",
+    date: "2026.05.27",
+    category: "press",
+    media: "뉴스프리존",
+    url: "https://www.newsfreezone.co.kr/news/articleView.html?idxno=691800",
+    thumbnail: "https://cdn.newsfreezone.co.kr/news/thumbnail/202605/691800_736109_4012_v150.jpg",
+  },
+  {
     id: 29,
     title: "'B-IMPACT 얼라이언스' 첫 라운드테이블…AI 연계 통합 돌봄망 본격화",
     date: "2026.05.22",
