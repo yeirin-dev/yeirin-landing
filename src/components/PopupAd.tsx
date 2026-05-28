@@ -7,11 +7,11 @@ const STORAGE_KEY = "popup-ad-dismissed";
 
 const POPUPS = [
   {
-    tab: "5월 프로그램",
-    imageSrc: "/popup-may.jpeg",
-    imageAlt: "예이린 5월 특별활동 프로그램",
+    tab: "6월 프로그램",
+    imageSrc: "/popup-june.png",
+    imageAlt: "예이린 6월 특별활동 프로그램",
     linkHref:
-      "https://docs.google.com/forms/d/e/1FAIpQLSc4rbOObPVp-waeADwNU_Feb5yLKDXE7Kg_NsmGMPdjLscv0w/viewform",
+      "https://docs.google.com/forms/d/e/1FAIpQLScpqtRoKvMrBLaemu7aKlZjdi4Dx6mzlQAd2T8oalpnsGOEug/viewform",
   },
   {
     tab: "8월 프로그램",
