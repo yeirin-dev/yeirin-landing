@@ -12,6 +12,24 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: 32,
+    title: "예이린 사회적협동조합, 경계선 지능 아동 위한 'AI 로봇 코딩교실' 열어",
+    date: "2026.06.08",
+    category: "press",
+    media: "부산일보",
+    url: "https://n.news.naver.com/article/082/0001384347",
+    thumbnail: "https://imgnews.pstatic.net/image/082/2026/06/08/0001384347_001_20260608155315434.jpg?type=w860",
+  },
+  {
+    id: 31,
+    title: '"로봇아, 같이 놀자!"…경계선 지능 아동 대상 AI 로봇코딩교실 성료',
+    date: "2026.06.08",
+    category: "press",
+    media: "시선뉴스",
+    url: "https://www.sisunnews.co.kr/news/articleView.html?idxno=240093",
+    thumbnail: "https://cdn.sisunnews.co.kr/news/thumbnail/202606/240093_466496_561_v150.jpg",
+  },
+  {
     id: 30,
     title: "부산 'B-임팩트 얼라이언스', AI 기반 아동 마음건강 돌봄망 가동",
     date: "2026.05.27",
