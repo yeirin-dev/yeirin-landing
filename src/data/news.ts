@@ -12,6 +12,15 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: 33,
+    title: "예이린-부산사회복지관협회, '통합 돌봄' 위해 맞손",
+    date: "2026.06.16",
+    category: "press",
+    media: "스트레이트뉴스",
+    url: "https://www.straightnews.co.kr/news/articleView.html?idxno=304838",
+    thumbnail: "https://cdn.straightnews.co.kr/news/thumbnail/202606/304838_214748_5741_v150.jpg",
+  },
+  {
     id: 32,
     title: "예이린 사회적협동조합, 경계선 지능 아동 위한 'AI 로봇 코딩교실' 열어",
     date: "2026.06.08",
