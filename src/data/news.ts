@@ -12,6 +12,15 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: 34,
+    title: "아뮤즈, 동의대 테니스팀에 발전기금 5000만 원 기부 약정",
+    date: "2026.05.17",
+    category: "partner",
+    media: "부산일보",
+    url: "https://www.busan.com/view/busan/view.php?code=2026051416264133335",
+    thumbnail: "https://www.busan.com/nas/wcms/wcms_data/photos/2026/05/14/2026051416262726490_l.jpg",
+  },
+  {
     id: 33,
     title: "예이린-부산사회복지관협회, '통합 돌봄' 위해 맞손",
     date: "2026.06.16",
