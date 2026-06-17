@@ -12,15 +12,6 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
-    id: 34,
-    title: "아뮤즈, 동의대 테니스팀에 발전기금 5000만 원 기부 약정",
-    date: "2026.05.17",
-    category: "partner",
-    media: "부산일보",
-    url: "https://www.busan.com/view/busan/view.php?code=2026051416264133335",
-    thumbnail: "https://www.busan.com/nas/wcms/wcms_data/photos/2026/05/14/2026051416262726490_l.jpg",
-  },
-  {
     id: 33,
     title: "예이린-부산사회복지관협회, '통합 돌봄' 위해 맞손",
     date: "2026.06.16",
@@ -75,6 +66,15 @@ export const newsData: NewsItem[] = [
     thumbnail: "https://cliimage.commutil.kr/phpwas/restmb_allidxmake.php?pp=002&idx=999&simg=2026052216401507421061d72a735222297138226.jpg&nmt=7",
   },
   {
+    id: 34,
+    title: "아뮤즈, 동의대 테니스팀에 발전기금 5000만 원 기부 약정",
+    date: "2026.05.17",
+    category: "partner",
+    media: "부산일보",
+    url: "https://www.busan.com/view/busan/view.php?code=2026051416264133335",
+    thumbnail: "https://www.busan.com/nas/wcms/wcms_data/photos/2026/05/14/2026051416262726490_l.jpg",
+  },
+  {
     id: 27,
     title: "아이피나우, 제2회 대한민국 인공지능 혁신대상 'AI혁신 종합대상' 수상",
     date: "2026.05.11",
@@ -111,6 +111,15 @@ export const newsData: NewsItem[] = [
     thumbnail: "https://imgnews.pstatic.net/image/082/2026/03/08/0001369837_001_20260308182019036.jpg?type=w800",
   },
   {
+    id: 21,
+    title: "부산서 보호아동 맞춤 지원...예이린, 파견전문가 출범식",
+    date: "2026.03.04",
+    category: "press",
+    media: "느린인뉴스",
+    url: "https://www.slowlearnernews.org/news/articleView.html?idxno=2996",
+    thumbnail: "https://cdn.slowlearnernews.org/news/photo/202603/2996_4108_4914.png",
+  },
+  {
     id: 23,
     title: "부산 아동·청소년 심리지원 네트워크 'B-IMPACT 얼라이언스' 출범",
     date: "2026.03.03",
@@ -127,15 +136,6 @@ export const newsData: NewsItem[] = [
     media: "이투뉴스",
     url: "https://www.e2news.com/news/articleView.html?idxno=328275",
     thumbnail: "https://cdn.e2news.com/news/thumbnail/202603/328275_226464_4554_v150.jpg",
-  },
-  {
-    id: 21,
-    title: "부산서 보호아동 맞춤 지원...예이린, 파견전문가 출범식",
-    date: "2026.03.04",
-    category: "press",
-    media: "느린인뉴스",
-    url: "https://www.slowlearnernews.org/news/articleView.html?idxno=2996",
-    thumbnail: "https://cdn.slowlearnernews.org/news/photo/202603/2996_4108_4914.png",
   },
   {
     id: 20,
@@ -201,15 +201,6 @@ export const newsData: NewsItem[] = [
     thumbnail: "https://m.segyebiz.com/content/image/2025/12/24/20251224512183.jpg",
   },
   {
-    id: 13,
-    title: "대화형 AI 심리상담 플랫폼… 아동돌봄 연계 생태계 구축",
-    date: "2025.11.03",
-    category: "press",
-    media: "부산일보",
-    url: "https://www.busan.com/view/busan/view.php?code=2025110317410585667",
-    thumbnail: "https://www.busan.com/nas/wcms/wcms_data/photos/2025/11/03/2025110317410501022_l.jpg",
-  },
-  {
     id: 12,
     title: "예이린 사회적협동조합–굿네이버스 영남본부, '아동 마음건강 지원' 업무협약 체결",
     date: "2025.12.02",
@@ -226,6 +217,15 @@ export const newsData: NewsItem[] = [
     media: "itbiznews",
     url: "https://www.itbiznews.com/news/articleView.html?idxno=186682",
     thumbnail: "https://cdn.itbiznews.com/news/photo/202511/186682_190683_2249.jpg",
+  },
+  {
+    id: 13,
+    title: "대화형 AI 심리상담 플랫폼… 아동돌봄 연계 생태계 구축",
+    date: "2025.11.03",
+    category: "press",
+    media: "부산일보",
+    url: "https://www.busan.com/view/busan/view.php?code=2025110317410585667",
+    thumbnail: "https://www.busan.com/nas/wcms/wcms_data/photos/2025/11/03/2025110317410501022_l.jpg",
   },
   {
     id: 10,
