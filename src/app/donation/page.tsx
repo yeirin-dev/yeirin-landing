@@ -181,10 +181,10 @@ export default function DonationPage() {
             <p className="mt-2">
               이메일:{" "}
               <a
-                href="mailto:yeirin2023@gmail.com"
+                href="mailto:contact@yeirin.com"
                 className="text-yeirin-orange hover:underline"
               >
-                yeirin2023@gmail.com
+                contact@yeirin.com
               </a>
             </p>
           </div>
