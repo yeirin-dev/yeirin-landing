@@ -193,11 +193,13 @@ function ActivitiesContent() {
 
           {/* 긴급 의뢰 CTA - care 탭에서만 노출 */}
           {activeTab === "care" && (
-            <FastTrackCTA
-                onClick={() =>
-                    window.open("https://fast.yeirin.com", "_blank", "noopener,noreferrer")
-                }
-            />
+              <div className="mt-16">
+                <FastTrackCTA
+                  onClick={() =>
+                      window.open("https://fast.yeirin.com", "_blank", "noopener,noreferrer")
+                  }
+                />
+              </div>
           )}
         </div>
       </section>
