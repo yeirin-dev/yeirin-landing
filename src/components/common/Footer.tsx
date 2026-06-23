@@ -31,8 +31,8 @@ export default function Footer() {
             {/* Contact Info */}
             <div className="text-sm text-gray-600 space-y-1">
               <p>(48117) 부산광역시 해운대구 달맞이길 117번다길 42-8 301호</p>
-              <p>대표이메일 yeirin2023@gmail.com</p>
-              <p>사업자번호</p>
+              <p>대표이메일 contact@yeirin.com</p>
+              <p>사업자번호 340-82-00603</p>
             </div>
 
             {/* Legal Links */}
@@ -107,7 +107,7 @@ export default function Footer() {
                   />
                 </Link>
                 <Link
-                  href="https://www.instagram.com/yeiri_n2023official/"
+                  href="https://www.instagram.com/yeirin_official/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="인스타그램"
@@ -125,7 +125,7 @@ export default function Footer() {
 
             {/* Copyright */}
             <p className="text-sm text-gray-500">
-              © 2021 Yeirin All Rights Reserved.
+              © 2023 Yeirin All Rights Reserved.
             </p>
           </div>
         </div>
