@@ -7,13 +7,6 @@ const STORAGE_KEY = "popup-ad-dismissed";
 
 const POPUPS = [
   {
-    tab: "6월 프로그램",
-    imageSrc: "/popup-june.png",
-    imageAlt: "예이린 6월 특별활동 프로그램",
-    linkHref:
-      "https://docs.google.com/forms/d/e/1FAIpQLScpqtRoKvMrBLaemu7aKlZjdi4Dx6mzlQAd2T8oalpnsGOEug/viewform",
-  },
-  {
     tab: "8월 프로그램",
     imageSrc: "/popup-august.png",
     imageAlt: "예이린 8월 특별활동 프로그램",
@@ -61,17 +54,19 @@ export default function PopupAd() {
         className="relative w-full max-w-[420px] max-h-[90vh] rounded-2xl overflow-hidden bg-white shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex border-b border-gray-200">
-          {POPUPS.map((popup, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveTab(index)}
-              className={`flex-1 py-3 text-sm font-semibold transition-colors ${activeTab === index ? "text-gray-900 border-b-2 border-gray-900" : "text-gray-400 hover:text-gray-600"}`}
-            >
-              {popup.tab}
-            </button>
-          ))}
-        </div>
+        {POPUPS.length > 1 && (
+          <div className="flex border-b border-gray-200">
+            {POPUPS.map((popup, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveTab(index)}
+                className={`flex-1 py-3 text-sm font-semibold transition-colors ${activeTab === index ? "text-gray-900 border-b-2 border-gray-900" : "text-gray-400 hover:text-gray-600"}`}
+              >
+                {popup.tab}
+              </button>
+            ))}
+          </div>
+        )}
         <a
           href={current.linkHref}
           target="_blank"
