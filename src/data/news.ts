@@ -12,6 +12,15 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: 35,
+    title: "예이린, 현장 실천가 위한 '마음성장 아카데미' 6월 특강 성료",
+    date: "2026.07.08",
+    category: "press",
+    media: "이투뉴스",
+    url: "https://www.e2news.com/news/articleView.html?idxno=332085",
+    thumbnail: "https://cdn.e2news.com/news/photo/202607/332085_230110_4132.jpg",
+  },
+  {
     id: 33,
     title: "예이린-부산사회복지관협회, '통합 돌봄' 위해 맞손",
     date: "2026.06.16",
