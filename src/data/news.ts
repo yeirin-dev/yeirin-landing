@@ -12,6 +12,15 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: 36,
+    title: "예이린·민플란트 치과, 학대피해 아동 의료·복지 사각지대 지우는 '온정의 손길'",
+    date: "2026.07.10",
+    category: "press",
+    media: "더파워뉴스",
+    url: "https://www.thepowernews.co.kr/view.php?ud=20260709213758309361d72a7352_7",
+    thumbnail: "https://cliimage.commutil.kr/phpwas/restmb_allidxmake.php?pp=002&idx=999&simg=2026070921391801846061d72a735212243246101.jpg&nmt=7",
+  },
+  {
     id: 35,
     title: "예이린, 현장 실천가 위한 '마음성장 아카데미' 6월 특강 성료",
     date: "2026.07.08",
