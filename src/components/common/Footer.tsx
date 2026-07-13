@@ -31,6 +31,7 @@ export default function Footer() {
             {/* Contact Info */}
             <div className="text-sm text-gray-600 space-y-1">
               <p>(48117) 부산광역시 해운대구 달맞이길 117번다길 42-8 301호</p>
+              <p>대표전화 010-7977-7054</p>
               <p>대표이메일 contact@yeirin.com</p>
               <p>사업자번호 340-82-00603</p>
             </div>
