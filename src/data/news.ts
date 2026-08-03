@@ -12,6 +12,24 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: 38,
+    title: "예이린, 위기아동 통합지원 본격화",
+    date: "2026.08.01",
+    category: "press",
+    media: "스트레이트뉴스",
+    url: "https://www.straightnews.co.kr/news/articleView.html?idxno=308134",
+    thumbnail: "https://cdn.straightnews.co.kr/news/thumbnail/202608/308134_218752_4751_v150.jpg",
+  },
+  {
+    id: 37,
+    title: "(주)에팩, 예이린에 후원금 300만원 기탁",
+    date: "2026.08.01",
+    category: "press",
+    media: "더파워뉴스",
+    url: "https://www.thepowernews.co.kr/view.php?ud=20260801155843212461d72a7352_7",
+    thumbnail: "https://cliimage.commutil.kr/phpwas/restmb_allidxmake.php?pp=002&idx=3&simg=2026080116041102071061d72a735212243246101.jpg&nmt=7",
+  },
+  {
     id: 36,
     title: "예이린·민플란트 치과, 학대피해 아동 의료·복지 사각지대 지우는 '온정의 손길'",
     date: "2026.07.10",
