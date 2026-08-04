@@ -7,6 +7,12 @@ const STORAGE_KEY = "popup-ad-dismissed";
 
 const POPUPS = [
   {
+    tab: "9월 프로그램",
+    imageSrc: "/popup-september.png",
+    imageAlt: "예이린 9월 도시농부 유스팜 프로그램",
+    linkHref: "https://forms.gle/5iXSeztAZSYjvrEi7",
+  },
+  {
     tab: "8월 프로그램",
     imageSrc: "/popup-august.png",
     imageAlt: "예이린 8월 특별활동 프로그램",
