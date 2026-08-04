@@ -82,8 +82,8 @@ export default function PopupAd() {
           <Image
             src={current.imageSrc}
             alt={current.imageAlt}
-            width={2338}
-            height={3316}
+            width={794}
+            height={1123}
             className="w-full h-auto"
             priority
           />
