@@ -12,6 +12,15 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: 39,
+    title: "\"AI 시대, 사각지대 놓인 경계선 지능 아동 지원도 달라져야\"",
+    date: "2026.08.26",
+    category: "press",
+    media: "뉴스1",
+    url: "https://www.news1.kr/local/busan-gyeongnam/6270380",
+    thumbnail: "https://i3n.news1.kr/system/photos/2026/8/26/8073715/high.jpg",
+  },
+  {
     id: 38,
     title: "예이린, 위기아동 통합지원 본격화",
     date: "2026.08.01",
