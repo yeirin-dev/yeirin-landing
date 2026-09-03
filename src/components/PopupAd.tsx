@@ -13,11 +13,10 @@ const POPUPS = [
     linkHref: "https://forms.gle/5iXSeztAZSYjvrEi7",
   },
   {
-    tab: "8월 프로그램",
-    imageSrc: "/popup-august.png",
-    imageAlt: "예이린 8월 특별활동 프로그램",
-    linkHref:
-      "https://docs.google.com/forms/d/e/1FAIpQLSdLnDty52hq_nQEhCE82stIKKWcP5Vb0JXXesu4pJcpfR3PzQ/viewform",
+    tab: "10월 특강",
+    imageSrc: "/popup-october.png",
+    imageAlt: "예이린 10월 아동·청소년 마음성장 아카데미 특강",
+    linkHref: "https://forms.gle/YFEMxBo4PxyJhZ3T6",
   },
 ];
 
