@@ -12,6 +12,15 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: 40,
+    title: "사랑의열매, 사회문제 대응 기여한 우수 배분사례 20건 선정",
+    date: "2026.09.09",
+    category: "press",
+    media: "공감신문",
+    url: "https://www.gokorea.kr/news/articleView.html?idxno=877653",
+    thumbnail: "https://cdn.gokorea.kr/news/photo/202609/877653_154844_3219.jpg",
+  },
+  {
     id: 39,
     title: "\"AI 시대, 사각지대 놓인 경계선 지능 아동 지원도 달라져야\"",
     date: "2026.08.26",
