@@ -12,6 +12,42 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: 41,
+    title: "예이린 사회적협동조합, 사랑의열매 배분사업 우수상",
+    date: "2026.09.27",
+    category: "press",
+    media: "부산일보",
+    url: "https://n.news.naver.com/article/082/0001399981?sid=102",
+    thumbnail: "https://imgnews.pstatic.net/image/082/2026/09/27/0001399981_001_20260927151420382.jpg?type=w800",
+  },
+  {
+    id: 42,
+    title: "예이린, SOVAC서 '사람과 기술 잇는 돌봄혁신' 선봬",
+    date: "2026.09.23",
+    category: "press",
+    media: "국민일보",
+    url: "https://www.kmib.co.kr/article/view.asp?arcid=9000016869&cp=nv",
+    thumbnail: "https://image.kmib.co.kr/online_image/2026/0923/01100201.20260923500697.jpg",
+  },
+  {
+    id: 43,
+    title: "\"직접 고르고, 계산하고, 경험한다\"…예이린, 경계선·학교밖 청소년 마음성장 캠프",
+    date: "2026.09.23",
+    category: "press",
+    media: "E동아",
+    url: "https://edu.donga.com/news/articleView.html?idxno=112259",
+    thumbnail: "https://cdn.edu.donga.com/news/photo/202609/112259_176734_4058.jpg",
+  },
+  {
+    id: 44,
+    title: "아이피나우, '2026 대한민국 AI 산업 대상' 수상",
+    date: "2026.09.15",
+    category: "partner",
+    media: "머니투데이",
+    url: "https://n.news.naver.com/article/008/0005414159?sid=101",
+    thumbnail: "https://imgnews.pstatic.net/image/008/2026/09/15/0005414159_001_20260915172912618.jpg?type=w800",
+  },
+  {
     id: 40,
     title: "사랑의열매, 사회문제 대응 기여한 우수 배분사례 20건 선정",
     date: "2026.09.09",
