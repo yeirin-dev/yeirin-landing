@@ -5,18 +5,19 @@ import Image from "next/image";
 
 const STORAGE_KEY = "popup-ad-dismissed";
 
-const POPUPS = [
-  {
-    tab: "9월 프로그램",
-    imageSrc: "/popup-september.png",
-    imageAlt: "예이린 9월 도시농부 유스팜 프로그램",
-    linkHref: "https://forms.gle/5iXSeztAZSYjvrEi7",
-  },
+type PopupItem = {
+  tab: string;
+  imageSrc: string;
+  imageAlt: string;
+  linkHref?: string;
+};
+
+const POPUPS: PopupItem[] = [
   {
     tab: "10월 특강",
     imageSrc: "/popup-october.png",
     imageAlt: "예이린 10월 아동·청소년 마음성장 아카데미 특강",
-    linkHref: "https://forms.gle/YFEMxBo4PxyJhZ3T6",
+    // linkHref: "https://forms.gle/YFEMxBo4PxyJhZ3T6", // 폼 응답 마감으로 임시 비활성화 (2026-09-28)
   },
 ];
 
@@ -72,21 +73,34 @@ export default function PopupAd() {
             ))}
           </div>
         )}
-        <a
-          href={current.linkHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block overflow-auto max-h-[75vh]"
-        >
-          <Image
-            src={current.imageSrc}
-            alt={current.imageAlt}
-            width={794}
-            height={1123}
-            className="w-full h-auto"
-            priority
-          />
-        </a>
+        {current.linkHref ? (
+          <a
+            href={current.linkHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block overflow-auto max-h-[75vh]"
+          >
+            <Image
+              src={current.imageSrc}
+              alt={current.imageAlt}
+              width={794}
+              height={1123}
+              className="w-full h-auto"
+              priority
+            />
+          </a>
+        ) : (
+          <div className="block overflow-auto max-h-[75vh]">
+            <Image
+              src={current.imageSrc}
+              alt={current.imageAlt}
+              width={794}
+              height={1123}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
+        )}
         <div className="flex border-t border-gray-200">
           <button
             onClick={handleDismissToday}
