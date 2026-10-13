@@ -121,12 +121,12 @@ export const orgChartMembers: Member[] = [
     image: "/images/board/이성진.jpg",
     message: "아이들이 소외감을 느끼지 않도록 돌보겠습니다.",
   },
-  // 아동복지사업본부
+  // 아동통합지원본부
   {
     id: "kim-narae",
     name: "김나래",
     role: "팀장",
-    title: "예이린 아동복지사업본부 팀장",
+    title: "예이린 아동통합지원본부 팀장",
     image: "/images/board/김나래.jpg",
     message:
       "돌봄이 닿지 못한 아이들 곁에서 동행하며, 연결의 길을 만들어가겠습니다.",
@@ -135,7 +135,7 @@ export const orgChartMembers: Member[] = [
     id: "choi-seungyeon",
     name: "최승연",
     role: "사원",
-    title: "예이린 아동복지사업본부 사원",
+    title: "예이린 아동통합지원본부 사원",
     image: "/images/board/최승연.jpg",
     message: "아이들의 따뜻한 미래를 위해 함께 하겠습니다.",
   },
