@@ -114,6 +114,7 @@ const advisors: Person[] = [
 
 const businessTeam: Person[] = [
   { id: "kim-narae", name: "김나래", role: "팀장" },
+  { id: "choi-seungyeon", name: "최승연", role: "사원" },
   { id: "go-hyunsook", name: "고현숙", role: "주임" },
   { id: "kim-hunjeong", name: "김훈정", role: "주임" },
 ];
@@ -310,7 +311,7 @@ export default function OrgChart() {
             {/* 본부 / 사업단 */}
             <div className="grid grid-cols-12 gap-4 md:gap-6">
 
-              {/* 사업본부 + 산하 */}
+              {/* 아동복지사업본부 + 산하 */}
               <div className="col-span-12 md:col-span-4 space-y-7">
                 <ArcherElement
                   id="business"
@@ -330,7 +331,7 @@ export default function OrgChart() {
                   ]}
                 >
                   <div>
-                    <GroupCard header={{ label: "사업본부", color: "dark" }}>
+                    <GroupCard header={{ label: "아동복지사업본부", color: "dark" }}>
                       <div className="space-y-3">
                         {businessTeam.map((p) => (
                           <div key={p.id} className="flex justify-center">

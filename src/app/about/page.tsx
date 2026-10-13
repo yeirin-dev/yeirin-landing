@@ -21,7 +21,7 @@ const advisorMembers = getMembersByIds([
   "shin-hyunsang",
   "lee-sungjin",
 ]);
-const businessTeamMembers = getMembersByIds(["kim-narae", "go-hyunsook", "kim-hunjeong"]);
+const businessTeamMembers = getMembersByIds(["kim-narae", "choi-seungyeon", "go-hyunsook", "kim-hunjeong"]);
 const bImpactMembers = getMembersByIds(["kim-younggeun", "shim-mingyu"]);
 const borderlineMembers = getMembersByIds(["ahn-yeji", "jeon-jongsu"]);
 const officeMembers = getMembersByIds(["lee-jongyeop", "byun-hoyoung"]);
@@ -262,12 +262,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 사업본부 · 사무국 */}
+      {/* 아동복지사업본부 · 사무국 */}
       <section className="py-16 md:py-20 bg-yeirin-cream">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-              사업본부 · 사무국
+              아동복지사업본부 · 사무국
             </h2>
             <p className="text-gray-600">
               예이린의{" "}
@@ -278,7 +278,7 @@ export default function AboutPage() {
           <div className="flex flex-col md:flex-row md:justify-center md:items-start gap-12 md:gap-x-20 lg:gap-x-28">
             <div>
               <h3 className="text-center text-lg md:text-xl font-bold text-yeirin-orange mb-6">
-                사업본부
+                아동복지사업본부
               </h3>
               <MemberRow members={businessTeamMembers} />
             </div>
@@ -301,7 +301,7 @@ export default function AboutPage() {
               B-IMPACT 얼라이언스 · 경계선 아동 파견전문가 양성단
             </h2>
             <p className="text-gray-600">
-              사업본부 산하의{" "}
+              아동복지사업본부 산하의{" "}
               <span className="text-yeirin-orange font-medium">전문 사업단</span>
               입니다
             </p>
