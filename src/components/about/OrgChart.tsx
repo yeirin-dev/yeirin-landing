@@ -322,7 +322,7 @@ export default function OrgChart() {
             {/* 본부 / 사업단 */}
             <div className="grid grid-cols-12 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)_minmax(0,2fr)_minmax(0,2.5fr)_minmax(0,2.5fr)] gap-4 md:gap-6">
 
-              {/* 아동복지사업본부 + 산하 */}
+              {/* 아동통합지원본부 + 산하 */}
               <div className="col-span-12 md:col-span-1 space-y-7">
                 <ArcherElement
                   id="business"
@@ -342,7 +342,7 @@ export default function OrgChart() {
                   ]}
                 >
                   <div>
-                    <GroupCard header={{ label: "아동복지사업본부", color: "dark" }}>
+                    <GroupCard header={{ label: "아동통합지원본부", color: "dark" }}>
                       <div className="space-y-3">
                         {businessTeam.map((p) => (
                           <div key={p.id} className="flex justify-center">
