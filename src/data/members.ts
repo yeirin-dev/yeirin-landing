@@ -68,15 +68,6 @@ export const techMembers: Member[] = [
 
 // 조직도에만 표시되는 인원 (상세 프로필 추후 보강 예정)
 export const orgChartMembers: Member[] = [
-  // (주) 예이린
-  {
-    id: "kim-hunjeong",
-    name: "김훈정",
-    role: "주임",
-    title: "예이린 주임",
-    image: "/images/board/김훈정.jpg",
-    message: "기술을 통해 사회에 가치를 환원하겠습니다.",
-  },
   // 자문위원
   {
     id: "park-suyoung",
@@ -148,13 +139,30 @@ export const orgChartMembers: Member[] = [
     image: "/images/board/최승연.jpg",
     message: "아이들의 따뜻한 미래를 위해 함께 하겠습니다.",
   },
+  // AI돌봄혁신본부
   {
     id: "go-hyunsook",
     name: "고현숙",
     role: "주임",
-    title: "예이린 사업본부 주임",
+    title: "예이린 AI돌봄혁신본부 주임",
     image: "/images/board/고현숙.jpg",
     message: "아이들의 따뜻한 미래를 만들어가는 길에 함께하겠습니다.",
+  },
+  {
+    id: "kim-hunjeong",
+    name: "김훈정",
+    role: "주임",
+    title: "예이린 AI돌봄혁신본부 주임",
+    image: "/images/board/김훈정.jpg",
+    message: "기술을 통해 사회에 가치를 환원하겠습니다.",
+  },
+  {
+    id: "lee-wiseong",
+    name: "이위성",
+    role: "사원",
+    title: "예이린 AI돌봄혁신본부 사원",
+    image: "/images/board/이위성.jpg",
+    message: "아이들의 작은 발 디딤이 큰 울림이 될 수 있도록 노력하겠습니다.",
   },
   // B-IMPACT 얼라이언스
   {

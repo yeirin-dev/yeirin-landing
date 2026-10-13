@@ -21,7 +21,8 @@ const advisorMembers = getMembersByIds([
   "shin-hyunsang",
   "lee-sungjin",
 ]);
-const businessTeamMembers = getMembersByIds(["kim-narae", "choi-seungyeon", "go-hyunsook", "kim-hunjeong"]);
+const businessTeamMembers = getMembersByIds(["kim-narae", "choi-seungyeon"]);
+const aiCareMembers = getMembersByIds(["go-hyunsook", "kim-hunjeong", "lee-wiseong"]);
 const bImpactMembers = getMembersByIds(["kim-younggeun", "shim-mingyu"]);
 const borderlineMembers = getMembersByIds(["ahn-yeji", "jeon-jongsu"]);
 const officeMembers = getMembersByIds(["lee-jongyeop", "byun-hoyoung"]);
@@ -262,12 +263,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 아동복지사업본부 · 사무국 */}
+      {/* 아동복지사업본부 · AI돌봄혁신본부 · 사무국 */}
       <section className="py-16 md:py-20 bg-yeirin-cream">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-              아동복지사업본부 · 사무국
+              아동복지사업본부 · AI돌봄혁신본부 · 사무국
             </h2>
             <p className="text-gray-600">
               예이린의{" "}
@@ -281,6 +282,13 @@ export default function AboutPage() {
                 아동복지사업본부
               </h3>
               <MemberRow members={businessTeamMembers} />
+            </div>
+            <div className="hidden md:block w-px bg-gray-200 self-stretch" />
+            <div>
+              <h3 className="text-center text-lg md:text-xl font-bold text-yeirin-orange mb-6">
+                AI돌봄혁신본부
+              </h3>
+              <MemberRow members={aiCareMembers} />
             </div>
             <div className="hidden md:block w-px bg-gray-200 self-stretch" />
             <div>

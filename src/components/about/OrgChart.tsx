@@ -28,7 +28,7 @@ function PersonNode({ person }: PersonNodeProps) {
         </p>
       )}
       {person.affiliation && (
-        <p className="text-[11px] text-gray-400 mt-1 leading-snug break-keep">
+        <p className="text-[11px] text-gray-400 mt-1 leading-snug break-keep [overflow-wrap:anywhere]">
           {person.affiliation}
         </p>
       )}
@@ -115,8 +115,12 @@ const advisors: Person[] = [
 const businessTeam: Person[] = [
   { id: "kim-narae", name: "김나래", role: "팀장" },
   { id: "choi-seungyeon", name: "최승연", role: "사원" },
+];
+
+const aiCareTeam: Person[] = [
   { id: "go-hyunsook", name: "고현숙", role: "주임" },
   { id: "kim-hunjeong", name: "김훈정", role: "주임" },
+  { id: "lee-wiseong", name: "이위성", role: "사원" },
 ];
 
 const bImpact: Person[] = [
@@ -239,7 +243,7 @@ export default function OrgChart() {
         </div>
 
         {/* 하단: 메인 영역 + 오른쪽 레일 */}
-        <div className="grid md:grid-cols-[minmax(0,1fr)_240px] gap-6 md:gap-10">
+        <div className="grid xl:grid-cols-[minmax(0,1fr)_240px] gap-6 md:gap-10">
           {/* MAIN 영역 */}
           <div className="space-y-14">
             {/* 이사진 + 감사 */}
@@ -262,6 +266,12 @@ export default function OrgChart() {
                     },
                     {
                       targetId: "business",
+                      targetAnchor: "top",
+                      sourceAnchor: "bottom",
+                      style: DASHED,
+                    },
+                    {
+                      targetId: "ai-care",
                       targetAnchor: "top",
                       sourceAnchor: "bottom",
                       style: DASHED,
@@ -309,10 +319,10 @@ export default function OrgChart() {
             </div>
 
             {/* 본부 / 사업단 */}
-            <div className="grid grid-cols-12 gap-4 md:gap-6">
+            <div className="grid grid-cols-12 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)_minmax(0,2fr)_minmax(0,2.5fr)_minmax(0,2.5fr)] gap-4 md:gap-6">
 
               {/* 아동복지사업본부 + 산하 */}
-              <div className="col-span-12 md:col-span-4 space-y-7">
+              <div className="col-span-12 md:col-span-1 space-y-7">
                 <ArcherElement
                   id="business"
                   relations={[
@@ -381,8 +391,25 @@ export default function OrgChart() {
                 </ArcherElement>
               </div>
 
+              {/* AI돌봄혁신본부 */}
+              <div className="col-span-12 md:col-span-1">
+                <ArcherElement id="ai-care">
+                  <div>
+                    <GroupCard header={{ label: "AI돌봄혁신본부", color: "dark" }}>
+                      <div className="space-y-3">
+                        {aiCareTeam.map((p) => (
+                          <div key={p.id} className="flex justify-center">
+                            <PersonNode person={p} />
+                          </div>
+                        ))}
+                      </div>
+                    </GroupCard>
+                  </div>
+                </ArcherElement>
+              </div>
+
               {/* 사무국 */}
-              <div className="col-span-12 md:col-span-2">
+              <div className="col-span-12 md:col-span-1">
                 <ArcherElement id="office">
                   <div>
                     <GroupCard header={{ label: "사무국", color: "dark" }}>
@@ -399,7 +426,7 @@ export default function OrgChart() {
               </div>
 
               {/* 자문위원 */}
-              <div className="col-span-12 md:col-span-3">
+              <div className="col-span-12 md:col-span-1">
                 <ArcherElement id="advisors">
                   <div>
                     <GroupCard header={{ label: "자문위원", color: "orange" }}>
@@ -416,7 +443,7 @@ export default function OrgChart() {
               </div>
 
               {/* 전문위원 */}
-              <div className="col-span-12 md:col-span-3">
+              <div className="col-span-12 md:col-span-1">
                 <ArcherElement id="specialists">
                   <div>
                     <GroupCard header={{ label: "전문위원", color: "orange" }}>
@@ -435,7 +462,7 @@ export default function OrgChart() {
           </div>
 
           {/* RIGHT RAIL: (주) 예이린 + 법인조합원 */}
-          <div className="space-y-7">
+          <div className="space-y-7 w-full max-w-sm mx-auto xl:max-w-none">
             <ArcherElement
               id="yeirin-corp"
               relations={[
