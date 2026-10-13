@@ -68,15 +68,6 @@ export const techMembers: Member[] = [
 
 // 조직도에만 표시되는 인원 (상세 프로필 추후 보강 예정)
 export const orgChartMembers: Member[] = [
-  // (주) 예이린
-  {
-    id: "kim-hunjeong",
-    name: "김훈정",
-    role: "주임",
-    title: "예이린 주임",
-    image: "/images/board/김훈정.jpg",
-    message: "기술을 통해 사회에 가치를 환원하겠습니다.",
-  },
   // 자문위원
   {
     id: "park-suyoung",
@@ -130,23 +121,48 @@ export const orgChartMembers: Member[] = [
     image: "/images/board/이성진.jpg",
     message: "아이들이 소외감을 느끼지 않도록 돌보겠습니다.",
   },
-  // 사업본부
+  // 아동복지사업본부
   {
     id: "kim-narae",
     name: "김나래",
     role: "팀장",
-    title: "예이린 사업본부 팀장",
+    title: "예이린 아동복지사업본부 팀장",
     image: "/images/board/김나래.jpg",
     message:
       "돌봄이 닿지 못한 아이들 곁에서 동행하며, 연결의 길을 만들어가겠습니다.",
   },
   {
+    id: "choi-seungyeon",
+    name: "최승연",
+    role: "사원",
+    title: "예이린 아동복지사업본부 사원",
+    image: "/images/board/최승연.jpg",
+    message: "아이들의 따뜻한 미래를 위해 함께 하겠습니다.",
+  },
+  // AI돌봄혁신본부
+  {
     id: "go-hyunsook",
     name: "고현숙",
     role: "주임",
-    title: "예이린 사업본부 주임",
+    title: "예이린 AI돌봄혁신본부 주임",
     image: "/images/board/고현숙.jpg",
     message: "아이들의 따뜻한 미래를 만들어가는 길에 함께하겠습니다.",
+  },
+  {
+    id: "kim-hunjeong",
+    name: "김훈정",
+    role: "주임",
+    title: "예이린 AI돌봄혁신본부 주임",
+    image: "/images/board/김훈정.jpg",
+    message: "기술을 통해 사회에 가치를 환원하겠습니다.",
+  },
+  {
+    id: "lee-wiseong",
+    name: "이위성",
+    role: "사원",
+    title: "예이린 AI돌봄혁신본부 사원",
+    image: "/images/board/이위성.jpg",
+    message: "아이들의 작은 발 디딤이 큰 울림이 될 수 있도록 노력하겠습니다.",
   },
   // B-IMPACT 얼라이언스
   {
@@ -190,13 +206,22 @@ export const orgChartMembers: Member[] = [
   },
   // 사무국
   {
-    id: "oh-seolhwa",
-    name: "오설화",
+    id: "lee-jongyeop",
+    name: "이종엽",
     role: "주임",
     title: "예이린 사무국 주임",
-    image: "/images/board/오설화.jpg",
+    image: "/images/board/이종엽.jpg",
     message:
-        "나보다 우리를 먼저 생각하는 마음으로 가장 친근하고 신뢰받는 구성원이 되고 싶습니다.",
+        "최고의 돌봄지원을 위한 최상의 업무지원을 하겠습니다.",
+  },
+  {
+    id: "byun-hoyoung",
+    name: "변호영",
+    role: "사원",
+    title: "예이린 사무국 사원",
+    image: "/images/board/변호영.jpg",
+    message:
+        "원활한 사무행정과 꼼꼼한 지원으로 예이린의 따뜻한 발걸음을 함께 하겠습니다.",
   },
   // 전문위원
   {
