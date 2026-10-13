@@ -129,7 +129,8 @@ const borderlineExperts: Person[] = [
 ];
 
 const officeStaff: Person[] = [
-  { id: "oh-seolhwa", name: "오설화", role: "주임" },
+  { id: "lee-jongyeop", name: "이종엽", role: "주임" },
+  { id: "byun-hoyoung", name: "변호영", role: "사원" },
 ];
 
 const specialists: Person[] = [

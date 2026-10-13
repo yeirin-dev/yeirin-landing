@@ -24,7 +24,7 @@ const advisorMembers = getMembersByIds([
 const businessTeamMembers = getMembersByIds(["kim-narae", "go-hyunsook", "kim-hunjeong"]);
 const bImpactMembers = getMembersByIds(["kim-younggeun", "shim-mingyu"]);
 const borderlineMembers = getMembersByIds(["ahn-yeji", "jeon-jongsu"]);
-const officeMembers = getMembersByIds(["oh-seolhwa"]);
+const officeMembers = getMembersByIds(["lee-jongyeop", "byun-hoyoung"]);
 const specialistMembers = getMembersByIds([
   "lee-cheolwoo",
   "shin-sangyong",

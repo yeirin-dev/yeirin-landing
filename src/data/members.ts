@@ -190,13 +190,22 @@ export const orgChartMembers: Member[] = [
   },
   // 사무국
   {
-    id: "oh-seolhwa",
-    name: "오설화",
+    id: "lee-jongyeop",
+    name: "이종엽",
     role: "주임",
     title: "예이린 사무국 주임",
-    image: "/images/board/오설화.jpg",
+    image: "/images/board/이종엽.jpg",
     message:
-        "나보다 우리를 먼저 생각하는 마음으로 가장 친근하고 신뢰받는 구성원이 되고 싶습니다.",
+        "최고의 돌봄지원을 위한 최상의 업무지원을 하겠습니다.",
+  },
+  {
+    id: "byun-hoyoung",
+    name: "변호영",
+    role: "사원",
+    title: "예이린 사무국 사원",
+    image: "/images/board/변호영.jpg",
+    message:
+        "원활한 사무행정과 꼼꼼한 지원으로 예이린의 따뜻한 발걸음을 함께 하겠습니다.",
   },
   // 전문위원
   {
