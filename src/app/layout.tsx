@@ -55,8 +55,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "예이린 | Health Care System for Your Child",
-    description: "취약계층 아동의 건강한 성장을 지원하는 사회적협동조합. AI 기반 심리상담 및 아동건강관리 서비스.",
+    title: "예이린 사회적협동조합 | YEIRIN",
+    description: "기술로 돌봄을 새롭게, 아이들의 내일을 따뜻하게",
     type: "website",
     locale: "ko_KR",
     url: SITE_URL,
@@ -64,8 +64,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "예이린 | Health Care System for Your Child",
-    description: "취약계층 아동의 건강한 성장을 지원하는 사회적협동조합",
+    title: "예이린 사회적협동조합 | YEIRIN",
+    description: "기술로 돌봄을 새롭게, 아이들의 내일을 따뜻하게",
   },
   verification: {
     google: "google422fab12e314d528",
