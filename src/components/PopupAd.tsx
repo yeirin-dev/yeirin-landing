@@ -10,6 +10,8 @@ type PopupItem = {
   imageSrc: string;
   imageAlt: string;
   linkHref?: string;
+  endDate?: string; // 이 날까지 노출 (YYYY-MM-DD, KST, 당일 포함)
+  applyUntil?: string; // 이 날까지만 신청 링크 활성 (YYYY-MM-DD, KST, 당일 포함)
 };
 
 const POPUPS: PopupItem[] = [
@@ -17,15 +19,26 @@ const POPUPS: PopupItem[] = [
     tab: "10월 특강",
     imageSrc: "/popup-october.png",
     imageAlt: "예이린 10월 아동·청소년 마음성장 아카데미 특강",
-    // linkHref: "https://forms.gle/YFEMxBo4PxyJhZ3T6", // 폼 응답 마감으로 임시 비활성화 (2026-09-28)
+    linkHref: "https://forms.gle/YFEMxBo4PxyJhZ3T6",
+    endDate: "2026-10-23",
+    applyUntil: "2026-09-28",
   },
 ];
+
+// 한국 시간 기준 오늘 날짜 (YYYY-MM-DD)
+const todayKST = () =>
+  new Intl.DateTimeFormat("sv-SE", { timeZone: "Asia/Seoul" }).format(new Date());
 
 export default function PopupAd() {
   const [visible, setVisible] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
+  const [popups, setPopups] = useState<PopupItem[]>([]);
 
   useEffect(() => {
+    const today = todayKST();
+    const active = POPUPS.filter((p) => !p.endDate || today <= p.endDate);
+    if (active.length === 0) return; // 노출할 팝업 없으면 아예 안 띄움
+    setPopups(active);
     const dismissed = localStorage.getItem(STORAGE_KEY);
     if (dismissed) {
       const dismissedDate = new Date(dismissed);
@@ -49,7 +62,12 @@ export default function PopupAd() {
   };
 
   if (!visible) return null;
-  const current = POPUPS[activeTab];
+  const current = popups[activeTab];
+  const today = todayKST();
+  const href =
+    current.linkHref && (!current.applyUntil || today <= current.applyUntil)
+      ? current.linkHref
+      : undefined;
 
   return (
     <div
@@ -60,9 +78,9 @@ export default function PopupAd() {
         className="relative w-full max-w-[420px] max-h-[90vh] rounded-2xl overflow-hidden bg-white shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        {POPUPS.length > 1 && (
+        {popups.length > 1 && (
           <div className="flex border-b border-gray-200">
-            {POPUPS.map((popup, index) => (
+            {popups.map((popup, index) => (
               <button
                 key={index}
                 onClick={() => setActiveTab(index)}
@@ -73,9 +91,9 @@ export default function PopupAd() {
             ))}
           </div>
         )}
-        {current.linkHref ? (
+        {href ? (
           <a
-            href={current.linkHref}
+            href={href}
             target="_blank"
             rel="noopener noreferrer"
             className="block overflow-auto max-h-[75vh]"
