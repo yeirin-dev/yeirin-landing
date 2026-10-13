@@ -163,6 +163,7 @@ export default function OrgChart() {
   return (
     <div className="w-full bg-white rounded-3xl p-6 md:p-12 ring-1 ring-gray-100">
       <ArcherContainer
+        className="max-md:[&>svg]:hidden"
         strokeColor="#94a3b8"
         strokeWidth={1.5}
         lineStyle="angle"
