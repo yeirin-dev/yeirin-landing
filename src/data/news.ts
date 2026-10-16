@@ -318,6 +318,15 @@ export const newsData: NewsItem[] = [
     thumbnail: "https://www.busan.com/nas/wcms/wcms_data/photos/2025/11/03/2025110317410501022_l.jpg",
   },
   {
+    id: 8,
+    title: "예이린 사회적협동조합, 복권기금 '경계선 지능 아동 사회적응력 향상 지원사업' 최종 선정",
+    date: "2025.11.03",
+    category: "press",
+    media: "E동아",
+    url: "https://edu.donga.com/news/articleView.html?idxno=97603",
+    thumbnail: "https://cdn.edu.donga.com/news/photo/202511/97603_160649_4421.jpg",
+  },
+  {
     id: 10,
     title: "부산 사상구, 'AI와 함께하는 마음건강+' 시범사업 성과공유회 개최",
     date: "2025.10.24",
@@ -334,15 +343,6 @@ export const newsData: NewsItem[] = [
     media: "뉴스포털1",
     url: "https://www.civilreporter.co.kr/news/articleView.html?idxno=500240",
     thumbnail: "https://cdn.civilreporter.co.kr/news/photo/202507/500240_524239_2019.jpg",
-  },
-  {
-    id: 8,
-    title: "예이린 사회적협동조합, 복권기금 '경계선 지능 아동 사회적응력 향상 지원사업' 최종 선정",
-    date: "2025.06.01",
-    category: "press",
-    media: "E동아",
-    url: "https://www.newsis.com/view/NISX20250530_0003196626",
-    thumbnail: "https://img1.newsis.com/2024/06/19/NISI20240619_0001579897_web.jpg",
   },
   {
     id: 7,
