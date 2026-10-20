@@ -12,6 +12,15 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: 45,
+    title: "경계선지능 아동 통합지원 '플로비 스쿨' 본격화",
+    date: "2026.10.19",
+    category: "press",
+    media: "부산일보",
+    url: "https://www.busan.com/view/busan/view.php?code=2026101516183024602",
+    thumbnail: "https://www.busan.com/nas/wcms/wcms_data/photos/2026/10/15/2026101516180285448_l.png",
+  },
+  {
     id: 41,
     title: "예이린 사회적협동조합, 사랑의열매 배분사업 우수상",
     date: "2026.09.27",
