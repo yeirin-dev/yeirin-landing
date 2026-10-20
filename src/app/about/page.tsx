@@ -263,12 +263,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 아동복지사업본부 · AI돌봄혁신본부 · 사무국 */}
+      {/* 아동통합지원본부 · AI돌봄혁신본부 · 사무국 */}
       <section className="py-16 md:py-20 bg-yeirin-cream">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-              아동복지사업본부 · AI돌봄혁신본부 · 사무국
+              아동통합지원본부 · AI돌봄혁신본부 · 사무국
             </h2>
             <p className="text-gray-600">
               예이린의{" "}
@@ -279,7 +279,7 @@ export default function AboutPage() {
           <div className="flex flex-col md:flex-row md:justify-center md:items-start gap-12 md:gap-x-20 lg:gap-x-28">
             <div>
               <h3 className="text-center text-lg md:text-xl font-bold text-yeirin-orange mb-6">
-                아동복지사업본부
+                아동통합지원본부
               </h3>
               <MemberRow members={businessTeamMembers} />
             </div>
@@ -309,7 +309,7 @@ export default function AboutPage() {
               B-IMPACT 얼라이언스 · 경계선 아동 파견전문가 양성단
             </h2>
             <p className="text-gray-600">
-              아동복지사업본부 산하의{" "}
+              아동통합지원본부 산하의{" "}
               <span className="text-yeirin-orange font-medium">전문 사업단</span>
               입니다
             </p>
