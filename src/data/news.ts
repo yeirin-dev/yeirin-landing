@@ -12,6 +12,15 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: 48,
+    title: "[헬시베이비 페스티벌] \"아이들은 지역의 귀한 보물이자 희망입니다\"",
+    date: "2026.10.26",
+    category: "press",
+    media: "부산일보",
+    url: "https://n.news.naver.com/article/082/0001404158?sid=103",
+    thumbnail: "https://imgnews.pstatic.net/image/082/2026/10/26/0001404158_001_20261026175015806.jpg?type=w800",
+  },
+  {
     id: 47,
     title: "예이린, '마음성장 아카데미' 10월 특강으로 2026년 대장정 마무리",
     date: "2026.10.26",
