@@ -12,6 +12,33 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: 48,
+    title: "[헬시베이비 페스티벌] \"아이들은 지역의 귀한 보물이자 희망입니다\"",
+    date: "2026.10.26",
+    category: "press",
+    media: "부산일보",
+    url: "https://n.news.naver.com/article/082/0001404158?sid=103",
+    thumbnail: "https://imgnews.pstatic.net/image/082/2026/10/26/0001404158_001_20261026175015806.jpg?type=w800",
+  },
+  {
+    id: 47,
+    title: "예이린, '마음성장 아카데미' 10월 특강으로 2026년 대장정 마무리",
+    date: "2026.10.26",
+    category: "press",
+    media: "디지털타임스",
+    url: "https://www.dt.co.kr/article/12091285",
+    thumbnail: "https://wimg.dt.co.kr/news/cms/2026/10/26/news-p.v1.20261026.dddd748d1dc84ad2ba13009fcd4162fa_R.jpg",
+  },
+  {
+    id: 46,
+    title: "사상구, '이주배경아동 성장동행 사업' 업무협약",
+    date: "2026.10.23",
+    category: "press",
+    media: "부산일보",
+    url: "https://www.busan.com/view/newsunicollvill/view.php?code=2026102315504085221",
+    thumbnail: "https://www.busan.com/nas/wcms/wcms_data/photos/2026/10/23/2026102315502687333_l.png",
+  },
+  {
     id: 45,
     title: "경계선지능 아동 통합지원 '플로비 스쿨' 본격화",
     date: "2026.10.19",
