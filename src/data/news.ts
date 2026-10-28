@@ -30,6 +30,15 @@ export const newsData: NewsItem[] = [
     thumbnail: "https://wimg.dt.co.kr/news/cms/2026/10/26/news-p.v1.20261026.dddd748d1dc84ad2ba13009fcd4162fa_R.jpg",
   },
   {
+    id: 49,
+    title: "예이린사회적협동조합, 3대 조직체계 정립…AI 기반 업무혁신 추진",
+    date: "2026.10.23",
+    category: "press",
+    media: "E동아",
+    url: "https://edu.donga.com/news/articleView.html?idxno=113126",
+    thumbnail: "https://cdn.edu.donga.com/news/photo/202610/113126_177661_2759.jpg",
+  },
+  {
     id: 46,
     title: "사상구, '이주배경아동 성장동행 사업' 업무협약",
     date: "2026.10.23",
