@@ -10,11 +10,22 @@ type PopupItem = {
   imageSrc: string;
   imageAlt: string;
   linkHref?: string;
+  startDate?: string; // 이 날부터 노출 (YYYY-MM-DD, KST, 당일 포함)
   endDate?: string; // 이 날까지 노출 (YYYY-MM-DD, KST, 당일 포함)
   applyUntil?: string; // 이 날까지만 신청 링크 활성 (YYYY-MM-DD, KST, 당일 포함)
 };
 
 const POPUPS: PopupItem[] = [
+  {
+    tab: "11월 플로비 마켓",
+    imageSrc: "/popup-november.png",
+    imageAlt: "2026 플로비 마켓 초대 포스터",
+    linkHref:
+      "https://docs.google.com/forms/d/e/1FAIpQLSdDokWaZ7FU-qD0mWEWZVWCC42KdBE2UG7pmA70DiUDe-X9Mg/viewform",
+    startDate: "2026-11-03",
+    endDate: "2026-11-21",
+    applyUntil: "2026-11-20",
+  },
   {
     tab: "10월 특강",
     imageSrc: "/popup-october.png",
@@ -36,7 +47,11 @@ export default function PopupAd() {
 
   useEffect(() => {
     const today = todayKST();
-    const active = POPUPS.filter((p) => !p.endDate || today <= p.endDate);
+    const active = POPUPS.filter(
+      (p) =>
+        (!p.startDate || today >= p.startDate) &&
+        (!p.endDate || today <= p.endDate)
+    );
     if (active.length === 0) return; // 노출할 팝업 없으면 아예 안 띄움
     setPopups(active);
     const dismissed = localStorage.getItem(STORAGE_KEY);
