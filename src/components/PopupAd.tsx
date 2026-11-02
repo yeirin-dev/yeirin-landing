@@ -26,14 +26,6 @@ const POPUPS: PopupItem[] = [
     endDate: "2026-11-21",
     applyUntil: "2026-11-20",
   },
-  {
-    tab: "10월 특강",
-    imageSrc: "/popup-october.png",
-    imageAlt: "예이린 10월 아동·청소년 마음성장 아카데미 특강",
-    linkHref: "https://forms.gle/YFEMxBo4PxyJhZ3T6",
-    endDate: "2026-10-23",
-    applyUntil: "2026-09-28",
-  },
 ];
 
 // 한국 시간 기준 오늘 날짜 (YYYY-MM-DD)
