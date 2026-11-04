@@ -12,7 +12,7 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
-    id: 49,
+    id: 50,
     title: "부산국제의료관광컨벤션 2026 눈길 끄는 새 부스는?",
     date: "2026.11.02",
     category: "press",
