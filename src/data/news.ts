@@ -12,6 +12,15 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: 49,
+    title: "부산국제의료관광컨벤션 2026 눈길 끄는 새 부스는?",
+    date: "2026.11.02",
+    category: "press",
+    media: "부산일보",
+    url: "https://n.news.naver.com/article/082/0001405273?sid=103",
+    thumbnail: "https://imgnews.pstatic.net/image/082/2026/11/02/0001405273_001_20261102181510165.jpg?type=w800",
+  },
+  {
     id: 48,
     title: "[헬시베이비 페스티벌] \"아이들은 지역의 귀한 보물이자 희망입니다\"",
     date: "2026.10.26",
