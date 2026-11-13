@@ -12,6 +12,24 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: 52,
+    title: "예이린, 경계선 지능 아동 지원 지역사회로 확대한다",
+    date: "2026.11.12",
+    category: "press",
+    media: "동아일보",
+    url: "https://www.donga.com/news/Society/article/all/20261112/135015284/1",
+    thumbnail: "https://dimg.donga.com/wps/NEWS/IMAGE/2026/11/12/135015244.2.jpg",
+  },
+  {
+    id: 51,
+    title: "예이린, 경계선 지능 아동 지원의 새로운 표준 제시…현장 돌봄에 AI 기술 결합",
+    date: "2026.11.12",
+    category: "press",
+    media: "파이낸스투데이",
+    url: "https://www.fntoday.co.kr/news/articleView.html?idxno=397923",
+    thumbnail: "https://cdn.fntoday.co.kr/news/photo/202611/2_1316606_1278175_3652.jpg",
+  },
+  {
     id: 50,
     title: "부산국제의료관광컨벤션 2026 눈길 끄는 새 부스는?",
     date: "2026.11.02",
