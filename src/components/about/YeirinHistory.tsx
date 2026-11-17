@@ -108,11 +108,6 @@ const HISTORY: HistoryYear[] = [
         date: "2023.11.06",
         title: "과학기술정보통신부 과학기술인 협동조합 등록",
       },
-      {
-        date: "2023.11.15",
-        title: "예이린사회적협동조합 설립",
-        highlight: true,
-      },
     ],
   },
   {
