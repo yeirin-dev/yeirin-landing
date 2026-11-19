@@ -12,6 +12,15 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: 53,
+    title: "예이린 사회적협동조합, 아동 파견전문가 40시간 교육 마무리",
+    date: "2026.11.18",
+    category: "press",
+    media: "느린인뉴스",
+    url: "https://www.slowlearnernews.org/news/articleView.html?idxno=4350",
+    thumbnail: "https://cdn.slowlearnernews.org/news/photo/202611/4350_5846_3648.png",
+  },
+  {
     id: 52,
     title: "예이린, 경계선 지능 아동 지원 지역사회로 확대한다",
     date: "2026.11.12",
